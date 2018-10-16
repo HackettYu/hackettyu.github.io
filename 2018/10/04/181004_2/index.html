@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hackettyu" />
+  <meta name="keywords" content="command,powershell,script," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="bra bra">
-<meta name="keywords" content="hackettyu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HackettYu&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="简介windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。 快速上手在普通 powershell 下输入下面的命令即可提权：1Start-Process -verb runas &amp;quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.e">
+<meta name="keywords" content="command,powershell,script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命令行下 powershell 提权">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/181004_2/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="bra bra">
+<meta property="og:description" content="简介windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。 快速上手在普通 powershell 下输入下面的命令即可提权：1Start-Process -verb runas &amp;quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.e">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-10-16T08:00:46.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HackettYu&#39;s blog">
-<meta name="twitter:description" content="bra bra">
+<meta name="twitter:title" content="命令行下 powershell 提权">
+<meta name="twitter:description" content="简介windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。 快速上手在普通 powershell 下输入下面的命令即可提权：1Start-Process -verb runas &amp;quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.e">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/181004_2/"/>
 
 
 
 
 
-  <title>HackettYu's blog</title>
+  <title>命令行下 powershell 提权 | HackettYu's blog</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,161 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote>
-<p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p>
-</blockquote>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
-<p>例如要关闭 NVIDIA 显卡：</p>
-<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
-<p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
-<p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -402,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/181004_2/" itemprop="url">命令行下 powershell 提权</a></h1>
+          <h1 class="post-title" itemprop="name headline">命令行下 powershell 提权</h1>
         
 
         <div class="post-meta">
@@ -476,9 +322,7 @@
       
 
       
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。</p>
 <h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>在普通 powershell 下输入下面的命令即可提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Start-Process -verb runas &quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe&quot;</span><br></pre></td></tr></table></figure></p>
 <p>后面的路径根据实际的路径修改，最好用任务管理器查看系统使用的那个，系统内可能有几个 powershell 程序。</p>
 <h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><blockquote>
@@ -499,8 +343,6 @@
 </blockquote>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>cmd 提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runas /user:hackett_yu@outlook.com cmd</span><br><span class="line">doskey sudo=runas /user:&#123;$username&#125; cmd</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -515,184 +357,44 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/181004_1/" itemprop="url">中文技术文档的写作规范</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T10:00:00+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/command/" rel="tag"># command</a>
           
-
+            <a href="/tags/powershell/" rel="tag"># powershell</a>
           
-            
+            <a href="/tags/script/" rel="tag"># script</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><blockquote>
-<p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="文档体系"><a href="#文档体系" class="headerlink" title="文档体系"></a>文档体系</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>软件手册是一部完整的书，建议采用下面的结构。</p>
-<ul>
-<li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li>
-<li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li>
-<li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul>
-<li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li>
-<li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li>
-<li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li>
-</ul>
-</li>
-<li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li>
-<li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li>
-<li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li>
-<li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul>
-<li><strong>Glossary</strong>：[可选] [文件] 名词解释</li>
-<li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li>
-<li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li>
-<li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li>
-<li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/04/181004_1/" rel="next" title="中文技术文档的写作规范">
+                <i class="fa fa-chevron-left"></i> 中文技术文档的写作规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/04/181004_3/" rel="prev" title="命令行开启 | 关闭显卡">
+                命令行开启 | 关闭显卡 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -702,14 +404,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -717,6 +416,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -737,8 +440,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -798,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速上手"><span class="nav-number">2.</span> <span class="nav-text">快速上手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门篇"><span class="nav-number">3.</span> <span class="nav-text">入门篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶篇"><span class="nav-number">4.</span> <span class="nav-text">进阶篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">5.</span> <span class="nav-text">附录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -931,6 +659,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

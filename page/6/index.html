@@ -83,7 +83,7 @@
 <meta name="keywords" content="hackettyu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="HackettYu&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
 <meta property="og:description" content="bra bra">
 <meta property="og:locale" content="en">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/6/"/>
 
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/180913/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -252,7 +252,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/04/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h1>
+                <a class="post-title-link" href="/2018/09/13/180913/" itemprop="url">解决 Ubuntu 16.04 没有 「在打字时停用触摸板」选项</a></h1>
         
 
         <div class="post-meta">
@@ -264,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
-                2018-10-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-13T12:00:00+08:00">
+                2018-09-13
               </time>
             
 
@@ -287,8 +287,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/log/" itemprop="url" rel="index">
+                    <span itemprop="name">log</span>
                   </a>
                 </span>
 
@@ -326,346 +326,393 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote>
-<p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p>
+            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="使用-syndaemon-程序"><a href="#使用-syndaemon-程序" class="headerlink" title="使用 syndaemon 程序"></a>使用 syndaemon 程序</h3><blockquote>
+<p><a href="https://wiki.archlinux.org/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8.E6.89.93.E5.AD.97.E6.97.B6.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Touchpad_Synaptics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.9C.A8.E6.89.93.E5.AD.97.E6.97.B6.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF</a><br><a href="https://linux.die.net/man/1/syndaemon" target="_blank" rel="noopener">https://linux.die.net/man/1/syndaemon</a></p>
 </blockquote>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
-<p>例如要关闭 NVIDIA 显卡：</p>
-<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
-<p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
-<p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/181004_2/" itemprop="url">命令行下 powershell 提权</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T12:00:00+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>在普通 powershell 下输入下面的命令即可提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Start-Process -verb runas &quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe&quot;</span><br></pre></td></tr></table></figure></p>
-<p>后面的路径根据实际的路径修改，最好用任务管理器查看系统使用的那个，系统内可能有几个 powershell 程序。</p>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><blockquote>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-6" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-6</a><br><a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6</a></p>
-</blockquote>
-<p>其实这样输入有点麻烦，bash 有 alias 这样的命令的给命令起别名， cmd 有doskey 这样的命令，而 powershell 的是 Set-Alias 。<br>下面的命令分别是添加、获取和删除别名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set-Alias &#123;$alias&#125; &#123;$command&#125;</span><br><span class="line">Get-Alias | findstr &#123;$alias&#125;</span><br><span class="line">Remove-Item alias:&#123;$alias&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用 Set-Alias 找不到能传参的方式，用了函数的方式，用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Function FuncName （args[]）</span><br><span class="line">&#123;</span><br><span class="line">      code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>实际命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Function fuck &#123;Start-Process -verb runas &quot;C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe&quot;&#125;</span><br><span class="line">Set-Alias sudo fuck</span><br></pre></td></tr></table></figure></p>
-<p>删除函数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del Function:&#123;$your function&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><blockquote>
-<p><a href="https://technet.microsoft.com/zh-CN/library/hh847748.aspx" target="_blank" rel="noopener">https://technet.microsoft.com/zh-CN/library/hh847748.aspx</a></p>
-</blockquote>
-<p>上面的方法可以使用但是，关闭程序后旧失效了，找了一种方法把脚本写入全局。<br>找到全局设置文件 Microsoft.PowerShell_profile.ps1 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-Variable profile | Format-List</span><br></pre></td></tr></table></figure></p>
-<p>如果没有自己创建一个，写入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Function fuck &#123;Start-Process -verb runas &quot;C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe&quot;&#125;</span><br><span class="line">Set-Alias sudo fuck</span><br></pre></td></tr></table></figure></p>
-<p>保存后发现无法加载，因为默认不加载外部脚本，管理员权限下 powershell 运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>REMOTESIGNED</strong><br>脚本可以运行。这是 Windows Server 2012 R2 中的默认执行策略。<br>要求从 Internet 下载的脚本和配置文件（包括电子邮件和即时消息程序）具有受信任的发布者的数字签名。<br>不要求你在本地计算机上编写的脚本（不是从 Internet 下载的）具有数字签名。<br>如果脚本已被取消阻止（比如通过使用 Unblock-File cmdlet），则运行从 Internet 下载但未签名的脚本。<br>存在运行来自 Internet 之外的源的未签名脚本和已签名但却是恶意的脚本的风险。</p>
-</blockquote>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>cmd 提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runas /user:hackett_yu@outlook.com cmd</span><br><span class="line">doskey sudo=runas /user:&#123;$username&#125; cmd</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/181004_1/" itemprop="url">中文技术文档的写作规范</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T10:00:00+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><blockquote>
-<p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p>
-</blockquote>
+<ul>
+<li>名称：syndaemon - 一个程序，用于监视键盘活动并在使用键盘时禁用触摸板。</li>
+<li>概要：syndaemon [ -i idle-time ] [ -m poll-inverval ] [ -d ] [ -p pid-file ] [ -t ] [ -k ] [ -K ] [ -R ]</li>
+<li>描述：键入时禁用触摸板可避免不必要的指针移动，从而导致焦点偏向错误的窗口。</li>
+<li>选项</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i &lt; 空闲时间 &gt;</td>
+<td>在启用触摸板之前最后一次按键后等待的秒数。（默认为2.0秒）</td>
+</tr>
+<tr>
+<td>-m &lt; poll-interval &gt;</td>
+<td>在两个轮询间隔之间等待多少毫秒。如果此值太低，将导致不必要的唤醒。如果该值太高，则可能不会注意到某些按键（在两个间隔之间发生按下和释放）。使用-R运行时，此开关无效。默认值为200毫秒</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>从守护进程开始，即在后台运行</td>
+</tr>
+<tr>
+<td>-p &lt; pid-file &gt;</td>
+<td>创建具有指定文件名的pid文件。只有在守护程序模式下启动程序时才会创建pid文件</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>仅响应键盘活动，禁用点击和滚动，而不禁用鼠标移动</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>监视键盘活动时忽略修饰键</td>
+</tr>
+<tr>
+<td>-K</td>
+<td>像-k一样，但也忽略了Modifier + Key组合</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>使用XRecord扩展来检测键盘活动，而不是轮询键盘状态</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>使用 syndaemon<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># syndaemon 可以监控键盘活动并在打字时禁用触摸板，有多个选项可以控制禁用条件。可以通过下面命令查看帮助：</span></span><br><span class="line">$ syndaemon -h</span><br><span class="line"><span class="comment"># 例如要在打字 0.5 秒后禁用点击和滚动，忽略 Ctrl 等修饰键，使用</span></span><br><span class="line">$ syndaemon -i 0.5 -t -K -R</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h2 id="文档体系"><a href="#文档体系" class="headerlink" title="文档体系"></a>文档体系</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>软件手册是一部完整的书，建议采用下面的结构。</p>
+<h3 id="设置开机启动脚本（利用-rc-local）"><a href="#设置开机启动脚本（利用-rc-local）" class="headerlink" title="设置开机启动脚本（利用 rc.local）"></a>设置开机启动脚本（利用 rc.local）</h3><blockquote>
+<p><a href="https://www.linuxidc.com/Linux/2017-09/147166.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2017-09/147166.htm</a></p>
+</blockquote>
+<p>rc.local脚本是一个Ubuntu开机后会自动执行的脚本，我们可以在该脚本内添加命令行指令。该脚本位于/etc/路径下，需要root权限才能修改。</p>
+<p>该脚本具体格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/sh -e</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># rc.local</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This script is executed at the end of each multiuser runlevel.</span></span><br><span class="line"><span class="comment"># Make sure that the script will "exit 0" on success or any other</span></span><br><span class="line"><span class="comment"># value on error.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># In order to enable or disable this script just change the execution</span></span><br><span class="line"><span class="comment"># bits.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># By default this script does nothing.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure></p>
+<p>在 exit 0 前添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syndaemon -i 1 -t -K -R</span><br></pre></td></tr></table></figure></p>
+<p>注意: 一定要将命令添加在exit 0之前。里面可以直接写命令或者执行Shell脚本文件sh。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/180828_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/180828_1/" itemprop="url">配置 jDK_1.8 环境变量</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-28T18:00:00+08:00">
+                2018-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/log/" itemprop="url" rel="index">
+                    <span itemprop="name">log</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><ul>
+<li>Windows 10 64 位家庭版</li>
+<li>JDK_1.8_64</li>
+</ul>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ul>
+<li>配置环境变量如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>变量值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JAVA_HOME</td>
+<td>C:\Program Files\Java\jdk1.8.0_171</td>
+</tr>
+<tr>
+<td>CLASSPATH</td>
+<td>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>C:\Program Files\Java\jdk1.8.0_171\bin</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>C:\Program Files\Java\jdk1.8.0_171\jre\bin</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li>
-<li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li>
-<li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul>
-<li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li>
-<li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li>
-<li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li>
+<li>JDK 的安装路径为：C:\Program Files\Java\jdk1.8.0_171</li>
+<li>Path 的变量值不能带 %JAVA_HOME ,实测带的话 javac 命令不识别</li>
+<li>注意 CLASSPATH 的变量值前面的点</li>
 </ul>
-</li>
-<li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li>
-<li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li>
-<li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li>
-<li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul>
-<li><strong>Glossary</strong>：[可选] [文件] 名词解释</li>
-<li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li>
-<li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li>
-<li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li>
-<li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li>
-</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/180828_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/180828_2/" itemprop="url">命令行编译 Eclipse 创建的 Java 程序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-28T12:00:00+08:00">
+                2018-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/log/" itemprop="url" rel="index">
+                    <span itemprop="name">log</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ul>
+<li>工程路径：F:\Workplace\Eclipse\JavaHXJS</li>
+<li>目标文件：F:\Workplace\Eclipse\JavaHXJS\src\com\aes\Test.java</li>
+<li>运行如下：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">F:\Workplace\Eclipse\JavaHXJS&gt;javac src\com\aes\Test.java</span><br><span class="line">F:\Workplace\Eclipse\JavaHXJS&gt;<span class="built_in">cd</span> src</span><br><span class="line">F:\Workplace\Eclipse\JavaHXJS\src&gt;java com.aes.Test</span><br><span class="line">Test successed</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -707,7 +754,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 

@@ -83,7 +83,7 @@
 <meta name="keywords" content="hackettyu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="HackettYu&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
 <meta property="og:description" content="bra bra">
 <meta property="og:locale" content="en">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/181003_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -252,7 +252,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/04/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h1>
+                <a class="post-title-link" href="/2018/10/03/181003_1/" itemprop="url">vscode 控制台输出编码问题</a></h1>
         
 
         <div class="post-meta">
@@ -264,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
-                2018-10-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-03T10:00:00+08:00">
+                2018-10-03
               </time>
             
 
@@ -287,8 +287,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -326,17 +326,10 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote>
-<p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p>
+            <h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><p>vscode 的 run code 插件无法使用，原因是控制台的编码问题</p>
+<h2 id="usage"><a href="#usage" class="headerlink" title="usage"></a>usage</h2><blockquote>
+<p><a href="https://github.com/formulahendry/vscode-code-runner/issues/241#issuecomment-400633228" target="_blank" rel="noopener">github vscode-code-runner issues</a></p>
 </blockquote>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
-<p>例如要关闭 NVIDIA 显卡：</p>
-<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
-<p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
-<p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -385,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/181001_7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -404,7 +397,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/04/181004_2/" itemprop="url">命令行下 powershell 提权</a></h1>
+                <a class="post-title-link" href="/2018/10/01/181001_7/" itemprop="url">解决 chromium 缺少 google api 密钥无法登录问题</a></h1>
         
 
         <div class="post-meta">
@@ -416,8 +409,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T12:00:00+08:00">
-                2018-10-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T23:00:00+08:00">
+                2018-10-01
               </time>
             
 
@@ -439,8 +432,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -478,26 +471,8 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>windows 下每次打开一个普通 cli 后发现要按 [win + X + A] 组合键才能打开管理员 cli ，感觉很麻烦，然后在网速查到了这个方法。</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>在普通 powershell 下输入下面的命令即可提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Start-Process -verb runas &quot;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe&quot;</span><br></pre></td></tr></table></figure></p>
-<p>后面的路径根据实际的路径修改，最好用任务管理器查看系统使用的那个，系统内可能有几个 powershell 程序。</p>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><blockquote>
-<p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-6" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-6</a><br><a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6</a></p>
-</blockquote>
-<p>其实这样输入有点麻烦，bash 有 alias 这样的命令的给命令起别名， cmd 有doskey 这样的命令，而 powershell 的是 Set-Alias 。<br>下面的命令分别是添加、获取和删除别名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set-Alias &#123;$alias&#125; &#123;$command&#125;</span><br><span class="line">Get-Alias | findstr &#123;$alias&#125;</span><br><span class="line">Remove-Item alias:&#123;$alias&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用 Set-Alias 找不到能传参的方式，用了函数的方式，用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Function FuncName （args[]）</span><br><span class="line">&#123;</span><br><span class="line">      code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>实际命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Function fuck &#123;Start-Process -verb runas &quot;C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe&quot;&#125;</span><br><span class="line">Set-Alias sudo fuck</span><br></pre></td></tr></table></figure></p>
-<p>删除函数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del Function:&#123;$your function&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><blockquote>
-<p><a href="https://technet.microsoft.com/zh-CN/library/hh847748.aspx" target="_blank" rel="noopener">https://technet.microsoft.com/zh-CN/library/hh847748.aspx</a></p>
-</blockquote>
-<p>上面的方法可以使用但是，关闭程序后旧失效了，找了一种方法把脚本写入全局。<br>找到全局设置文件 Microsoft.PowerShell_profile.ps1 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-Variable profile | Format-List</span><br></pre></td></tr></table></figure></p>
-<p>如果没有自己创建一个，写入下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Function fuck &#123;Start-Process -verb runas &quot;C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe&quot;&#125;</span><br><span class="line">Set-Alias sudo fuck</span><br></pre></td></tr></table></figure></p>
-<p>保存后发现无法加载，因为默认不加载外部脚本，管理员权限下 powershell 运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>REMOTESIGNED</strong><br>脚本可以运行。这是 Windows Server 2012 R2 中的默认执行策略。<br>要求从 Internet 下载的脚本和配置文件（包括电子邮件和即时消息程序）具有受信任的发布者的数字签名。<br>不要求你在本地计算机上编写的脚本（不是从 Internet 下载的）具有数字签名。<br>如果脚本已被取消阻止（比如通过使用 Unblock-File cmdlet），则运行从 Internet 下载但未签名的脚本。<br>存在运行来自 Internet 之外的源的未签名脚本和已签名但却是恶意的脚本的风险。</p>
-</blockquote>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>cmd 提权：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runas /user:hackett_yu@outlook.com cmd</span><br><span class="line">doskey sudo=runas /user:&#123;$username&#125; cmd</span><br></pre></td></tr></table></figure></p>
+            <p>管理员命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setx GOOGLE_API_KEY “AIzaSyAUoSnO_8k-3D4-fOp-CFopA_NQAkoVCLw”</span><br><span class="line">setx GOOGLE_DEFAULT_CLIENT_ID “6307505647-6knmr84r2pj2leudg3pp1j0h1licd6b9.apps.googleusercontent.com”</span><br><span class="line">setx GOOGLE_DEFAULT_CLIENT_SECRET “rbeWhXTLgU8oLiUeefPsEL9c”</span><br></pre></td></tr></table></figure></p>
+<p>这三行分别是：API密钥、客户端ID、客户端密钥</p>
 
           
         
@@ -546,7 +521,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/181004_1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/181001_6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -565,7 +540,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/04/181004_1/" itemprop="url">中文技术文档的写作规范</a></h1>
+                <a class="post-title-link" href="/2018/10/01/181001_6/" itemprop="url">m3u8 转 mp4</a></h1>
         
 
         <div class="post-meta">
@@ -577,8 +552,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-04T10:00:00+08:00">
-                2018-10-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T18:00:00+08:00">
+                2018-10-01
               </time>
             
 
@@ -639,36 +614,9 @@
       
         
           
-            <ul>
-<li><blockquote>
-<p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="文档体系"><a href="#文档体系" class="headerlink" title="文档体系"></a>文档体系</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>软件手册是一部完整的书，建议采用下面的结构。</p>
-<ul>
-<li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li>
-<li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li>
-<li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul>
-<li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li>
-<li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li>
-<li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li>
-</ul>
-</li>
-<li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li>
-<li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li>
-<li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li>
-<li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul>
-<li><strong>Glossary</strong>：[可选] [文件] 名词解释</li>
-<li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li>
-<li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li>
-<li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li>
-<li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li>
-</ul>
-</li>
-</ul>
+            <script src="https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d.js"></script>
 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"http://host/folder/file.m3u8"</span> -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 file.mp4</span><br></pre></td></tr></table></figure>
           
         
       
@@ -707,7 +655,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
