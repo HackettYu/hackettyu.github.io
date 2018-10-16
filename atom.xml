@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HackettYu&#39;s blog</title>
+  
+  <subtitle>Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-10-16T09:06:35.253Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>HackettYu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一段用 html 创建流程图的源码</title>
+    <link href="http://yoursite.com/2018/10/16/181016_1/"/>
+    <id>http://yoursite.com/2018/10/16/181016_1/</id>
+    <published>2018-10-16T02:00:00.000Z</published>
+    <updated>2018-10-16T09:06:35.253Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 下磁盘多余的图标删除</title>
+    <link href="http://yoursite.com/2018/10/10/181010_1/"/>
+    <id>http://yoursite.com/2018/10/10/181010_1/</id>
+    <published>2018-10-10T02:00:00.000Z</published>
+    <updated>2018-10-16T08:48:35.259Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="log" scheme="http://yoursite.com/categories/log/"/>
+    
+    
+      <category term="windows" scheme="http://yoursite.com/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑缺少 windows media player</title>
+    <link href="http://yoursite.com/2018/10/08/181008_1/"/>
+    <id>http://yoursite.com/2018/10/08/181008_1/</id>
+    <published>2018-10-08T02:00:00.000Z</published>
+    <updated>2018-10-16T08:46:28.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="http://yoursite.com/categories/debug/"/>
+    
+    
+      <category term="windows" scheme="http://yoursite.com/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux ln 命令之硬链接和软连接</title>
+    <link href="http://yoursite.com/2018/10/06/181006_1/"/>
+    <id>http://yoursite.com/2018/10/06/181006_1/</id>
+    <published>2018-10-06T02:00:00.000Z</published>
+    <updated>2018-10-16T08:44:16.250Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="http://yoursite.com/categories/note/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行开启 | 关闭显卡</title>
+    <link href="http://yoursite.com/2018/10/04/181004_3/"/>
+    <id>http://yoursite.com/2018/10/04/181004_3/</id>
+    <published>2018-10-04T06:00:00.000Z</published>
+    <updated>2018-10-16T08:02:08.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="http://yoursite.com/categories/note/"/>
+    
+    
+      <category term="command" scheme="http://yoursite.com/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim 配置</title>
+    <link href="http://yoursite.com/2018/10/04/181004_4/"/>
+    <id>http://yoursite.com/2018/10/04/181004_4/</id>
+    <published>2018-10-04T06:00:00.000Z</published>
+    <updated>2018-10-16T08:42:13.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="log" scheme="http://yoursite.com/categories/log/"/>
+    
+    
+      <category term="profile" scheme="http://yoursite.com/tags/profile/"/>
+    
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行下 powershell 提权</title>
+    <link href="http://yoursite.com/2018/10/04/181004_2/"/>
+    <id>http://yoursite.com/2018/10/04/181004_2/</id>
+    <published>2018-10-04T04:00:00.000Z</published>
+    <updated>2018-10-16T08:00:46.070Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="http://yoursite.com/categories/note/"/>
+    
+    
+      <category term="command" scheme="http://yoursite.com/tags/command/"/>
+    
+      <category term="powershell" scheme="http://yoursite.com/tags/powershell/"/>
+    
+      <category term="script" scheme="http://yoursite.com/tags/script/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中文技术文档的写作规范</title>
+    <link href="http://yoursite.com/2018/10/04/181004_1/"/>
+    <id>http://yoursite.com/2018/10/04/181004_1/</id>
+    <published>2018-10-04T02:00:00.000Z</published>
+    <updated>2018-10-16T07:58:56.232Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode 控制台输出编码问题</title>
+    <link href="http://yoursite.com/2018/10/03/181003_1/"/>
+    <id>http://yoursite.com/2018/10/03/181003_1/</id>
+    <published>2018-10-03T02:00:00.000Z</published>
+    <updated>2018-10-16T07:56:44.997Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="http://yoursite.com/categories/debug/"/>
+    
+    
+      <category term="vscode" scheme="http://yoursite.com/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 chromium 缺少 google api 密钥无法登录问题</title>
+    <link href="http://yoursite.com/2018/10/01/181001_7/"/>
+    <id>http://yoursite.com/2018/10/01/181001_7/</id>
+    <published>2018-10-01T15:00:00.000Z</published>
+    <updated>2018-10-16T07:48:08.042Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="http://yoursite.com/categories/debug/"/>
+    
+    
+      <category term="chromeium" scheme="http://yoursite.com/tags/chromeium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>m3u8 转 mp4</title>
+    <link href="http://yoursite.com/2018/10/01/181001_6/"/>
+    <id>http://yoursite.com/2018/10/01/181001_6/</id>
+    <published>2018-10-01T10:00:00.000Z</published>
+    <updated>2018-10-16T07:51:55.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="command" scheme="http://yoursite.com/tags/command/"/>
+    
+      <category term="ffmpeg" scheme="http://yoursite.com/tags/ffmpeg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 git LF 和 CFLF 换行问题</title>
+    <link href="http://yoursite.com/2018/10/01/181001_1/"/>
+    <id>http://yoursite.com/2018/10/01/181001_1/</id>
+    <published>2018-10-01T02:00:00.000Z</published>
+    <updated>2018-10-16T07:47:21.907Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="http://yoursite.com/categories/debug/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSR 133 FAQ 翻译</title>
+    <link href="http://yoursite.com/2018/09/27/180927_3/"/>
+    <id>http://yoursite.com/2018/09/27/180927_3/</id>
+    <published>2018-09-27T10:00:00.000Z</published>
+    <updated>2018-10-16T07:42:37.168Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>synchronized 实现</title>
+    <link href="http://yoursite.com/2018/09/27/180927_2/"/>
+    <id>http://yoursite.com/2018/09/27/180927_2/</id>
+    <published>2018-09-27T08:00:00.000Z</published>
+    <updated>2018-10-16T07:41:37.859Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码行统计</title>
+    <link href="http://yoursite.com/2018/09/27/180927_1/"/>
+    <id>http://yoursite.com/2018/09/27/180927_1/</id>
+    <published>2018-09-27T04:00:00.000Z</published>
+    <updated>2018-10-16T07:34:49.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="log" scheme="http://yoursite.com/categories/log/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语技巧</title>
+    <link href="http://yoursite.com/2018/09/21/180921/"/>
+    <id>http://yoursite.com/2018/09/21/180921/</id>
+    <published>2018-09-21T04:00:00.000Z</published>
+    <updated>2018-10-16T07:32:50.524Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="english" scheme="http://yoursite.com/tags/english/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文档体系</title>
+    <link href="http://yoursite.com/2018/09/20/180920/"/>
+    <id>http://yoursite.com/2018/09/20/180920/</id>
+    <published>2018-09-20T04:00:00.000Z</published>
+    <updated>2018-10-16T07:54:14.973Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中文文案排版指北</title>
+    <link href="http://yoursite.com/2018/09/19/180919/"/>
+    <id>http://yoursite.com/2018/09/19/180919/</id>
+    <published>2018-09-19T04:00:00.000Z</published>
+    <updated>2018-10-16T07:53:59.042Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>提问的智慧</title>
+    <link href="http://yoursite.com/2018/09/16/180916/"/>
+    <id>http://yoursite.com/2018/09/16/180916/</id>
+    <published>2018-09-16T04:00:00.000Z</published>
+    <updated>2018-10-16T07:24:42.481Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="digest" scheme="http://yoursite.com/categories/digest/"/>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mermaid.js 使用</title>
+    <link href="http://yoursite.com/2018/09/15/180915/"/>
+    <id>http://yoursite.com/2018/09/15/180915/</id>
+    <published>2018-09-15T04:00:00.000Z</published>
+    <updated>2018-10-16T06:12:32.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="http://yoursite.com/categories/note/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>
