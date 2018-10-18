@@ -269,6 +269,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.github.io/2018/05/10/180510/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/10/180510/" itemprop="url">CentOS 6.7 开启 DHCP 服务</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T10:00:00+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/digest/" itemprop="url" rel="index">
+                    <span itemprop="name">digest</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###IP地址</p>
+<ul>
+<li>192.168.1.11</li>
+</ul>
+<p>###网关</p>
+<ul>
+<li>192.168.1.1</li>
+</ul>
+<p>###在CentOS 6.7下搭建DHCP服务</p>
+<ul>
+<li>[~]# yum install dhcpd      #安装dhcp<br>0X01 配置服务器网络服务</li>
+</ul>
+<p>首先我们要将本地的网络配置成静态地址，并重启网络服务</p>
+<ul>
+<li>[~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将本地的网络配置成静态地址，并重启网络服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static <span class="comment">#之前很有可能是dhcp，现在我们修改它为静态</span></span><br><span class="line">ONBOOT=yes       <span class="comment">#以前可能是no，改为yes、就是打开网络服务的时候启动这个网卡</span></span><br><span class="line">IPADDR=192.168.1.11 <span class="comment">#配置文件中可能没有这个，没有的话就自己添加这行</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>[~]# service network restart</li>
+<li>[~]# vi /etc/dhcp/dhcpd.conf</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置DHCP于DNS服务器的动态信息更新模式。初学时完全可以不理这个选项，但是全局设置中一定要有这个选项，否则DHCP服务不能成功启动。</span></span><br><span class="line">ddns-update-style interim;</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面开始分配子网，网段是192.168.1.11 子网掩码是 255.255.255.0</span></span><br><span class="line"><span class="comment">#不能理解网段和子网掩码的可以去网上查一下。简单的说网段规定了分配IP的段（分配哪一段IP给客户机），子网掩码规定了网段的大小 subnet</span></span><br><span class="line">192.168.1.11 netmask 255.255.255.0 &#123;     </span><br><span class="line">    range 192.168.1.100 192.168.1.199;</span><br><span class="line"><span class="comment">#同一网段，分配给客户机的IP     </span></span><br><span class="line">    option routers 192.168.1.1; <span class="comment">#设置网关    </span></span><br><span class="line">    default-lease-time</span><br><span class="line">    600; <span class="comment">#默认租约时间     </span></span><br><span class="line">    max-lease-time 7200; <span class="comment">#最大租约时间 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###给特定MAC设置</p>
+<ul>
+<li>[~]# vi /etc/dhcp/dhcpd.conf  #添加如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">host Client &#123; <span class="comment">#名字随便起</span></span><br><span class="line">    hardware ethernet 08:00:27:5e:04:27; <span class="comment">#MAC地址</span></span><br><span class="line">    fixed-address 192.168.1.123;       <span class="comment">#分配给它192.168.1.123的IP</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>[~]# service dhcpd restart</li>
+</ul>
+<h3 id="Linux-下测试DHCP"><a href="#Linux-下测试DHCP" class="headerlink" title="Linux 下测试DHCP"></a>Linux 下测试DHCP</h3><ul>
+<li><p>[~]# vi /etc/sysconfig/network-scripts/icf-eth0 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=dhcp  <span class="comment">#dhcp</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line">HWADDR=08:00:27:5e:04:27 <span class="comment">#MAC</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# service network restart</p>
+</li>
+</ul>
+<hr>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://blog.csdn.net/mouse_ts/article/details/51382971" target="_blank" rel="noopener">CentOS 7.x 下配置 DHCP 服务器 基础篇</a></li>
+</ul>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.github.io/2018/01/03/180103/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -669,168 +855,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.github.io/2017/12/31/171231/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/31/171231/" itemprop="url">谷歌高级搜索</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T10:00:00+08:00">
-                2017-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><span id="jump"></span></p>
-<h3 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h3><h5 id="技术搜索"><a href="#技术搜索" class="headerlink" title="技术搜索"></a>技术搜索</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内容  site:segmentfault.com OR site:.github.com OR blog.csdn.net OR site:cnblogs.com OR site:jianshu.com OR site:stackoverflow.com</span><br><span class="line">OR site:.blog.* OR site:infoq.com OR .ibm.com</span><br></pre></td></tr></table></figure>
-<h5 id="排除网页"><a href="#排除网页" class="headerlink" title="排除网页"></a>排除网页</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">百度 -site:baidu.com</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Google 搜索通常会忽略不属于搜索运算符的标点符号。<br>请勿在符号/字词和搜索字词之间加上空格。例如，site:nytimes.com 可以正常发挥作用，但 site: nytimes.com 则不行。</p>
-<h3 id="常用搜索技巧"><a href="#常用搜索技巧" class="headerlink" title="常用搜索技巧"></a>常用搜索技巧</h3><h5 id="搜索社交媒体"><a href="#搜索社交媒体" class="headerlink" title="搜索社交媒体"></a>搜索社交媒体</h5><p>在用于搜索社交媒体的字词前加上 @。例如：@twitter。</p>
-<h5 id="搜索特定价格"><a href="#搜索特定价格" class="headerlink" title="搜索特定价格"></a>搜索特定价格</h5><p>在数字前加上 $。例如：camera $400。</p>
-<h5 id="搜索-标签"><a href="#搜索-标签" class="headerlink" title="搜索 # 标签"></a>搜索 # 标签</h5><p>在字词前加上 #。例如：#throwbackthursday</p>
-<h5 id="从搜索结果中排除特定字词"><a href="#从搜索结果中排除特定字词" class="headerlink" title="从搜索结果中排除特定字词"></a>从搜索结果中排除特定字词</h5><p>在您要排除的字词前加上 -。例如：jaguar speed -car</p>
-<h5 id="搜索完全匹配的结果"><a href="#搜索完全匹配的结果" class="headerlink" title="搜索完全匹配的结果"></a>搜索完全匹配的结果</h5><p>为字词或短语加上引号。例如：”tallest building”。</p>
-<h5 id="搜索通配符或未知字词"><a href="#搜索通配符或未知字词" class="headerlink" title="搜索通配符或未知字词"></a>搜索通配符或未知字词</h5><p>在字词或短语中您要放置占位符的地方加上 <em>。例如：”largest </em> in the world”。</p>
-<h5 id="在某个数字范围内执行搜索"><a href="#在某个数字范围内执行搜索" class="headerlink" title="在某个数字范围内执行搜索"></a>在某个数字范围内执行搜索</h5><p>在两个数字之间加上 ..。例如：camera $50..$100。</p>
-<h5 id="组合搜索"><a href="#组合搜索" class="headerlink" title="组合搜索"></a>组合搜索</h5><p>在各个搜索查询之间加上“OR”。例如：marathon OR race。</p>
-<h5 id="搜索特定网站"><a href="#搜索特定网站" class="headerlink" title="搜索特定网站"></a>搜索特定网站</h5><p>在相应网站或域名前加上“site:”。例如：site:youtube.com 或 site:.gov。</p>
-<h5 id="搜索相关网站"><a href="#搜索相关网站" class="headerlink" title="搜索相关网站"></a>搜索相关网站</h5><p>在已知网址前加上“related:”。例如：related:time.com。</p>
-<h5 id="获取网站详情"><a href="#获取网站详情" class="headerlink" title="获取网站详情"></a>获取网站详情</h5><p>在相应网址前加上“info:”。</p>
-<h5 id="查看网站的-Google-缓存版本"><a href="#查看网站的-Google-缓存版本" class="headerlink" title="查看网站的 Google 缓存版本"></a>查看网站的 Google 缓存版本</h5><p>在相应网址前加上“cache:”。</p>
-<p><a href="#jump">TOP</a></p>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -881,7 +905,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
