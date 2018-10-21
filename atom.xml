@@ -147,6 +147,32 @@
   </entry>
   
   <entry>
+    <title>命令行开启 | 关闭显卡</title>
+    <link href="https://hackettyu.com/181004_3/"/>
+    <id>https://hackettyu.com/181004_3/</id>
+    <published>2018-10-04T06:00:00.000Z</published>
+    <updated>2018-10-16T08:02:08.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
+    
+    
+      <category term="command" scheme="https://hackettyu.com/tags/command/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim 配置</title>
     <link href="https://hackettyu.com/181004_4/"/>
     <id>https://hackettyu.com/181004_4/</id>
@@ -171,32 +197,6 @@
       <category term="profile" scheme="https://hackettyu.com/tags/profile/"/>
     
       <category term="vim" scheme="https://hackettyu.com/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>命令行开启 | 关闭显卡</title>
-    <link href="https://hackettyu.com/181004_3/"/>
-    <id>https://hackettyu.com/181004_3/</id>
-    <published>2018-10-04T06:00:00.000Z</published>
-    <updated>2018-10-16T08:02:08.616Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
-    
-    
-      <category term="command" scheme="https://hackettyu.com/tags/command/"/>
     
   </entry>
   
