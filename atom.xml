@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2018-10-18T08:29:03.180Z</updated>
+  <updated>2018-10-25T10:36:14.681Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo 配置 dns 分流的问题</title>
+    <link href="https://hackettyu.com/181025_2/"/>
+    <id>https://hackettyu.com/181025_2/</id>
+    <published>2018-10-25T04:00:00.000Z</published>
+    <updated>2018-10-25T10:36:14.681Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+    
+    
+      <category term="hexo" scheme="https://hackettyu.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos 7 防火墙命令 firewall-cmd</title>
+    <link href="https://hackettyu.com/181025_1/"/>
+    <id>https://hackettyu.com/181025_1/</id>
+    <published>2018-10-25T02:00:00.000Z</published>
+    <updated>2018-10-25T10:24:26.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
+    
+    
+      <category term="linux" scheme="https://hackettyu.com/tags/linux/"/>
+    
+      <category term="centos" scheme="https://hackettyu.com/tags/centos/"/>
+    
+  </entry>
   
   <entry>
     <title>关于 java swap 函数</title>
@@ -472,58 +526,6 @@
     <id>https://hackettyu.com/180920/</id>
     <published>2018-09-20T04:00:00.000Z</published>
     <updated>2018-10-16T07:54:14.973Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="digest" scheme="https://hackettyu.com/categories/digest/"/>
-    
-    
-      <category term="others" scheme="https://hackettyu.com/tags/others/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中文文案排版指北</title>
-    <link href="https://hackettyu.com/180919/"/>
-    <id>https://hackettyu.com/180919/</id>
-    <published>2018-09-19T04:00:00.000Z</published>
-    <updated>2018-10-16T07:53:59.042Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="digest" scheme="https://hackettyu.com/categories/digest/"/>
-    
-    
-      <category term="others" scheme="https://hackettyu.com/tags/others/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>提问的智慧</title>
-    <link href="https://hackettyu.com/180916/"/>
-    <id>https://hackettyu.com/180916/</id>
-    <published>2018-09-16T04:00:00.000Z</published>
-    <updated>2018-10-16T07:24:42.481Z</updated>
     
     <summary type="html">
     

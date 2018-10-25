@@ -3,6 +3,54 @@
   
     
     <entry>
+      <title>hexo 配置 dns 分流的问题</title>
+      <link href="/181025_2/"/>
+      <url>/181025_2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>hexo 同时部署在 coding page 和 github page 后，在域名服务器设置 dns 分流后发现 coding 一直无法申请 ssl。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>网上说的把 dns 设置境外线路和国内线路让 dns 分流让国内访问 coding 国外访问 github 加速网页加载，不过分流要看用户配置的 dns 不是看 ip。<br>这导致 我的 coding ssl 证书 申请不成功 因为域名验证成功的必要条件还是要让证书服务提供方能读取到申请者（即 Coding Pages 服务器）所提供的验证信息<br>所以要先暂停境外的分流再申请 coding 的 ssl。</p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>我一直找不到问题的原因是我使用的 dns 是 <code>1.1.1.1</code>，这是国外的 dns，导致我一直使用的是 github page，没有加载到 coding page。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> debug </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>centos 7 防火墙命令 firewall-cmd</title>
+      <link href="/181025_1/"/>
+      <url>/181025_1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install firewalld</span><br></pre></td></tr></table></figure></p><p>开启防火墙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure></p><p>关闭防火墙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure></p><p>开机自动启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br></pre></td></tr></table></figure></p><p>关闭开机制动启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure></p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>基本的添加端口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=9001/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=9001/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p><p>查看：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure></p><h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-service=https //临时</span><br><span class="line">firewall-cmd --zone=public --add-port=8080-8081/tcp //临时</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-service=https //永久</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080-8081/tcp //永久</span><br></pre></td></tr></table></figure><p>删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --remove-rich-rule=<span class="string">"rule family="</span>ipv4<span class="string">" source address="</span>192.168.1.1<span class="string">"</span></span><br></pre></td></tr></table></figure></p><p>查询<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-service ftp</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service ssh</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service samba</span><br><span class="line">no</span><br><span class="line">firewall-cmd --query-service http</span><br><span class="line">no</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>关于 java swap 函数</title>
       <link href="/181018_1/"/>
       <url>/181018_1/</url>
