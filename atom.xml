@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2018-10-25T10:36:14.681Z</updated>
+  <updated>2018-11-13T05:52:59.297Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSH 登录时出现如下错误：Disconnected:No supported authentication methods available</title>
+    <link href="https://hackettyu.com/181113_1/"/>
+    <id>https://hackettyu.com/181113_1/</id>
+    <published>2018-11-18T04:00:00.000Z</published>
+    <updated>2018-11-13T05:52:59.297Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ssh 登录时出现如下错误：Disconnected:No supported authentication methods<br>原因：PasswordAuthentication 的默认值为 yes，SSH服务将其值置为 no 以禁用密码验证登录，导致此类故障。需要修改 PasswordAuthentication 配置解决此问题。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+    
+    
+      <category term="linux" scheme="https://hackettyu.com/tags/linux/"/>
+    
+      <category term="ssh" scheme="https://hackettyu.com/tags/ssh/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo 配置 dns 分流的问题</title>
@@ -555,34 +585,6 @@
     
     
       <category term="english" scheme="https://hackettyu.com/tags/english/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文档体系</title>
-    <link href="https://hackettyu.com/180920/"/>
-    <id>https://hackettyu.com/180920/</id>
-    <published>2018-09-20T04:00:00.000Z</published>
-    <updated>2018-10-16T07:54:14.973Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p></blockquote><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>软件手册是一部完整的书，建议采用下面的结构。</p><ul><li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li><li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li><li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul><li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li><li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li><li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li></ul></li><li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li><li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li><li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li><li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul><li><strong>Glossary</strong>：[可选] [文件] 名词解释</li><li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li><li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li><li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li><li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li></ul></li></ul><p>下面是两个真实范例，可参考。</p><ul><li><a href="http://redux.js.org/index.html" target="_blank" rel="noopener">Redux 手册</a></li><li><a href="http://flight-manual.atom.io/" target="_blank" rel="noopener">Atom 手册</a></li></ul><h2 id="文件名"><a href="#文件名" class="headerlink" title="文件名"></a>文件名</h2><p>文档的文件名不得含有空格。</p><p>文件名必须使用半角字符，不得使用全角字符。这也意味着，中文不能用于文件名。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">错误： 名词解释.md</span><br><span class="line"></span><br><span class="line">正确： glossary.md</span><br></pre></td></tr></table></figure><p>文件名建议只使用小写字母，不使用大写字母。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">错误：TroubleShooting.md</span><br><span class="line"></span><br><span class="line">正确：troubleshooting.md</span><br></pre></td></tr></table></figure><p>为了醒目，某些说明文件的文件名，可以使用大写字母，比如<code>README</code>、<code>LICENSE</code>。</p><p>文件名包含多个单词时，单词之间建议使用半角的连词线（<code>-</code>）分隔。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不佳：advanced_usage.md</span><br><span class="line"></span><br><span class="line">正确：advanced-usage.md</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="digest" scheme="https://hackettyu.com/categories/digest/"/>
-    
-    
-      <category term="others" scheme="https://hackettyu.com/tags/others/"/>
     
   </entry>
   

@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>SSH 登录时出现如下错误：Disconnected:No supported authentication methods available</title>
+      <link href="/181113_1/"/>
+      <url>/181113_1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ssh 登录时出现如下错误：Disconnected:No supported authentication methods<br>原因：PasswordAuthentication 的默认值为 yes，SSH服务将其值置为 no 以禁用密码验证登录，导致此类故障。需要修改 PasswordAuthentication 配置解决此问题。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> debug </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>hexo 配置 dns 分流的问题</title>
       <link href="/181025_2/"/>
       <url>/181025_2/</url>
