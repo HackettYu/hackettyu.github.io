@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2018-12-07T17:11:43.175Z</updated>
+  <updated>2018-12-07T17:29:15.868Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://hackettyu.com/weekly_01/"/>
     <id>https://hackettyu.com/weekly_01/</id>
     <published>2018-12-09T10:00:00.000Z</published>
-    <updated>2018-12-07T17:11:43.175Z</updated>
+    <updated>2018-12-07T17:29:15.868Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><hr><p>1、<code>一句话新闻</code> <a href="https://www.blog.google/products/translate/new-look-google-translate-web/" target="_blank" rel="noopener">谷歌翻译新增文档翻译功能</a><br><img src="/image/weekly_01_google_ts.gif" alt="weekly_01_google_ts.gif"></p><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr><p>1、<a href="http://www.cnblogs.com/geek6/p/3951677.html" target="_blank" rel="noopener">java 23种设计模式</a></p><ul><li>设计模式的分类<br><img src="http://dl.iteye.com/upload/attachment/0083/1179/57a92d42-4d84-3aa9-a8b9-63a0b02c2c36.jpg" alt=""></li><li>设计模式的六大原则</li><li>Java的23中设计模式</li></ul><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、<a href="https://sergiubucur.itch.io/falling-through-code" target="_blank" rel="noopener">falling-through-code</a></p><ul><li><code>falling-through-code</code> 是一个关于代码的 web 游戏。<br><img src="/image/weekly_01_falling_through_code.gif" alt="weekly_01_falling_through_code.gif"></li></ul><p>2、<a href="https://zhusandiao.gitbooks.io/grammar-club/content/" target="_blank" rel="noopener">语法俱乐部</a></p><p>3、<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p><hr><p>2、<a href="https://rubiks-cube-solver.com/" target="_blank" rel="noopener">rubiks-cube-solver</a></p><ul><li><code>rubiks-cube-solver</code> 是一个解模式的程序。</li></ul><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><p>1、<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">反模式</a></p><ul><li>被认为是坏的软件开发实践的模式是反模式。</li></ul><p>2、<a href="https://zh.wikipedia.org/wiki/Foobar" target="_blank" rel="noopener">foobar</a></p><ul><li>foobar是计算机程序领域里的术语，并无实际用途和参考意义。在计算机程序设计与计算机技术的相关文档中，术语foobar是一个常见的无名氏化名，常被作为“伪变量”使用。</li></ul><p>3、<a href="https://ocg-rule.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">游戏王 ocg 规则</a></p><p>4、<a href="https://github.com/linchuanXu/word-statistics-cet4" target="_blank" rel="noopener">12年36套四级真题试卷的单词频率统计程序</a></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><ul><li>这个 weekly 是模仿 <a href="https://github.com/ruanyf/weekly" target="_blank" rel="noopener">阮一峰技术分享周刊</a> 并结合博主自身写的周记。<br>（完）</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><hr><p>1、<code>一句话新闻</code> <a href="https://www.blog.google/products/translate/new-look-google-translate-web/" target="_blank" rel="noopener">谷歌翻译新增文档翻译功能</a><br><img src="/image/weekly_01_google_ts.gif" alt="weekly_01_google_ts.gif"></p><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr><p>1、<a href="http://www.cnblogs.com/geek6/p/3951677.html" target="_blank" rel="noopener">java 23种设计模式</a></p><ul><li>设计模式的分类<br><img src="http://dl.iteye.com/upload/attachment/0083/1179/57a92d42-4d84-3aa9-a8b9-63a0b02c2c36.jpg" alt=""></li><li>设计模式的六大原则</li><li>Java的23中设计模式</li></ul><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、<a href="https://sergiubucur.itch.io/falling-through-code" target="_blank" rel="noopener">falling-through-code</a></p><ul><li><code>falling-through-code</code> 是一个关于代码的 web 游戏。<br><img src="/image/weekly_01_falling_through_code.gif" alt="weekly_01_falling_through_code.gif"></li></ul><p>2、<a href="https://zhusandiao.gitbooks.io/grammar-club/content/" target="_blank" rel="noopener">语法俱乐部</a></p><p>3、<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p><p>4、<a href="https://rubiks-cube-solver.com/" target="_blank" rel="noopener">rubiks-cube-solver</a></p><ul><li><code>rubiks-cube-solver</code> 是一个解模式的程序。</li></ul><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><p>1、<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">反模式</a></p><ul><li>被认为是坏的软件开发实践的模式是反模式。</li></ul><p>2、<a href="https://zh.wikipedia.org/wiki/Foobar" target="_blank" rel="noopener">foobar</a></p><ul><li>foobar是计算机程序领域里的术语，并无实际用途和参考意义。在计算机程序设计与计算机技术的相关文档中，术语foobar是一个常见的无名氏化名，常被作为“伪变量”使用。</li></ul><p>3、<a href="https://ocg-rule.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">游戏王 ocg 规则</a></p><p>4、<a href="https://github.com/linchuanXu/word-statistics-cet4" target="_blank" rel="noopener">12年36套四级真题试卷的单词频率统计程序</a></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><ul><li>这个 weekly 是模仿 <a href="https://github.com/ruanyf/weekly" target="_blank" rel="noopener">阮一峰技术分享周刊</a> 并结合博主自身写的周记。<br>（完）</li></ul>]]></content>
     
     <summary type="html">
     
@@ -329,34 +329,6 @@
   </entry>
   
   <entry>
-    <title>命令行开启 | 关闭显卡</title>
-    <link href="https://hackettyu.com/181004_3/"/>
-    <id>https://hackettyu.com/181004_3/</id>
-    <published>2018-10-04T06:00:00.000Z</published>
-    <updated>2018-10-16T08:02:08.616Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote><p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p></blockquote><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p><p>例如要关闭 NVIDIA 显卡：</p><p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p><p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p><p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p><p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
-    
-    
-      <category term="command" scheme="https://hackettyu.com/tags/command/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vim 配置</title>
     <link href="https://hackettyu.com/181004_4/"/>
     <id>https://hackettyu.com/181004_4/</id>
@@ -383,6 +355,34 @@
       <category term="profile" scheme="https://hackettyu.com/tags/profile/"/>
     
       <category term="vim" scheme="https://hackettyu.com/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行开启 | 关闭显卡</title>
+    <link href="https://hackettyu.com/181004_3/"/>
+    <id>https://hackettyu.com/181004_3/</id>
+    <published>2018-10-04T06:00:00.000Z</published>
+    <updated>2018-10-16T08:02:08.616Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote><p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p></blockquote><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p><p>例如要关闭 NVIDIA 显卡：</p><p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p><p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p><p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p><p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
+    
+    
+      <category term="command" scheme="https://hackettyu.com/tags/command/"/>
     
   </entry>
   
