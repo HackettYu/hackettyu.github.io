@@ -1,4 +1,963 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="linux,"><link rel="alternate" href="/atom.xml" title="HackettYu's blog" type="application/atom+xml"><meta name="description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind"><meta name="keywords" content="linux"><meta property="og:type" content="article"><meta property="og:title" content="CentOS 6.7 安装 bind"><meta property="og:url" content="https://hackettyu.com/180102/index.html"><meta property="og:site_name" content="HackettYu&#39;s blog"><meta property="og:description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2018-10-16T08:56:50.097Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="CentOS 6.7 安装 bind"><meta name="twitter:description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="https://hackettyu.com/180102/"><title>CentOS 6.7 安装 bind | HackettYu's blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">HackettYu's blog</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">hackettyu</h1></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://hackettyu.com/180102/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="HackettYu"><meta itemprop="description" content=""><meta itemprop="image" content="/images/avatar.gif"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="HackettYu's blog"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">CentOS 6.7 安装 bind</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T10:00:00+08:00">2018-01-02</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/digest/" itemprop="url" rel="index"><span itemprop="name">digest</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/180102/#comments" itemprop="discussionUrl"><span class="post-comments-count gitment-comments-count" data-xid="/180102/" itemprop="commentsCount"></span></a></span> <span id="/180102/" class="leancloud_visitors" data-flag-title="CentOS 6.7 安装 bind"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数&#58;</span><span class="leancloud-visitors-count"></span></span></div></header><div class="post-body" itemprop="articleBody"><p>###本机IP</p><ul><li>192.168.1.11</li></ul><p>###测试机IP</p><ul><li>192.168.1.12</li></ul><p>###网关</p><ul><li>192.168.1.1</li></ul><p>###解析域名</p><ul><li><a href="http://www.hengxia.top" target="_blank" rel="noopener">www.hengxia.top</a></li></ul><p>###CentOS 6.7上yum安装BIND,并启动</p><ul><li>[~]# service iptables stop #关闭防火墙</li><li>[~]# yum -y install bind #yum安装bind</li><li>[~]# rpm -ql bind #查看安装版本</li><li>[~]# service named restart #重启bind</li><li>[~]# chkconfig named on #设置成开机启动</li></ul><p>###在CentOS 6.7配置BIND</p><ul><li>[~]# yum -y install telnet</li><li>[~]# telnet 192.168.1.11 53 #测试本机IP能否访问端口53，端口53是BIND默认端口</li><li>[~]# cp -p /etc/named.conf{,.bak} # 备份named.conf并修改 ，备份文件文件后缀为.bak</li><li>[~]# vi /etc/named.conf #编辑bind主配置文件</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#listen-on port 53 &#123; 127.0.0.1; &#125;; 将此行注释掉</span></span><br></pre></td></tr></table></figure><ul><li>[~]# service named restart #重启bind服务，主要为了重新读取配置文件</li><li><p>[~]# vi /etc/sysconfig/network-scripts/ifcfg-eth0</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#编辑网卡配置文件，编辑配置好静态IP的，只需修改下面这行，即DNS1</span></span><br><span class="line">DNS1=<span class="string">"127.0.0.1"</span>        <span class="comment"># 因为CentOS6.7自己为DNS服务器，所以设自己为DNS服务器</span></span><br></pre></td></tr></table></figure></li><li><p>[~]# service network restart</p></li><li><p>[~]# cat /etc/resolv.conf # 查看默认DNS</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generated by NetworkManager</span></span><br><span class="line">search top              <span class="comment"># 搜索top域名，例如com、cn</span></span><br><span class="line">nameserver 127.0.0.1</span><br></pre></td></tr></table></figure></li><li><p>[~]# vi /etc/named.conf</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># allow-query &#123; localhost; &#125; #注释掉该行，即默认同意所有IP访问</span></span><br></pre></td></tr></table></figure></li><li><p>[~]# named-checkconf # 检查配置文件named.conf,服务-checkconf命令检查服务的配置文件</p></li><li>[~]# service named restrart #重启bind，重读配置文件</li></ul><p>###在CentOS 6.7上DNS搭建自己的域，让当前DNS解析<a href="http://www.hengxia.top域" target="_blank" rel="noopener">www.hengxia.top域</a></p><ul><li><p>[~]# vi /etc/named.rfc1912.zones # 编辑区域解析库文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zone <span class="string">"hengxia.top"</span> IN &#123;                 <span class="comment"># hengxia.top是域名</span></span><br><span class="line">    <span class="built_in">type</span> master;                <span class="comment"># 表示权威DNS，即第一个</span></span><br><span class="line">    file <span class="string">"hengxia.top.zone"</span>;        <span class="comment"># 域数据库，默认位于/var/named/下面，只需告知文件名 hengxia.top.zone是库文件名</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li><li><p>[~]# cd /var/named</p></li><li>[~]# ls</li><li>[named]# cp -p named.localhost hengxia.top.zone</li><li>/# 注意cp -p 保持原有属性， 用cp 要用 chgrp named hengxia.top.zone</li><li>/# 复制配置文件，</li><li><p>[named]# cat hengxia.top.zone</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解析区域数据库格式，存放名字与IP的对应关系</span></span><br><span class="line"><span class="variable">$TTL</span> 1D     <span class="comment"># 统一定义TTL(过期时间、缓存时间）                   </span></span><br><span class="line">@   IN SOA  @ rname.invalid. (                    <span class="comment"># SOA记录   IN internet技术 IN第一条要写，后面可以省略，可继承第一条IN           rname.invalid.  资源的类型          </span></span><br><span class="line">                    0   ; serial         </span><br><span class="line">                    1D  ; refresh</span><br><span class="line">                    1H  ; retry</span><br><span class="line">                    1W  ; expire</span><br><span class="line">                    3H )    ; minimum</span><br><span class="line">    NS  @                                         <span class="comment"># 代表当前配置域，例如配置hengxia.top，就代表hengxia.top</span></span><br><span class="line">    A   127.0.0.1                                 <span class="comment"># A记录 名字 到 IP   对应IPv4地址</span></span><br><span class="line">    AAAA    ::1                                   <span class="comment"># A记录 名字 到 IP   对应IPv6地址</span></span><br></pre></td></tr></table></figure></li><li><p>[named]# vi hengxia.top.zone #配置后文件如下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@   IN SOA  dns1.hengxia.top dnsadmin.hengxia.top. (</span><br><span class="line">                    201707262051    ; serial</span><br><span class="line">                    10M ; refresh</span><br><span class="line">                    3M  ; retry</span><br><span class="line">                    1D  ; expire</span><br><span class="line">                    3D )    ; minimum</span><br><span class="line">    NS  dns1</span><br><span class="line">        NS      dns2</span><br><span class="line">dns1    A   192.168.1.11                    <span class="comment"># 本机IP</span></span><br><span class="line">dns2    A       192.168.1.11                <span class="comment"># 测试机IP</span></span><br><span class="line">websrv  A   1.1.1.1</span><br><span class="line">ftpsrv  A       2.2.2.2</span><br></pre></td></tr></table></figure></li><li><p>[named]# named-checkconf # 检查/etc/下与named有关文件</p></li><li><p>[named]# named-checkzone hengxia.top /var/named/hengxia.top.zone # 检查域数据库文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dns_rdata_fromtext: /var/named/hengxia.top.zone:2: near <span class="string">'201707262051'</span>: out of range                                      <span class="comment"># 序列号超出范围</span></span><br><span class="line">zone hengxia.top/IN: loading from master file /var/named/hengxia.top.zone failed: out of range</span><br><span class="line">zone hengxia.top/IN: not loaded due to errors.</span><br></pre></td></tr></table></figure></li><li><p>[named]# vi hengxia.top.zone</p></li><li><p>[named]# named-checkzone hengxia.top /var/named/hengxia.top.zone</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zone hengxia.top/IN: loaded serial 2017072601</span><br><span class="line">[OK]</span><br></pre></td></tr></table></figure></li><li><p>[named]# service named restart</p></li></ul><p>###在另一台CentOS 6.7上测试DNS</p><ul><li>[~]# yum -y install bind bind-utils # 测试工具 dig host nslookup 来自 bind-utils包</li><li><p>[~]# dig <a href="http://www.hengxia.top" target="_blank" rel="noopener">www.hengxia.top</a> @192.168.1.11 # 本机IP</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.62.rc1.el6 &lt;&lt;&gt;&gt; www.hengxia.top @192.168.1.11</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: SERVFAIL, id: 53941</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;www.hengxia.top.       IN  A</span><br><span class="line"></span><br><span class="line">;; Query time: 7 msec</span><br><span class="line">;; SERVER: 172.16.252.77<span class="comment">#53(192.168.1.11)</span></span><br><span class="line">;; WHEN: Wed Jul 26 19:13:37 2017</span><br><span class="line">;; MSG SIZE  rcvd: 33</span><br></pre></td></tr></table></figure></li><li><p>[~]# dig websrv.hengxia.top @192.168.1.11 # 测试成功，说明CentOS 6.7上的域搭建成功</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.62.rc1.el6 &lt;&lt;&gt;&gt; websrv.hengxia.top @192.168.1.11    </span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 49446</span><br><span class="line">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2          <span class="comment"># aa 说明是权威结果</span></span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;websrv.hengxia.top.        IN  A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">websrv.hengxia.top. 86400   IN  A   1.1.1.1</span><br><span class="line"></span><br><span class="line">;; AUTHORITY SECTION:</span><br><span class="line">hengxia.top.        86400   IN  NS  dns1.hengxia.top.</span><br><span class="line">hengxia.top.        86400   IN  NS  dns2.hengxia.top.</span><br><span class="line"></span><br><span class="line">;; ADDITIONAL SECTION:</span><br><span class="line">dns1.hengxia.top.   86400   IN  A   192.168.1.11</span><br><span class="line">dns2.hengxia.top.   86400   IN  A   192.168.1.12   <span class="comment"># 端口85400</span></span><br><span class="line"></span><br><span class="line">;; Query time: 3 msec</span><br><span class="line">;; SERVER: 172.16.252.77<span class="comment">#53(192.168.1.11)</span></span><br><span class="line">;; WHEN: Wed Jul 26 19:17:38 2017</span><br><span class="line">;; MSG SIZE  rcvd: 122</span><br></pre></td></tr></table></figure></li></ul><hr><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://blog.csdn.net/miouqi/article/details/76422700" target="_blank" rel="noopener">CentOS 7.3使用BIND配置DNS服务器</a></p><div><ul class="post-copyright"><li class="post-copyright-author"> <strong>本文作者：</strong>HackettYu</li><li class="post-copyright-link"> <strong>本文链接：</strong> <a href="/180102/" title="CentOS 6.7 安装 bind">180102/</a></li><li class="post-copyright-license"> <strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！</li></ul></div></div><footer class="post-footer"><div class="post-tags"> <a href="/tags/linux/" rel="tag"># linux</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/171231/" rel="next" title="谷歌高级搜索"><i class="fa fa-chevron-left"></i> 谷歌高级搜索</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/180103/" rel="prev" title="CentOS 6.7 安装 redis">CentOS 6.7 安装 redis<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div><div class="comments" id="comments"><div id="gitment-container"></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">HackettYu</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">41</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">5</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">25</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/HackettYu" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i> GitHub</a></span><span class="links-of-author-item"><a href="https://twitter.com/HackettYu" target="_blank" title="Twitter"><i class="fa fa-fw fa-globe"></i> Twitter</a></span><span class="links-of-author-item"><a href="https://www.weibo.com/u/6095046581?is_hot=1" target="_blank" title="Weibo"><i class="fa fa-fw fa-globe"></i> Weibo</a></span><span class="links-of-author-item"><a href="mailto:hy.lobby@gmail.com" target="_blank" title="Email"><i class="fa fa-fw fa-globe"></i> Email</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2018</span><span class="with-love"><i class="fa fa-user"></i></span> <span class="author" itemprop="copyrightHolder">HackettYu</span></div><div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> <span class="post-meta-divider">|</span><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css"><script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script><script type="text/javascript">function renderGitment(){new Gitmint({id:window.location.pathname,owner:"HackettYu",repo:"gitment-comments",lang:navigator.language||navigator.systemLanguage||navigator.userLanguage,oauth:{client_secret:"dd0ad0b06a58625bed6aca3615cfd28641a35973",client_id:"4dfb72553595fe8e1c8b"}}).render("gitment-container")}renderGitment()</script><script type="text/javascript">
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="HackettYu's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS 6.7 安装 bind">
+<meta property="og:url" content="https://hackettyu.com/180102/index.html">
+<meta property="og:site_name" content="HackettYu&#39;s blog">
+<meta property="og:description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-16T08:56:50.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS 6.7 安装 bind">
+<meta name="twitter:description" content="###本机IP  192.168.1.11   ###测试机IP        192.168.1.12   ###网关  192.168.1.1     ###解析域名  www.hengxia.top  ###CentOS 6.7上yum安装BIND,并启动  [~]# service iptables stop        #关闭防火墙 [~]# yum -y install bind">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hackettyu.com/180102/"/>
+
+
+
+
+
+  <title>CentOS 6.7 安装 bind | HackettYu's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HackettYu's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">hackettyu</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CentOS 6.7 安装 bind</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T10:00:00+08:00">
+                2018-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/digest/" itemprop="url" rel="index">
+                    <span itemprop="name">digest</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/180102/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/180102/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/180102/" class="leancloud_visitors" data-flag-title="CentOS 6.7 安装 bind">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###本机IP</p>
+<ul>
+<li>192.168.1.11 </li>
+</ul>
+<p>###测试机IP      </p>
+<ul>
+<li>192.168.1.12 </li>
+</ul>
+<p>###网关</p>
+<ul>
+<li>192.168.1.1   </li>
+</ul>
+<p>###解析域名</p>
+<ul>
+<li><a href="http://www.hengxia.top" target="_blank" rel="noopener">www.hengxia.top</a></li>
+</ul>
+<p>###CentOS 6.7上yum安装BIND,并启动</p>
+<ul>
+<li>[~]# service iptables stop        #关闭防火墙</li>
+<li>[~]# yum -y install bind          #yum安装bind</li>
+<li>[~]# rpm -ql bind                 #查看安装版本</li>
+<li>[~]# service named restart        #重启bind</li>
+<li>[~]# chkconfig named on           #设置成开机启动</li>
+</ul>
+<p>###在CentOS 6.7配置BIND</p>
+<ul>
+<li>[~]# yum -y install telnet</li>
+<li>[~]# telnet 192.168.1.11 53   #测试本机IP能否访问端口53，端口53是BIND默认端口</li>
+<li>[~]# cp -p /etc/named.conf{,.bak} # 备份named.conf并修改 ，备份文件文件后缀为.bak</li>
+<li>[~]# vi /etc/named.conf       #编辑bind主配置文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#listen-on port 53 &#123; 127.0.0.1; &#125;; 将此行注释掉</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>[~]# service named restart    #重启bind服务，主要为了重新读取配置文件</li>
+<li><p>[~]# vi /etc/sysconfig/network-scripts/ifcfg-eth0 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#编辑网卡配置文件，编辑配置好静态IP的，只需修改下面这行，即DNS1</span></span><br><span class="line">DNS1=<span class="string">"127.0.0.1"</span>        <span class="comment"># 因为CentOS6.7自己为DNS服务器，所以设自己为DNS服务器</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# service network restart</p>
+</li>
+<li><p>[~]# cat /etc/resolv.conf  # 查看默认DNS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generated by NetworkManager</span></span><br><span class="line">search top              <span class="comment"># 搜索top域名，例如com、cn</span></span><br><span class="line">nameserver 127.0.0.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# vi /etc/named.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># allow-query &#123; localhost; &#125; #注释掉该行，即默认同意所有IP访问</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# named-checkconf  # 检查配置文件named.conf,服务-checkconf命令检查服务的配置文件 </p>
+</li>
+<li>[~]# service named restrart  #重启bind，重读配置文件</li>
+</ul>
+<p>###在CentOS 6.7上DNS搭建自己的域，让当前DNS解析<a href="http://www.hengxia.top域" target="_blank" rel="noopener">www.hengxia.top域</a></p>
+<ul>
+<li><p>[~]# vi /etc/named.rfc1912.zones   # 编辑区域解析库文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zone <span class="string">"hengxia.top"</span> IN &#123;                 <span class="comment"># hengxia.top是域名</span></span><br><span class="line">    <span class="built_in">type</span> master;                <span class="comment"># 表示权威DNS，即第一个</span></span><br><span class="line">    file <span class="string">"hengxia.top.zone"</span>;        <span class="comment"># 域数据库，默认位于/var/named/下面，只需告知文件名 hengxia.top.zone是库文件名</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# cd /var/named</p>
+</li>
+<li>[~]# ls</li>
+<li>[named]# cp -p named.localhost hengxia.top.zone         </li>
+<li>/# 注意cp -p 保持原有属性， 用cp 要用 chgrp named hengxia.top.zone</li>
+<li>/# 复制配置文件，</li>
+<li><p>[named]# cat hengxia.top.zone  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解析区域数据库格式，存放名字与IP的对应关系</span></span><br><span class="line"><span class="variable">$TTL</span> 1D     <span class="comment"># 统一定义TTL(过期时间、缓存时间）                   </span></span><br><span class="line">@   IN SOA  @ rname.invalid. (                    <span class="comment"># SOA记录   IN internet技术 IN第一条要写，后面可以省略，可继承第一条IN           rname.invalid.  资源的类型          </span></span><br><span class="line">                    0   ; serial         </span><br><span class="line">                    1D  ; refresh</span><br><span class="line">                    1H  ; retry</span><br><span class="line">                    1W  ; expire</span><br><span class="line">                    3H )    ; minimum</span><br><span class="line">    NS  @                                         <span class="comment"># 代表当前配置域，例如配置hengxia.top，就代表hengxia.top</span></span><br><span class="line">    A   127.0.0.1                                 <span class="comment"># A记录 名字 到 IP   对应IPv4地址</span></span><br><span class="line">    AAAA    ::1                                   <span class="comment"># A记录 名字 到 IP   对应IPv6地址</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[named]# vi hengxia.top.zone #配置后文件如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$TTL</span> 1D</span><br><span class="line">@   IN SOA  dns1.hengxia.top dnsadmin.hengxia.top. (</span><br><span class="line">                    201707262051    ; serial</span><br><span class="line">                    10M ; refresh</span><br><span class="line">                    3M  ; retry</span><br><span class="line">                    1D  ; expire</span><br><span class="line">                    3D )    ; minimum</span><br><span class="line">    NS  dns1</span><br><span class="line">        NS      dns2</span><br><span class="line">dns1    A   192.168.1.11                    <span class="comment"># 本机IP</span></span><br><span class="line">dns2    A       192.168.1.11                <span class="comment"># 测试机IP</span></span><br><span class="line">websrv  A   1.1.1.1</span><br><span class="line">ftpsrv  A       2.2.2.2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[named]# named-checkconf  # 检查/etc/下与named有关文件</p>
+</li>
+<li><p>[named]# named-checkzone hengxia.top /var/named/hengxia.top.zone # 检查域数据库文件 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dns_rdata_fromtext: /var/named/hengxia.top.zone:2: near <span class="string">'201707262051'</span>: out of range                                      <span class="comment"># 序列号超出范围</span></span><br><span class="line">zone hengxia.top/IN: loading from master file /var/named/hengxia.top.zone failed: out of range</span><br><span class="line">zone hengxia.top/IN: not loaded due to errors.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[named]# vi hengxia.top.zone </p>
+</li>
+<li><p>[named]# named-checkzone hengxia.top /var/named/hengxia.top.zone</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zone hengxia.top/IN: loaded serial 2017072601</span><br><span class="line">[OK]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[named]# service named restart</p>
+</li>
+</ul>
+<p>###在另一台CentOS 6.7上测试DNS</p>
+<ul>
+<li>[~]# yum -y install bind bind-utils   # 测试工具 dig host nslookup 来自 bind-utils包</li>
+<li><p>[~]# dig <a href="http://www.hengxia.top" target="_blank" rel="noopener">www.hengxia.top</a> @192.168.1.11  # 本机IP</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.62.rc1.el6 &lt;&lt;&gt;&gt; www.hengxia.top @192.168.1.11</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: SERVFAIL, id: 53941</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0</span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;www.hengxia.top.       IN  A</span><br><span class="line"></span><br><span class="line">;; Query time: 7 msec</span><br><span class="line">;; SERVER: 172.16.252.77<span class="comment">#53(192.168.1.11)</span></span><br><span class="line">;; WHEN: Wed Jul 26 19:13:37 2017</span><br><span class="line">;; MSG SIZE  rcvd: 33</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[~]# dig websrv.hengxia.top @192.168.1.11           # 测试成功，说明CentOS 6.7上的域搭建成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.62.rc1.el6 &lt;&lt;&gt;&gt; websrv.hengxia.top @192.168.1.11    </span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 49446</span><br><span class="line">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2          <span class="comment"># aa 说明是权威结果</span></span><br><span class="line"></span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;websrv.hengxia.top.        IN  A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">websrv.hengxia.top. 86400   IN  A   1.1.1.1</span><br><span class="line"></span><br><span class="line">;; AUTHORITY SECTION:</span><br><span class="line">hengxia.top.        86400   IN  NS  dns1.hengxia.top.</span><br><span class="line">hengxia.top.        86400   IN  NS  dns2.hengxia.top.</span><br><span class="line"></span><br><span class="line">;; ADDITIONAL SECTION:</span><br><span class="line">dns1.hengxia.top.   86400   IN  A   192.168.1.11</span><br><span class="line">dns2.hengxia.top.   86400   IN  A   192.168.1.12   <span class="comment"># 端口85400</span></span><br><span class="line"></span><br><span class="line">;; Query time: 3 msec</span><br><span class="line">;; SERVER: 172.16.252.77<span class="comment">#53(192.168.1.11)</span></span><br><span class="line">;; WHEN: Wed Jul 26 19:17:38 2017</span><br><span class="line">;; MSG SIZE  rcvd: 122</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://blog.csdn.net/miouqi/article/details/76422700" target="_blank" rel="noopener">CentOS 7.3使用BIND配置DNS服务器</a></p>
+
+      
+      <div>    
+      
+      
+          <ul class="post-copyright">
+            <li class="post-copyright-author">
+                <strong>本文作者：</strong>HackettYu
+            </li>
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="/180102/" title="CentOS 6.7 安装 bind">180102/</a>
+            </li>
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/171231/" rel="next" title="谷歌高级搜索">
+                <i class="fa fa-chevron-left"></i> 谷歌高级搜索
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/180103/" rel="prev" title="CentOS 6.7 安装 redis">
+                CentOS 6.7 安装 redis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">HackettYu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HackettYu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/HackettYu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/u/6095046581?is_hot=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hy.lobby@gmail.com" target="_blank" title="Email">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HackettYu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'HackettYu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'dd0ad0b06a58625bed6aca3615cfd28641a35973',
+            
+                client_id: '4dfb72553595fe8e1c8b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -313,4 +1272,148 @@
         onPopupClose();
       }
     });
-  </script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("WFgxEYxJbyg3lmm9VCYnsDME-gzGzoHsz","du2Ur20fyRv2eIrze7uK8pID")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></body></html>
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("WFgxEYxJbyg3lmm9VCYnsDME-gzGzoHsz", "du2Ur20fyRv2eIrze7uK8pID");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
