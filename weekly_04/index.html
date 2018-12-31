@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="文摘 1、CSS属性值定义语法    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;lt;&amp;#39;bo">
+<meta name="description" content="文摘 1、CSS属性值定义语法| =&amp;gt; \    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;l">
 <meta name="keywords" content="weekly">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每周分享第 4 期">
 <meta property="og:url" content="https://hackettyu.com/weekly_04/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="文摘 1、CSS属性值定义语法    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;lt;&amp;#39;bo">
+<meta property="og:description" content="文摘 1、CSS属性值定义语法| =&amp;gt; \    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-30T08:27:51.195Z">
+<meta property="og:updated_time" content="2018-12-31T14:13:21.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每周分享第 4 期">
-<meta name="twitter:description" content="文摘 1、CSS属性值定义语法    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;lt;&amp;#39;bo">
+<meta name="twitter:description" content="文摘 1、CSS属性值定义语法| =&amp;gt; \    符号 名称 描述 示例     组合符号       并置 各部分必须出现且按顺序出现 solid &amp;lt;length&amp;gt;   &amp;amp;&amp;amp; “与”组合符 各部分必须出现，但可以不按顺序 &amp;lt;length&amp;gt; &amp;amp;&amp;amp; &amp;lt;string&amp;gt;   \ “或”组合符 各部分至少出现一个，可以不按顺序 &amp;l">
 
 
 
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:00:00+08:00">
-                2018-12-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T23:59:59+08:00">
+                2018-12-31
               </time>
             
 
@@ -410,7 +410,7 @@
 
       
         <h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr>
-<p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a></p>
+<p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a><br><code>|</code> =&gt; <code>\</code></p>
 <table>
 <thead>
 <tr>
@@ -449,11 +449,7 @@
 <td>\</td>
 <td>“互斥”组合符</td>
 <td>各部分恰好出现一个</td>
-<td>smaller</td>
-<td>small</td>
-<td>normal</td>
-<td>big</td>
-<td>bigger</td>
+<td>smaller \ small \ normal \ big \ bigger</td>
 </tr>
 <tr>
 <td>[ ]</td>
@@ -508,10 +504,12 @@
 <p>2、python3 打印圣诞树<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"for i in list(range(0, 5)) + list(range(2, 8)) + list(range(3, 12)) + [2, 2]: print(' ' * int((40-2*i-i/2)) + '*' * int((4*i+1+i)))"</span></span><br></pre></td></tr></table></figure></p>
 <p>3、python3 开启内置服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure></p>
 <p>4、windows 装 python2 和 python3 后安装 python2 的 pip 包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install &lt;package&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr>
+<p>5、windows 修改 dns command</p>
 <ul>
-<li>还是自己冲的咖啡好喝;)<br>（完）</li>
+<li>netsh interface ip set dns “以太网” static 114.114.114.114    # 设置 dns 管理员权限下<br>6、全球 BGP<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">telnet route-server.ip.att.NET</span><br><span class="line">username: rviews</span><br><span class="line">password: rviews</span><br><span class="line">show route all</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;—-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-</p>
 
       
       <div>    

@@ -7,7 +7,7 @@
       <link href="/weekly_04/"/>
       <url>/weekly_04/</url>
       
-        <content type="html"><![CDATA[<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a></p><table><thead><tr><th>符号</th><th>名称</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td>组合符号</td><td></td><td></td><td></td></tr><tr><td></td><td>并置</td><td>各部分必须出现且按顺序出现</td><td>solid <code>&lt;length&gt;</code></td></tr><tr><td>&amp;&amp;</td><td>“与”组合符</td><td>各部分必须出现，但可以不按顺序</td><td><code>&lt;length&gt;</code> &amp;&amp; <code>&lt;string&gt;</code></td></tr><tr><td>\</td><td>“或”组合符</td><td>各部分至少出现一个，可以不按顺序</td><td><code>&lt;&#39;border-image-outset&#39;&gt;</code> \ <code>&lt;&#39;border-image-slice&#39;&gt;</code></td></tr><tr><td>\</td><td>“互斥”组合符</td><td>各部分恰好出现一个</td><td>smaller</td><td>small</td><td>normal</td><td>big</td><td>bigger</td></tr><tr><td>[ ]</td><td>方括号</td><td>强调优先级</td><td>bold [ thin &amp;&amp; <code>&lt;length&gt;</code> ]</td></tr><tr><td>数量符号</td><td></td><td></td><td></td></tr><tr><td></td><td>无数量符号</td><td>恰好一次</td><td>solid</td></tr><tr><td>*</td><td>星号</td><td>零次、一次或多次</td><td>bold smaller*</td></tr><tr><td>+</td><td>加号</td><td>一次或多次</td><td>bold smaller+</td></tr><tr><td>？</td><td>问号</td><td>零次或一次（即可选）</td><td>bold smaller？</td></tr><tr><td>{A,B}</td><td>大括号</td><td>至少A次，至多B次</td><td>bold smaller{1,3}</td></tr><tr><td>#</td><td>井号</td><td>一次或多次，但多次出现必须以逗号分隔</td><td>bold smaller#</td></tr></tbody></table><p>2、python3 打印圣诞树<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"for i in list(range(0, 5)) + list(range(2, 8)) + list(range(3, 12)) + [2, 2]: print(' ' * int((40-2*i-i/2)) + '*' * int((4*i+1+i)))"</span></span><br></pre></td></tr></table></figure></p><p>3、python3 开启内置服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure></p><p>4、windows 装 python2 和 python3 后安装 python2 的 pip 包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install &lt;package&gt;</span><br></pre></td></tr></table></figure></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><ul><li>还是自己冲的咖啡好喝;)<br>（完）</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a><br><code>|</code> =&gt; <code>\</code></p><table><thead><tr><th>符号</th><th>名称</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td>组合符号</td><td></td><td></td><td></td></tr><tr><td></td><td>并置</td><td>各部分必须出现且按顺序出现</td><td>solid <code>&lt;length&gt;</code></td></tr><tr><td>&amp;&amp;</td><td>“与”组合符</td><td>各部分必须出现，但可以不按顺序</td><td><code>&lt;length&gt;</code> &amp;&amp; <code>&lt;string&gt;</code></td></tr><tr><td>\</td><td>“或”组合符</td><td>各部分至少出现一个，可以不按顺序</td><td><code>&lt;&#39;border-image-outset&#39;&gt;</code> \ <code>&lt;&#39;border-image-slice&#39;&gt;</code></td></tr><tr><td>\</td><td>“互斥”组合符</td><td>各部分恰好出现一个</td><td>smaller \ small \ normal \ big \ bigger</td></tr><tr><td>[ ]</td><td>方括号</td><td>强调优先级</td><td>bold [ thin &amp;&amp; <code>&lt;length&gt;</code> ]</td></tr><tr><td>数量符号</td><td></td><td></td><td></td></tr><tr><td></td><td>无数量符号</td><td>恰好一次</td><td>solid</td></tr><tr><td>*</td><td>星号</td><td>零次、一次或多次</td><td>bold smaller*</td></tr><tr><td>+</td><td>加号</td><td>一次或多次</td><td>bold smaller+</td></tr><tr><td>？</td><td>问号</td><td>零次或一次（即可选）</td><td>bold smaller？</td></tr><tr><td>{A,B}</td><td>大括号</td><td>至少A次，至多B次</td><td>bold smaller{1,3}</td></tr><tr><td>#</td><td>井号</td><td>一次或多次，但多次出现必须以逗号分隔</td><td>bold smaller#</td></tr></tbody></table><p>2、python3 打印圣诞树<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"for i in list(range(0, 5)) + list(range(2, 8)) + list(range(3, 12)) + [2, 2]: print(' ' * int((40-2*i-i/2)) + '*' * int((4*i+1+i)))"</span></span><br></pre></td></tr></table></figure></p><p>3、python3 开启内置服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure></p><p>4、windows 装 python2 和 python3 后安装 python2 的 pip 包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install &lt;package&gt;</span><br></pre></td></tr></table></figure></p><p>5、windows 修改 dns command</p><ul><li>netsh interface ip set dns “以太网” static 114.114.114.114    # 设置 dns 管理员权限下<br>6、全球 BGP<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">telnet route-server.ip.att.NET</span><br><span class="line">username: rviews</span><br><span class="line">password: rviews</span><br><span class="line">show route all</span><br></pre></td></tr></table></figure></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;—-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—-</p>]]></content>
       
       
       <categories>
@@ -65,32 +65,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> eclipse </tag>
             
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Cannot find one or more componets. Please reinstall the application</title>
-      <link href="/181215_1/"/>
-      <url>/181215_1/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> debug </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> windows </tag>
+            <tag> java </tag>
             
         </tags>
       
@@ -114,6 +91,29 @@
         <tags>
             
             <tag> weekly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Cannot find one or more componets. Please reinstall the application</title>
+      <link href="/181215_1/"/>
+      <url>/181215_1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> debug </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
       
@@ -823,9 +823,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> eclipse </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
