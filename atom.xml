@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2018-12-31T14:13:21.112Z</updated>
+  <updated>2019-01-06T14:32:53.750Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每周分享第 5 期</title>
+    <link href="https://hackettyu.com/weekly_05/"/>
+    <id>https://hackettyu.com/weekly_05/</id>
+    <published>2019-01-06T04:00:00.000Z</published>
+    <updated>2019-01-06T14:32:53.750Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><ol><li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors" target="_blank" rel="noopener">JavaScript 错误参考</a></p></li><li><p>WTFPL<br>You just DO WHAT THE F123UCK YOU WANT TO</p></li><li><p>一道 JavaScript 面试题</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hookupevents</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"button"</span> + i)</span><br><span class="line">      .addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(i);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><hr><p>-<br>（完）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
+    
+    
+      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
+    
+  </entry>
   
   <entry>
     <title>每周分享第 4 期</title>
@@ -73,6 +101,34 @@
   </entry>
   
   <entry>
+    <title>每周分享第 2 期</title>
+    <link href="https://hackettyu.com/weekly_02/"/>
+    <id>https://hackettyu.com/weekly_02/</id>
+    <published>2018-12-15T04:00:00.000Z</published>
+    <updated>2018-12-15T02:40:39.217Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a><br>Mybatis通用分页插件</p><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a><br>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><p>一周都在弄报告 ）0（<br>（完）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
+    
+    
+      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
+    
+  </entry>
+  
+  <entry>
     <title>切换 eclipse 编译版本</title>
     <link href="https://hackettyu.com/181215_2/"/>
     <id>https://hackettyu.com/181215_2/</id>
@@ -99,34 +155,6 @@
       <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第 2 期</title>
-    <link href="https://hackettyu.com/weekly_02/"/>
-    <id>https://hackettyu.com/weekly_02/</id>
-    <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T02:40:39.217Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a><br>Mybatis通用分页插件</p><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a><br>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><p>一周都在弄报告 ）0（<br>（完）</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
-    
-    
-      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
     
   </entry>
   
@@ -557,34 +585,6 @@
       <category term="powershell" scheme="https://hackettyu.com/tags/powershell/"/>
     
       <category term="script" scheme="https://hackettyu.com/tags/script/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中文技术文档的写作规范</title>
-    <link href="https://hackettyu.com/181004_1/"/>
-    <id>https://hackettyu.com/181004_1/</id>
-    <published>2018-10-04T02:00:00.000Z</published>
-    <updated>2018-10-16T07:58:56.232Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><blockquote><p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p></blockquote></li></ul><hr><h2 id="文档体系"><a href="#文档体系" class="headerlink" title="文档体系"></a>文档体系</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>软件手册是一部完整的书，建议采用下面的结构。</p><ul><li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li><li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li><li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul><li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li><li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li><li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li></ul></li><li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li><li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li><li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li><li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul><li><strong>Glossary</strong>：[可选] [文件] 名词解释</li><li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li><li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li><li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li><li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="digest" scheme="https://hackettyu.com/categories/digest/"/>
-    
-    
-      <category term="others" scheme="https://hackettyu.com/tags/others/"/>
     
   </entry>
   
