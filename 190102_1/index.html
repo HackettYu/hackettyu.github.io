@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="简介 12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    conso">
+<meta name="description" content="简介12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    consol">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="title">
+<meta property="og:title" content="JavaScript 作用域问题">
 <meta property="og:url" content="https://hackettyu.com/190102_1/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="简介 12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    conso">
+<meta property="og:description" content="简介12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    consol">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T10:43:04.524Z">
+<meta property="og:updated_time" content="2019-01-08T13:30:55.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="title">
-<meta name="twitter:description" content="简介 12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    conso">
+<meta name="twitter:title" content="JavaScript 作用域问题">
+<meta name="twitter:description" content="简介12345678910111213141516171819202122232425262728293031323334353637//blockconsole.log(&quot;foo() --------------------------------------------------&quot;)var a = 1;function foo() &amp;#123;    var a = 2;    consol">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>title | HackettYu's blog</title>
+  <title>JavaScript 作用域问题 | HackettYu's blog</title>
   
 
 
@@ -316,7 +316,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">title</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript 作用域问题</h2>
         
 
         <div class="post-meta">
@@ -378,7 +378,7 @@
 
           
           
-             <span id="/190102_1/" class="leancloud_visitors" data-flag-title="title">
+             <span id="/190102_1/" class="leancloud_visitors" data-flag-title="JavaScript 作用域问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,8 +409,7 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//block</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foo() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();  <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"bar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// function block</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">2</span>;  <span class="comment">// same variable!</span></span><br><span class="line">      <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foobar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foobar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = <span class="number">2</span>;  <span class="comment">// </span></span><br><span class="line">      <span class="built_in">console</span>.log(c);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(c);  <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line">foobar();</span><br></pre></td></tr></table></figure>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//block</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foo() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();  <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"bar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// function block</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">2</span>;  <span class="comment">// same variable!</span></span><br><span class="line">      <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foobar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foobar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = <span class="number">2</span>;  <span class="comment">// </span></span><br><span class="line">      <span class="built_in">console</span>.log(c);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(c);  <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line">foobar();</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
 <li>语句作用域与函数作用域的区别？</li>
@@ -439,7 +438,7 @@
             </li>
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="/190102_1/" title="title">190102_1/</a>
+              <a href="/190102_1/" title="JavaScript 作用域问题">190102_1/</a>
             </li>
             <li class="post-copyright-license">
               <strong>版权声明： </strong>
@@ -572,7 +571,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

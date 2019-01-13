@@ -299,6 +299,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180103/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/180103/" itemprop="url">CentOS 6.7 安装 redis</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-03T10:00:00+08:00">
+                2018-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/digest/" itemprop="url" rel="index">
+                    <span itemprop="name">digest</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/180103/" class="leancloud_visitors" data-flag-title="CentOS 6.7 安装 redis">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###测试点</p>
+<figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server1:</span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.11</span>:<span class="number">7000</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.11</span>:<span class="number">7001</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.11</span>:<span class="number">7002</span></span><br><span class="line">server2：</span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.18</span>:<span class="number">7003</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.18</span>:<span class="number">7004</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.1</span><span class="number">.18</span>:<span class="number">7005</span></span><br></pre></td></tr></table></figure>
+<p>###安装需要的依赖包</p>
+<figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum install gcc gcc-c++ kernel-devel automake autoconf libtool make wget tcl vim ruby rubygems unzip git -y</span></span><br></pre></td></tr></table></figure>
+<p>###两台机器分别下载redis并安装<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]<span class="comment"># cd /usr/local/  </span></span><br><span class="line">[root@localhost <span class="built_in">local</span>]<span class="comment"># wget http://download.redis.io/releases/redis-3.0.6.tar.gz  </span></span><br><span class="line">[root@localhost <span class="built_in">local</span>]<span class="comment"># tar xzf redis-3.0.6.tar.gz  </span></span><br><span class="line">[root@localhost <span class="built_in">local</span>]<span class="comment"># cd redis-3.0.6  </span></span><br><span class="line">[root@localhost redis-3.0.6]<span class="comment"># make</span></span><br></pre></td></tr></table></figure></p>
+<p>###创建集群需要的目录<br>==Server1下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/cluster  </span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cluster  </span><br><span class="line">mkdir 7000  </span><br><span class="line">mkdir 7001  </span><br><span class="line">mkdir 7002  autoc</span><br></pre></td></tr></table></figure></p>
+<p>==Server2下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/cluster  </span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cluster  </span><br><span class="line">mkdir 7003  </span><br><span class="line">mkdir 7004  </span><br><span class="line">mkdir 7005</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修改配置文件redis.conf</span><br><span class="line">cp /usr/<span class="built_in">local</span>/redis-3.0.6/redis.conf  /usr/<span class="built_in">local</span>/cluster</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cluster</span><br><span class="line">vi redis.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">##注意每个实例的端口号不同  </span><br><span class="line">port 7000  </span><br><span class="line">daemonize yes  </span><br><span class="line">cluster-enabled yes  </span><br><span class="line">cluster-config-file nodes.conf  </span><br><span class="line">cluster-node-timeout 5000  </span><br><span class="line">appendonly yes</span><br></pre></td></tr></table></figure>
+<p>==Server1下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7000  </span><br><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7001  </span><br><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7002</span><br></pre></td></tr></table></figure></p>
+<p>==Server2下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7003  </span><br><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7004  </span><br><span class="line">cp /usr/<span class="built_in">local</span>/cluster/redis.conf /usr/<span class="built_in">local</span>/cluster/7005</span><br></pre></td></tr></table></figure></p>
+<p>###分别启动这6个redis实例，并查看是否成功：ps -ef|grep redis<br>==Server1下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cluster]<span class="comment"># cd /usr/local/cluster/7000  </span></span><br><span class="line">[root@localhost 7000]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7000]<span class="comment"># cd /usr/local/cluster/7001  </span></span><br><span class="line">[root@localhost 7001]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7001]<span class="comment"># cd /usr/local/cluster/7002  </span></span><br><span class="line">[root@localhost 7002]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7002]<span class="comment"># ps -ef|grep redis  </span></span><br><span class="line">root      2741     1  0 09:39 ?        00:00:00 redis-server *:7000 [cluster]  </span><br><span class="line">root      2747     1  0 09:40 ?        00:00:00 redis-server *:7001 [cluster]  </span><br><span class="line">root      2751     1  0 09:40 ?        00:00:00 redis-server *:7002 [cluster]  </span><br><span class="line">root      2755  2687  0 09:40 pts/0    00:00:00 grep redis</span><br></pre></td></tr></table></figure></p>
+<p>==Server2下==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost cluster]<span class="comment"># cd /usr/local/cluster/7003  </span></span><br><span class="line">[root@localhost 7003]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7003]<span class="comment"># cd /usr/local/cluster/7004  </span></span><br><span class="line">[root@localhost 7004]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7004]<span class="comment"># cd /usr/local/cluster/7005  </span></span><br><span class="line">[root@localhost 7005]<span class="comment"># /usr/local/redis-3.0.6/src/redis-server redis.conf </span></span><br><span class="line">[root@localhost 7005]<span class="comment"># ps -ef|grep redis  </span></span><br><span class="line">root      1619     1  0 09:40 ?        00:00:00 redis-server *:7003 [cluster]  </span><br><span class="line">root      1623     1  0 09:40 ?        00:00:00 redis-server *:7004 [cluster]  </span><br><span class="line">root      1627     1  0 09:41 ?        00:00:00 redis-server *:7005 [cluster]  </span><br><span class="line">root      1631  1563  0 09:41 pts/0    00:00:00 grep redis</span><br></pre></td></tr></table></figure></p>
+<p>###执行redis的创建集群命令创建集群（注意ip地址和端口号）<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]<span class="comment"># ./redis-trib.rb  create --replicas 1 192.168.1.11:7000 192.168.1.11:7001 192.168.1.11:7002 192.168.1.18:7003 192.168.1.18:7004 192.168.1.18:7005</span></span><br></pre></td></tr></table></figure></p>
+<p>==错误内容：==<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&apos;: no such file to load -- redis (LoadError)</span><br><span class="line">        from /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require&apos;</span><br><span class="line">        from ./redis-trib.rb:25</span><br></pre></td></tr></table></figure></p>
+<p>==解决：==<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem update --system</span><br><span class="line">gem install redis -v 3.3.5</span><br></pre></td></tr></table></figure></p>
+<p>###再次执行第6步的命令，正常执行，提示是否允许修改配置文件，输入yes，然后整个集群配置完成！<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]<span class="comment"># ./redis-trib.rb  create --replicas 1 192.168.1.11:7000 192.168.1.11:7001 192.168.1.11:7002 192.168.1.18:7003 192.168.1.18:7004 192.168.1.18:7005 </span></span><br><span class="line">```</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Creating cluster<br>Performing hash slots allocation on 6 nodes…<br>Using 3 masters:<br>192.168.1.199:7003<br>192.168.1.198:7000<br>192.168.1.199:7004<br>Adding replica 192.168.1.198:7001 to 192.168.1.199:7003<br>Adding replica 192.168.1.199:7005 to 192.168.1.198:7000<br>Adding replica 192.168.1.198:7002 to 192.168.1.199:7004<br>M: 2f70e9f2b4a06a846e46d7034a54e0fe6971beea 192.168.1.198:7000<br>   slots:5461-10922 (5462 slots) master<br>S: e60f49920cf8620927b200b0001892d08067d065 192.168.1.198:7001<br>   replicates 02f1958bd5032caca2fd47a56362c8d562d7e621<br>S: 26101db06b5c2d4431ca8308cf43d51f6939b4fc 192.168.1.198:7002<br>   replicates 6c4f18b9e8729c3ab5d43b00b0bc1e2ee976f299<br>M: 02f1958bd5032caca2fd47a56362c8d562d7e621 192.168.1.199:7003<br>   slots:0-5460 (5461 slots) master<br>M: 6c4f18b9e8729c3ab5d43b00b0bc1e2ee976f299 192.168.1.199:7004<br>   slots:10923-16383 (5461 slots) master<br>S: ebb27bd0a48b67a4f4e0584be27c1c909944e935 192.168.1.199:7005<br>   replicates 2f70e9f2b4a06a846e46d7034a54e0fe6971beea<br>Can I set the above configuration? (type ‘yes’ to accept): yes<br>Nodes configuration updated<br>Assign a different config epoch to each node<br>Sending CLUSTER MEET messages to join the cluster<br>Waiting for the cluster to join…<br>Performing Cluster Check (using node 192.168.1.198:7000)<br>M: 2f70e9f2b4a06a846e46d7034a54e0fe6971beea 192.168.1.198:7000<br>   slots:5461-10922 (5462 slots) master<br>M: e60f49920cf8620927b200b0001892d08067d065 192.168.1.198:7001<br>   slots: (0 slots) master<br>   replicates 02f1958bd5032caca2fd47a56362c8d562d7e621<br>M: 26101db06b5c2d4431ca8308cf43d51f6939b4fc 192.168.1.198:7002<br>   slots: (0 slots) master<br>   replicates 6c4f18b9e8729c3ab5d43b00b0bc1e2ee976f299<br>M: 02f1958bd5032caca2fd47a56362c8d562d7e621 192.168.1.199:7003<br>   slots:0-5460 (5461 slots) master<br>M: 6c4f18b9e8729c3ab5d43b00b0bc1e2ee976f299 192.168.1.199:7004<br>   slots:10923-16383 (5461 slots) master<br>M: ebb27bd0a48b67a4f4e0584be27c1c909944e935 192.168.1.199:7005<br>   slots: (0 slots) master<br>   replicates 2f70e9f2b4a06a846e46d7034a54e0fe6971beea<br>[OK] All nodes agree about slots configuration.<br>Check for open slots…<br>Check slots coverage…<br>[OK] All 16384 slots covered.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###测试集群</span><br><span class="line">#####server1上登录redis客户端并执行</span><br><span class="line">```bash &#123;.line-numbers&#125;</span><br><span class="line">[root@localhost src]# ./redis-cli -c -p 7000   #可执行文件</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:7000&gt; get key  </span><br><span class="line">-&gt; Redirected to slot [12539] located at 192.168.1.199:7004  </span><br><span class="line">&quot;val&quot;  </span><br><span class="line">192.168.1.199:7004&gt; set name test  </span><br><span class="line">-&gt; Redirected to slot [5798] located at 192.168.1.198:7000  </span><br><span class="line">OK  </span><br><span class="line">192.168.1.198:7000&gt; set adress shanghai  </span><br><span class="line">-&gt; Redirected to slot [1562] located at 192.168.1.199:7003  </span><br><span class="line">OK  </span><br><span class="line">192.168.1.199:7003&gt;</span><br></pre></td></tr></table></figure>
+<p>#####server2上登录redis客户端并执行<br><figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]<span class="comment"># redis-cli -c -p 7003</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:7003&gt; set key val  </span><br><span class="line">-&gt; Redirected to slot [12539] located at 192.168.1.199:7004  </span><br><span class="line">OK  </span><br><span class="line">192.168.1.199:7004&gt; get keyv  </span><br><span class="line">&quot;val&quot;  </span><br><span class="line">192.168.1.199:7004&gt; set key2 val2  </span><br><span class="line">-&gt; Redirected to slot [4998] located at 192.168.1.199:7003  </span><br><span class="line">OK  </span><br><span class="line">192.168.1.199:7003&gt; get key2  </span><br><span class="line">&quot;val2&quot;  </span><br><span class="line">192.168.1.199:7003&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://blog.csdn.net/nuli888/article/details/52134117/" target="_blank" rel="noopener">Centos完美搭建redis3.0集群并附测试</a> </li>
+<li><a href="https://www.jianshu.com/p/728184da1699" target="_blank" rel="noopener">Ruby Gem命令详解</a>  </li>
+<li><a href="https://redis.io/download" target="_blank" rel="noopener">Redis官网</a></li>
+</ul>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180102/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -706,221 +894,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/171216/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/171216/" itemprop="url">CentOs 6.7 安装 owncloud</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-16T10:00:00+08:00">
-                2017-12-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/171216/" class="leancloud_visitors" data-flag-title="CentOs 6.7 安装 owncloud">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="软件版本"><a href="#软件版本" class="headerlink" title="软件版本"></a>软件版本</h2><ul>
-<li>CentOS 6.7</li>
-<li>LAMP<ul>
-<li>PHP 5.6</li>
-<li>MySql</li>
-<li>Apache</li>
-</ul>
-</li>
-<li>OwnCloud 9.0.10</li>
-</ul>
-<h2 id="安装MySql"><a href="#安装MySql" class="headerlink" title="安装MySql"></a>安装MySql</h2><ul>
-<li>[~]# yum -y install mysql mysql-server mysql-devel</li>
-</ul>
-<h2 id="配置MySql开机自启动服务"><a href="#配置MySql开机自启动服务" class="headerlink" title="配置MySql开机自启动服务"></a>配置MySql开机自启动服务</h2><ul>
-<li>[~]# chkconfig mysqld on   #设置mysql服务随开机启动</li>
-<li>[~]# service mysqld start  #启动mysql服务</li>
-<li>[~]# service mysqld start  #启动mysql服务</li>
-<li>[~]# chkconfig –list | grep mysqld #检查自启动服务是否处于开启on状态</li>
-</ul>
-<h2 id="安装PHP环境"><a href="#安装PHP环境" class="headerlink" title="安装PHP环境"></a>安装PHP环境</h2><ul>
-<li>[~]# yum -y update</li>
-<li>[~]# rpm -Uvh <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="noopener">https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm</a> #<a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="noopener">链接测试</a></li>
-<li>[~]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el6/latest.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el6/latest.rpm</a> #<a href="https://mirror.webtatic.com/yum/el6/latest.rpm" target="_blank" rel="noopener">链接测试</a></li>
-<li>[~]# yum install -y php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64 #安装不成功，尝试换顺序</li>
-<li>[~]# yum install -y php56w-xml</li>
-</ul>
-<h2 id="调试PHP环境"><a href="#调试PHP环境" class="headerlink" title="调试PHP环境"></a>调试PHP环境</h2><ul>
-<li>[~]# chkconfig httpd on        #httpd服务加入自启动</li>
-<li>[~]# chkconfig –list | grep httpd  #检查启动httpd服务</li>
-<li>[~]# service httpd restart  #重启httpd服务</li>
-</ul>
-<h2 id="验证httpd服务"><a href="#验证httpd服务" class="headerlink" title="验证httpd服务"></a>验证httpd服务</h2><ul>
-<li>打开浏览器,访问<a href="http://192.168.XXX.XXX" target="_blank" rel="noopener">http://192.168.XXX.XXX</a></li>
-</ul>
-<h2 id="安装owncloud"><a href="#安装owncloud" class="headerlink" title="安装owncloud"></a>安装owncloud</h2><ul>
-<li>[~]# wget <a href="https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2" target="_blank" rel="noopener">https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2</a> #<a href="https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2" target="_blank" rel="noopener">链接测试</a></li>
-<li>[~]# tar -jxf owncloud-9.0.10.tar.bz2</li>
-<li>[~]# mv owncloud /var/www/html</li>
-<li>[~]# cd /var/www/html  # 检查解压文件路径是否正确</li>
-<li>[html]# ls </li>
-<li>[html]# pwd </li>
-<li>[html]# chown -R apache:apache /var/www/html/owncloud/ # 更改owncloud文件夹所属用户组</li>
-<li>[~]# chmod 777 /var/www/html/owncloud/config/</li>
-<li>浏览器访问 <a href="http://192.168.XXX.XXX/owncloud" target="_blank" rel="noopener">http://192.168.XXX.XXX/owncloud</a></li>
-<li>验证安装,并配置管理员用户</li>
-<li>owncloud安装完成,简单配置语言</li>
-</ul>
-<p><a href="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" alt="1.png"></a><br><!-- delete[1] --><br><!-- https://sm.ms/delete/ASq7gfIDGl3FHu8 --></p>
-<p><img src="https://i.loli.net/2017/12/16/5a34d58b7ff3c.png" alt="2.png"><br><!-- delete[2] --><br><!-- https://sm.ms/delete/XEapbOv3RN74DLn --></p>
-<ul>
-<li>完成</li>
-</ul>
-<hr>
-<p>##参考链接<br><a href="https://jingyan.baidu.com/article/414eccf644cebb6b431f0abb.html" target="_blank" rel="noopener">CentOS 6.7 安装私有云owncloud</a></p>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -966,7 +944,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
