@@ -405,7 +405,7 @@
           
             <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors" target="_blank" rel="noopener">JavaScript 错误参考</a></p>
 <h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><ul>
-<li>Error: Permission denied to access property “x”<br><code>没有权限访问 x 属性</code><br>尝试访问无权访问的对象。这很可能出现在使用\<iframe>元素时加载了一个不同域名下的页面，这在访问子页面时会违背同源策略。</iframe></li>
+<li>Error: Permission denied to access property “x”<br><code>没有权限访问 x 属性</code><br>尝试访问无权访问的对象。这很可能出现在使用 iframe 元素时加载了一个不同域名下的页面，这在访问子页面时会违背同源策略。</li>
 </ul>
 <h2 id="内部错误"><a href="#内部错误" class="headerlink" title="内部错误"></a>内部错误</h2><ul>
 <li>InternalError: too much recursion<br><code>递归太深</code><br>一个调用自身的函数被称作递归函数。一些情况下，递归函数类似于一个循环，都重复地执行一个代码段许多次，都需要一个条件（用于避免无尽循环或此处的无尽递归）。当出现过于深层的递归或无尽递归时，JavaScript将会抛出此错误。</li>
@@ -564,17 +564,22 @@
 <li>TypeError: “x” is read-only<br>全局变量或对象属性被设置为只读 (专业点讲，就是这条数据属性禁止写入.)<br>这条错误值发生在strict mode code(俗称严格模式). 正常情况下，是没有报错的。</li>
 <li>TypeError: ‘x’ is not iterable<br>这个值作为 for…of  的表达式右值，或者作为一个函数的参数，如 Promise.all 或者 TypedArray.from, 不是一个 可迭代对象.  一个可迭代对象可以是一个内置可迭代类型，如Array, String 或 Map, 一个 generator 生成结果, 或者一个实现了 可迭代协议 的对象</li>
 <li>TypeError: More arguments needed<br>调用函数的时候出现了错误。需要提供更多的参数。</li>
-<li>TypeError: can’t access dead object<br>为了提高内存使用效率以及防止内存泄露，Firefox 浏览器不允许插件在 DOM 所在的父页面被销毁后对 DOM 对象保持强引用。死对象指的是在 DOM 被销毁后依然持有对 DOM 元素的强引用(处于活跃状态)。为了避免这样的问题，对处于外部文档中的 DOM 节点的引用应该被存储于一个专属于那个文档的对象当中，并且在文档卸载的时候将其清理，或者使用弱引用方式进行存储。</li>
-<li><p>TypeError: can’t define property “x”: “obj” is not extensible</p>
+<li><p>TypeError: can’t access dead object<br>为了提高内存使用效率以及防止内存泄露，Firefox 浏览器不允许插件在 DOM 所在的父页面被销毁后对 DOM 对象保持强引用。死对象指的是在 DOM 被销毁后依然持有对 DOM 元素的强引用(处于活跃状态)。为了避免这样的问题，对处于外部文档中的 DOM 节点的引用应该被存储于一个专属于那个文档的对象当中，并且在文档卸载的时候将其清理，或者使用弱引用方式进行存储。</p>
 </li>
-<li><p>TypeError: can’t delete non-configurable array element</p>
+<li><p>TypeError: can’t define property “x”: “obj” is not extensible<br>通常情况下，对象是可以进行扩展的，即可以向其添加新的属性。然而当使用 Object.preventExtensions() 将一个对象标记为不再可以扩展的情况下，就无法对该对象添加在其被标记为不可扩展之前所拥有的属性之外的新属性了。</p>
 </li>
-<li><p>TypeError: can’t redefine non-configurable property “x”</p>
+<li><p>TypeError: can’t delete non-configurable array element<br>这个错误提示发生于当试图缩短一个数组的长度的时候，其中有元素是不可配置的（non-configurable）。正常情况下，缩短数组的长度，则超出限度的元素会被删除，而这里指的是这种操作失效的情况。<br>configurable  特性控制着属性是否可以从对象中删除，以及它的特性（除了 writable 之外）是否可以发生改变。<br>通常，使用数组初始化语句创建的对象是可配置的，而通过 Object.defineProperty() 创建的属性，默认则是不可配置的。</p>
 </li>
-<li>TypeError: cyclic object value</li>
-<li>TypeError: invalid ‘in’ operand “x”</li>
-<li>TypeError: invalid ‘instanceof’ operand ‘x’</li>
-<li>TypeError: invalid Array.prototype.sort argument</li>
+<li><p>TypeError: can’t redefine non-configurable property “x”<br>这种错误的起因在于试图给对象重新定义一个属性，但是该属性是不可配置的。 configurable 特性控制着该属性是否可以从对象中删除，以及它的各个特性（除 writable 之外）是否可以修改。通常使用对象初始化语句定义的对象属性是可配置的。而使用 Object.defineProperty() 定义的属性则默认不可配置。</p>
+</li>
+<li><p>TypeError: cyclic object value<br>当调用 JSON.stringify() 方法时，循环对象引用结构不能被转换为字符串。</p>
+</li>
+<li><p>TypeError: invalid ‘in’ operand “x”<br>in 操作符只可以用来检测对象中是否存在某个属性，而不能用来在字符串、数字或者其他基本类型的数据中进行检索。</p>
+</li>
+<li><p>TypeError: invalid ‘instanceof’ operand ‘x’<br>instanceof 操作符 希望右边的操作数为一个构造对象，即一个有 prototype 属性且可以调用的对象。</p>
+</li>
+<li><p>TypeError: invalid Array.prototype.sort argument<br>Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作数的函数。</p>
+</li>
 <li><p>TypeError: invalid arguments<br><code>无效的参数</code></p>
 </li>
 <li><p>TypeError: invalid assignment to const “x”<br><code>对 const “x” 的赋值无效</code></p>
