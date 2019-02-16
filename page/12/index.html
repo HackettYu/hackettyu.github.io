@@ -299,6 +299,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180920/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/180920/" itemprop="url">文档体系</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T12:00:00+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/digest/" itemprop="url" rel="index">
+                    <span itemprop="name">digest</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/180920/" class="leancloud_visitors" data-flag-title="文档体系">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md" target="_blank" rel="noopener">https://github.com/ruanyf/document-style-guide/blob/master/docs/structure.md</a></p>
+</blockquote>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>软件手册是一部完整的书，建议采用下面的结构。</p>
+<ul>
+<li><strong>简介</strong>（Introduction）： [必备] [文件] 提供对产品和文档本身的总体的、扼要的说明</li>
+<li><strong>快速上手</strong>（Getting Started）：[可选] [文件] 如何最快速地使用产品</li>
+<li><strong>入门篇</strong>（Basics）： [必备] [目录] 又称”使用篇“，提供初级的使用教程<ul>
+<li><strong>环境准备</strong>（Prerequisite）：[必备] [文件] 软件使用需要满足的前置条件</li>
+<li><strong>安装</strong>（Installation）：[可选] [文件] 软件的安装方法</li>
+<li><strong>设置</strong>（Configuration）：[必备] [文件] 软件的设置</li>
+</ul>
+</li>
+<li><strong>进阶篇</strong>（Advanced)：[可选] [目录] 又称”开发篇“，提供中高级的开发教程</li>
+<li><strong>API</strong>（Reference）：[可选] [目录|文件] 软件 API 的逐一介绍</li>
+<li><strong>FAQ</strong>：[可选] [文件] 常见问题解答</li>
+<li><strong>附录</strong>（Appendix）：[可选] [目录] 不属于教程本身、但对阅读教程有帮助的内容<ul>
+<li><strong>Glossary</strong>：[可选] [文件] 名词解释</li>
+<li><strong>Recipes</strong>：[可选] [文件] 最佳实践</li>
+<li><strong>Troubleshooting</strong>：[可选] [文件] 故障处理</li>
+<li><strong>ChangeLog</strong>：[可选] [文件] 版本说明</li>
+<li><strong>Feedback</strong>：[可选] [文件] 反馈方式</li>
+</ul>
+</li>
+</ul>
+<p>下面是两个真实范例，可参考。</p>
+<ul>
+<li><a href="http://redux.js.org/index.html" target="_blank" rel="noopener">Redux 手册</a></li>
+<li><a href="http://flight-manual.atom.io/" target="_blank" rel="noopener">Atom 手册</a></li>
+</ul>
+<h2 id="文件名"><a href="#文件名" class="headerlink" title="文件名"></a>文件名</h2><p>文档的文件名不得含有空格。</p>
+<p>文件名必须使用半角字符，不得使用全角字符。这也意味着，中文不能用于文件名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">错误： 名词解释.md</span><br><span class="line"></span><br><span class="line">正确： glossary.md</span><br></pre></td></tr></table></figure>
+<p>文件名建议只使用小写字母，不使用大写字母。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">错误：TroubleShooting.md</span><br><span class="line"></span><br><span class="line">正确：troubleshooting.md</span><br></pre></td></tr></table></figure>
+<p>为了醒目，某些说明文件的文件名，可以使用大写字母，比如<code>README</code>、<code>LICENSE</code>。</p>
+<p>文件名包含多个单词时，单词之间建议使用半角的连词线（<code>-</code>）分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">不佳：advanced_usage.md</span><br><span class="line"></span><br><span class="line">正确：advanced-usage.md</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180919/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1776,172 +1970,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/180915/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/180915/" itemprop="url">mermaid.js 使用</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T12:00:00+08:00">
-                2018-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/180915/" class="leancloud_visitors" data-flag-title="mermaid.js 使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><blockquote>
-<p><a href="https://mermaidjs.github.io/flowchart.html" target="_blank" rel="noopener">https://mermaidjs.github.io/flowchart.html</a></p>
-</blockquote>
-<p>需要导入 js，可以在 markdown 里使用</p>
-<h3 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">        dateFormat  YYYY-MM-DD</span><br><span class="line">        title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">        section A section</span><br><span class="line">        Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">        Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">        Future task               :         des3, after des2, 5d</span><br><span class="line">        Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">        section Critical tasks</span><br><span class="line">        Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">        Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">        Create tests for parser             :crit, active, 3d</span><br><span class="line">        Future task in critical line        :crit, 5d</span><br><span class="line">        Create tests for renderer           :2d</span><br><span class="line">        Add to mermaid                      :1d</span><br></pre></td></tr></table></figure>
-<h3 id="基本顺序图"><a href="#基本顺序图" class="headerlink" title="基本顺序图"></a>基本顺序图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice -&gt;&gt; Bob: Hello Bob, how are you?</span><br><span class="line">    Bob--&gt;&gt;John: How about you John?</span><br><span class="line">    Bob--x Alice: I am good thanks!</span><br><span class="line">    Bob-x John: I am good thanks!</span><br><span class="line">    Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.</span><br><span class="line"></span><br><span class="line">    Bob--&gt;Alice: Checking with John...</span><br><span class="line">    Alice-&gt;John: Yes... John, how are you?</span><br></pre></td></tr></table></figure>
-<h3 id="基本流程图"><a href="#基本流程图" class="headerlink" title="基本流程图"></a>基本流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A[Square Rect] -- Link text --&gt; B((Circle))</span><br><span class="line">    A --&gt; C(Round Rect)</span><br><span class="line">    B --&gt; D&#123;Rhombus&#125;</span><br><span class="line">    C --&gt; D</span><br></pre></td></tr></table></figure>
-<h3 id="更大的带样式流程图"><a href="#更大的带样式流程图" class="headerlink" title="更大的带样式流程图"></a>更大的带样式流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">    sq[Square shape] --&gt; ci((Circle shape))</span><br><span class="line"></span><br><span class="line">    subgraph A subgraph</span><br><span class="line">        od&gt;Odd shape]-- Two line&lt;br/&gt;edge comment --&gt; ro</span><br><span class="line">        di&#123;Diamond with &lt;br/&gt; line break&#125; -.-&gt; ro(Rounded&lt;br&gt;square&lt;br&gt;shape)</span><br><span class="line">        di==&gt;ro2(Rounded square shape)</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    %% Notice that no text in shape are added here instead that is appended further down</span><br><span class="line">    e --&gt; od3&gt;Really long text with linebreak&lt;br&gt;in an Odd shape]</span><br><span class="line"></span><br><span class="line">    %% Comments after double percent signs</span><br><span class="line">    e((Inner / circle&lt;br&gt;and some odd &lt;br&gt;special characters)) --&gt; f(,.?!+-*ز)</span><br><span class="line"></span><br><span class="line">    cyr[Cyrillic]--&gt;cyr2((Circle shape Начало));</span><br><span class="line"></span><br><span class="line">    classDef green fill:#9f6,stroke:#333,stroke-width:2px;</span><br><span class="line">    classDef orange fill:#f96,stroke:#333,stroke-width:4px;</span><br><span class="line">    class sq,e green</span><br><span class="line">    class di orange</span><br></pre></td></tr></table></figure>
-<h3 id="Loops-alt-and-opt"><a href="#Loops-alt-and-opt" class="headerlink" title="Loops, alt and opt"></a>Loops, alt and opt</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    loop Daily query</span><br><span class="line">        Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">        alt is sick</span><br><span class="line">            Bob-&gt;&gt;Alice: Not so good :(</span><br><span class="line">        else is well</span><br><span class="line">            Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span><br><span class="line">        end</span><br><span class="line"></span><br><span class="line">        opt Extra response</span><br><span class="line">            Bob-&gt;&gt;Alice: Thanks for asking</span><br><span class="line">        end</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
-<h3 id="Message-to-self-in-loop"><a href="#Message-to-self-in-loop" class="headerlink" title="Message to self in loop"></a>Message to self in loop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant Alice</span><br><span class="line">    participant Bob</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    loop Healthcheck</span><br><span class="line">        John-&gt;&gt;John: Fight against hypochondria</span><br><span class="line">    end</span><br><span class="line">    Note right of John: Rational thoughts&lt;br/&gt;prevail...</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br><span class="line">    John-&gt;&gt;Bob: How about you?</span><br><span class="line">    Bob--&gt;&gt;John: Jolly good!</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1992,7 +2020,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
