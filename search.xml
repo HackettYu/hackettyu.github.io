@@ -212,29 +212,6 @@
     </entry>
     
     <entry>
-      <title>Cannot find one or more componets. Please reinstall the application</title>
-      <link href="/181215_1/"/>
-      <url>/181215_1/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> debug </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>每周分享第 2 期</title>
       <link href="/weekly_02/"/>
       <url>/weekly_02/</url>
@@ -277,6 +254,29 @@
             <tag> java </tag>
             
             <tag> eclipse </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Cannot find one or more componets. Please reinstall the application</title>
+      <link href="/181215_1/"/>
+      <url>/181215_1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> debug </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
             
         </tags>
       
@@ -540,29 +540,6 @@
     </entry>
     
     <entry>
-      <title>命令行开启 | 关闭显卡</title>
-      <link href="/181004_3/"/>
-      <url>/181004_3/</url>
-      
-        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote><p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p></blockquote><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p><p>例如要关闭 NVIDIA 显卡：</p><p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p><p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p><p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p><p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> note </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> command </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>vim 配置</title>
       <link href="/181004_4/"/>
       <url>/181004_4/</url>
@@ -582,6 +559,29 @@
             <tag> profile </tag>
             
             <tag> vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>命令行开启 | 关闭显卡</title>
+      <link href="/181004_3/"/>
+      <url>/181004_3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote><p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p></blockquote><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p><p>例如要关闭 NVIDIA 显卡：</p><p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p><p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p><p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p><p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> command </tag>
             
         </tags>
       
