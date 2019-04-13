@@ -299,6 +299,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190413_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/190413_1/" itemprop="url">获取 spring framework 的各个版本更新信息</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T12:00:00+08:00">
+                2019-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/190413_1/" class="leancloud_visitors" data-flag-title="获取 spring framework 的各个版本更新信息">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<p>spring framework 更新后都会有新的特性, 而且 spring framework 是在 github 上开源的, github 上也会有相应的版本更新日志, 所以我采用 github api 可以获取其日志内容, 当然你可以在页面上看, 不过我想要的是所有的信息</p>
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
+<ul>
+<li>github 获取的对应仓库的链接 <code>https://api.github.com/repos/spring-projects/spring-framework/releases</code></li>
+</ul>
+<p>##入门篇</p>
+<hr>
+<ul>
+<li>直接贴代码</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.1.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/marked/0.6.2/marked.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            marked.setOptions(&#123;</span></span><br><span class="line"><span class="javascript">                renderer: <span class="keyword">new</span> marked.Renderer(),</span></span><br><span class="line"><span class="javascript">                gfm: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                tables: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                breaks: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                pedantic: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                sanitize: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                smartLists: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                smartypants: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                highlight: <span class="function"><span class="keyword">function</span> (<span class="params">code, lang</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">//使用 highlight 插件解析文档中代码部分</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> hljs.highlightAuto(code, [lang]).value;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> html = <span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">            $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">"https://api.github.com/repos/spring-projects/spring-framework/releases"</span>,   <span class="comment">// 路径</span></span></span><br><span class="line"><span class="undefined">                data: &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">async</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                    $.each(data, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['upload_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'tag_name'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['target_commitish']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['name']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['draft']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['login']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['node_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['avatar_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gravatar_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['followers_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['following_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gists_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['starred_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['subscripttions_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['organizations_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['repos_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['received_events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['type']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['site_admin']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['prerelease']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['created_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['published_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['tarball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['zipball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'body'</span>])</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                        html += <span class="string">`&lt;a href='<span class="subst">$&#123;value[<span class="string">'html_url'</span>]&#125;</span>'&gt;<span class="subst">$&#123;value[<span class="string">'tag_name'</span>]&#125;</span>&lt;/a&gt;&lt;p&gt;<span class="subst">$&#123;value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]&#125;</span>&lt;/p&gt;<span class="subst">$&#123;marked(value[<span class="string">'body'</span>])&#125;</span>&lt;hr&gt;`</span>;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#list"</span>).html(html);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
+<ul>
+<li>github 对应的 api <code>https://api.github.com/repos/${github name}/${repo name}/releases</code></li>
+<li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">github api v4</a></li>
+</ul>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190218_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -800,557 +973,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190216_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/190216_1/" itemprop="url">JavaScript 错误参考</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T12:00:00+08:00">
-                2019-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/190216_1/" class="leancloud_visitors" data-flag-title="JavaScript 错误参考">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors" target="_blank" rel="noopener">JavaScript 错误参考</a></p>
-<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><ul>
-<li>Error: Permission denied to access property “x”<br><code>没有权限访问 x 属性</code><br>尝试访问无权访问的对象。这很可能出现在使用 iframe 元素时加载了一个不同域名下的页面，这在访问子页面时会违背同源策略。</li>
-</ul>
-<h2 id="内部错误"><a href="#内部错误" class="headerlink" title="内部错误"></a>内部错误</h2><ul>
-<li>InternalError: too much recursion<br><code>递归太深</code><br>一个调用自身的函数被称作递归函数。一些情况下，递归函数类似于一个循环，都重复地执行一个代码段许多次，都需要一个条件（用于避免无尽循环或此处的无尽递归）。当出现过于深层的递归或无尽递归时，JavaScript将会抛出此错误。</li>
-</ul>
-<h2 id="范围错误"><a href="#范围错误" class="headerlink" title="范围错误"></a>范围错误</h2><ul>
-<li><p>RangeError: argument is not a valid code point<br><code>参数不是一个有效的代码点</code><br>String.fromCodePoint() 这个方法只能接受有效的码位（code point） 。<br>码位（ code point）是组成码空间（或代码页）的数值，范围是 0 到 0x10FFFF。<br>NaN，负整数（-1），非整数（3.14），或编号大于0x10FFFF (1114111) 的字符，无法使该方法。</p>
-</li>
-<li><p>RangeError: invalid array length<br><code>无效的数组长度</code><br>无效的数组错误长度通常会在以下情形中出现：</p>
-<ul>
-<li>当创建一个长度为负数或者长度大于等于232 的 Array 或者 ArrayBuffer 时。</li>
-<li><p>当设置 Array.length 属性为负数或者长度大于等于232 时。</p>
-<p>为什么 Array（数组） 和 ArrayBuffer（数组缓冲区） 的长度会受到限制？</p>
-</li>
-<li>因为 Array 和 ArrayBuffer 的 length（长度） 属性被定义为一个32位无符号整形（unsigned 32-bit integer）的值，所以它只能存储 0 - 232-1 之间的数。</li>
-<li>当你使用构造函数来创建一个数组的时候，你可能想使用字面值的形式，第一个参数会被解释为数组的长度。<br>或者说，你想要在设置数组之前确定它的长度，或把它作为一个构造函数的参数。</li>
-</ul>
-</li>
-<li><p>RangeError: invalid date<br><code>非法数据</code><br>为 Date 或 Date.parse() 提供了一个会导致无效日期的字符串。</p>
-</li>
-<li><p>RangeError: precision is out of range<br><code>精度越界</code><br>以下的某个方法传入了一个超出精度范围的参数：</p>
-<ul>
-<li>Number.prototype.toExponential()</li>
-<li>Number.prototype.toFixed()</li>
-<li>Number.prototype.toPrecision()<br>通常这些方法允许的参数范围介于0和20（或21）之间。需要注意的是，ECMAScript标准是允许扩展这个范围的。</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Firefox (SpiderMonkey)</th>
-<th>Chrome, Opera (V8)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Number.prototype.toExponential()</td>
-<td>0 to 100</td>
-<td>0 to 20</td>
-</tr>
-<tr>
-<td>Number.prototype.toFixed()</td>
-<td>-20 to 100</td>
-<td>0 to 20</td>
-</tr>
-<tr>
-<td>Number.prototype.toPrecision()</td>
-<td>1 to 100</td>
-<td>1 to 21</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>RangeError: radix must be an integer<br><code>基数必须是一个整数</code><br>在使用Number.prototype.toString()方法时使用了可选的基数参数，参数应该为一个2到36之间的整型(数字)，返回对应数字的转换为字符串时表示的该进制对应的数字量。<br>为什么小于36呢？因为一个大于(包含等于)10的基数在使用时需要用一个字母表字符来代替。不能超过36是因为拉丁字母表中只有26个字符。</p>
-</li>
-<li><p>RangeError: repeat count must be less than infinity<br><code>重复数必须小于无穷</code><br>代码中使用了 String.prototype.repeat()方法。它有一个计数参数，表示重复该字符串的次数。该参数必须在 0 及正 Infinity 之间，且不能为负数。该值的合法范围可以这样表示： [0, +∞)。<br>其结果字符串也不能长于最大字符串，不同 JavaScript 引擎中可能有所不同。 在 Firefox (SpiderMonkey) 里最大字符串大小为 228 -1 (0xFFFFFFF)。</p>
-</li>
-<li><p>RangeError: repeat count must be non-negative<br><code>重复计数必须是非负数</code><br>代码中使用了 String.prototype.repeat()方法。它有一个计数参数，表示重复该字符串的次数。该参数必须在 0 及正 Infinity 之间，且不能为负数。该值的合法范围可以这样表示： [0, +∞)。</p>
-</li>
-</ul>
-<h2 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h2><ul>
-<li><p>ReferenceError: “x” is not defined<br><code>x 没有定义</code><br>在某些地方引用一个不存的的变量的时候。当你使用变量的时候，这个变量必须是已经被声明的，或者你可以确保它在你当前的脚本或作用域 (scope) 中可用。</p>
-</li>
-<li><p>ReferenceError: assignment to undeclared variable “x”<br><code>分配了未声明的 x</code><br>在代码里赋值了一个未声明的变量。换句话说，有处没有带着 var 关键字的赋值。事实上已声明的和未声明的变量之间有一些差异，这可能会导致意想不到的结果，这就是为什么 JavaScript 在严格模式打印出这种错误。<br>关于已声明和未声明的变量，其有三个注意事项：</p>
-<ul>
-<li>已声明的变量被约束在其执行上下文中。未声明的变量总是全局的。</li>
-<li>已声明的变量在执行任何代码之前就创建了。未声明的变量则不存在，直到执行相关的代码。</li>
-<li><p>已声明的变量是其执行上下文（函数或全局）的不可配置属性。而未声明的变量是可配置的（例如可以删除）。</p>
-<p>更多信息及例子，请参考 var 页面。<br>关于未声明变量的赋值的错误仅在严格模式里出现。在非严格模式中，这些将被忽略。</p>
-</li>
-</ul>
-</li>
-<li><p>ReferenceError: can’t access lexical declaration<code>X&#39; before initialization</code>不能再定义前初始化`<br>词法变量在初始化之前被访问。该错误可以发生于任何语句块中，当使用 let 或 const 修饰的变量在初始化之前被访问的时候。</p>
-</li>
-<li><p>ReferenceError: deprecated caller or arguments usage<br><code>弃用调用者或参数使用</code><br>在 strict mode 中，Function.caller 和 Function.arguments 属性是不该使用的。它们都是已经被废弃的了，因为这两者泄露了函数的调用者，是不标准的，难于优化和有这潜在的性能问题。</p>
-</li>
-<li><p>ReferenceError: invalid assignment left-hand side<br><code>左手边任务无效</code><br>在 strict mode 中，Function.caller 和 Function.arguments 属性是不该使用的。它们都是已经被废弃的了，因为这两者泄露了函数的调用者，是不标准的，难于优化和有这潜在的性能问题。</p>
-</li>
-<li><p>ReferenceError: reference to undefined property “x”<br><code>引用未定义的属性x</code><br>脚本尝试去访问一个不存在的对象属性。property accessors 页面描述了两种访问属性的方法。<br>引用未定义属性的错误仅出现在 strict mode 代码中。在非严格代码中，对不存在的属性的访问将被忽略。</p>
-</li>
-</ul>
-<h2 id="语法错误"><a href="#语法错误" class="headerlink" title="语法错误"></a>语法错误</h2><ul>
-<li><p>SyntaxError: “0”-prefixed octal literals and octal escape seq. are deprecated<br><code>“0” - 前缀八进制文字和八进制转义序列号。不推荐使用</code></p>
-</li>
-<li><p>SyntaxError: “use strict” not allowed in function with non-simple parameters<br><code>在非简单参数的函数中不允许使用“use strict”</code></p>
-</li>
-<li><p>SyntaxError: “x” is a reserved identifier<br><code>“x”是保留标识符</code></p>
-</li>
-<li><p>SyntaxError: “x” is not a legal ECMA-262 octal constant<br><code>“x”不是合法的ECMA-262八进制常量</code></p>
-</li>
-<li><p>SyntaxError: JSON.parse: bad parsing<br><code>JSON.parse：解析错误</code></p>
-</li>
-<li><p>SyntaxError: Malformed formal parameter<br><code>格式错误的形式参数</code></p>
-</li>
-<li><p>SyntaxError: Unexpected token<br><code>意外的令牌</code></p>
-</li>
-<li><p>SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead<br><code>不建议使用// @来表示sourceURL pragma。使用//＃代替</code></p>
-</li>
-<li><p>SyntaxError: a declaration in the head of a for-of loop can’t have an initializer<br><code>for-of循环头部的声明不能有初始化器</code></p>
-</li>
-<li><p>SyntaxError: applying the ‘delete’ operator to an unqualified name is deprecated<br><code>不建议将&#39;delete&#39;运算符应用于非限定名称</code></p>
-</li>
-<li><p>SyntaxError: for-in loop head declarations may not have initializers<br><code>for-in循环头声明可能没有初始值设定项</code></p>
-</li>
-<li><p>SyntaxError: function statement requires a name<br><code>函数语句需要一个名称</code></p>
-</li>
-<li><p>SyntaxError: identifier starts immediately after numeric literal<br><code>标识符在数字文字后立即开始</code></p>
-</li>
-<li><p>SyntaxError: illegal character<br><code>非法字符</code></p>
-</li>
-<li><p>SyntaxError: invalid regular expression flag “x”<br><code>无效的正则表达式标志“x”</code></p>
-</li>
-</ul>
-<h2 id="语法错误-缺失"><a href="#语法错误-缺失" class="headerlink" title="语法错误-缺失"></a>语法错误-缺失</h2><ul>
-<li><p>SyntaxError: missing ) after argument list<br><code>参数列表后面</code></p>
-</li>
-<li><p>SyntaxError: missing ) after condition<br><code>条件之后</code></p>
-</li>
-<li><p>SyntaxError: missing : after property id<br><code>id 属性之后</code></p>
-</li>
-<li><p>SyntaxError: missing ; before statement<br><code>在声明之前</code></p>
-</li>
-<li><p>SyntaxError: missing = in const declaration<br><code>const 声明中的</code></p>
-</li>
-<li><p>SyntaxError: missing ] after element list<br><code>元素列表后面的</code></p>
-</li>
-<li><p>SyntaxError: missing formal parameter<br><code>缺少形式参数</code></p>
-</li>
-<li><p>SyntaxError: missing name after . operator<br><code>之后缺少名称。操作者</code></p>
-</li>
-<li><p>SyntaxError: missing variable name<br><code>缺少变量名</code></p>
-</li>
-<li><p>SyntaxError: missing } after function body<br><code>函数主体后缺失 }</code></p>
-</li>
-<li>SyntaxError: missing } after property list<br><code>属性键与属性值后缺失 }</code></li>
-</ul>
-<h2 id="语法错误-1"><a href="#语法错误-1" class="headerlink" title="语法错误"></a>语法错误</h2><ul>
-<li><p>SyntaxError: redeclaration of formal parameter “x”<br><code>重复声明参数</code><br>某个变量名称已经作为函数参数出现了，但是又使用了 let 在函数体里重声明了。在JavaScript 中不允许使用let在相同的函数或块范围内重新声明相同的变量。</p>
-</li>
-<li><p>SyntaxError: return not in function<br><code>不是在函数里返回</code><br>return 返回的或者 yield 语句在函数 function 外被调用. 或许是少了一个花括号， return 返回的和 yield 语句必须是在一个函数里，因为它们会停止（暂停或恢复）函数的继续执行，然后返回。</p>
-</li>
-<li><p>SyntaxError: test for equality (\=\=) mistyped as assignment (=)?<br><code>赋值符号出现在错误的位置</code><br>在通常期望进行相等判定（==）的地方出现了赋值（=）。 为了帮助调试，JavaScript（在开启严格模式的情况下）会对这种情况进行警告。</p>
-</li>
-<li><p>SyntaxError: unterminated string literal<br><code>未结束的字符串</code></p>
-</li>
-</ul>
-<h2 id="类型错误"><a href="#类型错误" class="headerlink" title="类型错误"></a>类型错误</h2><ul>
-<li><p>TypeError: “x” has no properties<br>null 和 undefined中，没有你需要的属性。</p>
-</li>
-<li><p>TypeError: “x” is (not) “y”<br>出现了与期望不符的类型。 这个错误常常由 undefined 或 null 值引起。<br>此外，某些方法，例如 Object.create() 或 Symbol.keyFor()， 要求必须提供特定类型的参数。</p>
-</li>
-<li>TypeError: “x” is not a constructor<br>是因为尝试将不是构造器的对象或者变量来作为构造器使用。参考 constructor 或者 new operator 来了解什么是构造器。<br>有很多的全局对象比如 String、Array 等等都是可以使用 new 操作符的构造器。但是有一些全局对象并不是，且其属性和方法都是静态的。下面的 JavaScript 标准内置对象都不是构造器：Math，JSON，Symbol，Reflect，Intl，SIMD，Atomics。<br>Generator functions 也不能作为构造器来使用。</li>
-<li>TypeError: “x” is not a function<br>问题出在你试图去调用一个像函数一样的值，但是该值实际上不是函数，有时候你的代码需要调用一些函数，但是那种值并不能当作函数来被调用。<br>也许函数名称上有错别字？ 也许你正在调用Object对象没有这个方法？ 例如，在JavaScript中单纯的对象(Object)没有map函数，但是JavaScript数组(Array)对象却有这个函数。</li>
-<li>TypeError: “x” is not a non-null object<br>在期待出现对象类型的值的地方而没有提供。null 不是对象类型，因此不起作用。必须在给定的场景下提供一个合适的对象。</li>
-<li>TypeError: “x” is read-only<br>全局变量或对象属性被设置为只读 (专业点讲，就是这条数据属性禁止写入.)<br>这条错误值发生在strict mode code(俗称严格模式). 正常情况下，是没有报错的。</li>
-<li>TypeError: ‘x’ is not iterable<br>这个值作为 for…of  的表达式右值，或者作为一个函数的参数，如 Promise.all 或者 TypedArray.from, 不是一个 可迭代对象.  一个可迭代对象可以是一个内置可迭代类型，如Array, String 或 Map, 一个 generator 生成结果, 或者一个实现了 可迭代协议 的对象</li>
-<li>TypeError: More arguments needed<br>调用函数的时候出现了错误。需要提供更多的参数。</li>
-<li><p>TypeError: can’t access dead object<br>为了提高内存使用效率以及防止内存泄露，Firefox 浏览器不允许插件在 DOM 所在的父页面被销毁后对 DOM 对象保持强引用。死对象指的是在 DOM 被销毁后依然持有对 DOM 元素的强引用(处于活跃状态)。为了避免这样的问题，对处于外部文档中的 DOM 节点的引用应该被存储于一个专属于那个文档的对象当中，并且在文档卸载的时候将其清理，或者使用弱引用方式进行存储。</p>
-</li>
-<li><p>TypeError: can’t define property “x”: “obj” is not extensible<br>通常情况下，对象是可以进行扩展的，即可以向其添加新的属性。然而当使用 Object.preventExtensions() 将一个对象标记为不再可以扩展的情况下，就无法对该对象添加在其被标记为不可扩展之前所拥有的属性之外的新属性了。</p>
-</li>
-<li><p>TypeError: can’t delete non-configurable array element<br>这个错误提示发生于当试图缩短一个数组的长度的时候，其中有元素是不可配置的（non-configurable）。正常情况下，缩短数组的长度，则超出限度的元素会被删除，而这里指的是这种操作失效的情况。<br>configurable  特性控制着属性是否可以从对象中删除，以及它的特性（除了 writable 之外）是否可以发生改变。<br>通常，使用数组初始化语句创建的对象是可配置的，而通过 Object.defineProperty() 创建的属性，默认则是不可配置的。</p>
-</li>
-<li><p>TypeError: can’t redefine non-configurable property “x”<br>这种错误的起因在于试图给对象重新定义一个属性，但是该属性是不可配置的。 configurable 特性控制着该属性是否可以从对象中删除，以及它的各个特性（除 writable 之外）是否可以修改。通常使用对象初始化语句定义的对象属性是可配置的。而使用 Object.defineProperty() 定义的属性则默认不可配置。</p>
-</li>
-<li><p>TypeError: cyclic object value<br>当调用 JSON.stringify() 方法时，循环对象引用结构不能被转换为字符串。</p>
-</li>
-<li><p>TypeError: invalid ‘in’ operand “x”<br>in 操作符只可以用来检测对象中是否存在某个属性，而不能用来在字符串、数字或者其他基本类型的数据中进行检索。</p>
-</li>
-<li><p>TypeError: invalid ‘instanceof’ operand ‘x’<br>instanceof 操作符 希望右边的操作数为一个构造对象，即一个有 prototype 属性且可以调用的对象。</p>
-</li>
-<li><p>TypeError: invalid Array.prototype.sort argument<br>Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作数的函数。</p>
-</li>
-<li><p>TypeError: invalid arguments<br><code>无效的参数</code></p>
-</li>
-<li><p>TypeError: invalid assignment to const “x”<br><code>对 const “x” 的赋值无效</code></p>
-</li>
-<li><p>TypeError: property “x” is non-configurable and can’t be deleted<br><code>属性 “x” 不可配置且无法删除</code></p>
-</li>
-<li><p>TypeError: setting getter-only property “x”<br><code>设置 getter-only 属性 “x”</code></p>
-</li>
-<li><p>TypeError: variable “x” redeclares argument<br><code>变量 x 重复声明参数</code></p>
-</li>
-</ul>
-<h2 id="路径错误"><a href="#路径错误" class="headerlink" title="路径错误"></a>路径错误</h2><ul>
-<li>URIError: malformed URI sequence<br><code>格式错误的 URI 序列</code></li>
-</ul>
-<h2 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h2><ul>
-<li><p>Warning: -file- is being assigned a //# sourceMappingURL, but already has one<br><code>-file-正被分配//＃sourceMappingURL，但已经有一个</code></p>
-</li>
-<li><p>Warning: Date.prototype.toLocaleFormat is deprecated<br><code>不推荐使用 Date.prototype.toLocaleFormat</code></p>
-</li>
-<li><p>Warning: JavaScript 1.6’s for-each-in loops are deprecated<br><code>不推荐使用 JavaScript 1.6 for-each-in 循环</code></p>
-</li>
-<li><p>Warning: String.x is deprecated; use String.prototype.x instead<br><code>不推荐使用 String.x;请改用 String.prototype.x</code></p>
-</li>
-<li><p>Warning: expression closures are deprecated<br><code>不推荐使用表达式闭包</code></p>
-</li>
-<li><p>Warning: unreachable code after return statement<br><code>返回语句后无法访问代码</code></p>
-</li>
-<li><p>X.prototype.y called on incompatible type<br><code>X.prototype.y调用了不兼容的类型</code></p>
-</li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_07/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/weekly_07/" itemprop="url">每周分享第 7 期</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T12:00:00+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/weekly/" itemprop="url" rel="index">
-                    <span itemprop="name">weekly</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/weekly_07/" class="leancloud_visitors" data-flag-title="每周分享第 7 期">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr>
-<p>1、<a href="https://standardjs.com/readme-zhcn.html" target="_blank" rel="noopener">JavaScript Standard Style</a> <code>JavaScript 规范</code><br>2、<a href="https://www.yuque.com/umijs/umi/hello" target="_blank" rel="noopener">Hello，Umi · 语雀</a>   <code>umi 实战</code><br>3、<a href="https://github.com/MRNIU/SimpleKernel/blob/TODO/README.md" target="_blank" rel="noopener">SimpleKernel/README.md at TODO · MRNIU/SimpleKernel</a>    <code>内核学习</code><br>4、<a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="noopener">Quick start / Methodology / BEM</a> <code>一种 css 命名规范</code><br>5、<a href="https://docs.emmet.io/" target="_blank" rel="noopener">Emmet Documentation</a> <code>emmet 文档</code><br>6、<a href="https://github.com/google/styleguide" target="_blank" rel="noopener">google/styleguide: Style guides for Google-originated open-source projects</a><br>7、<a href="http://www.jezzamon.com/fourier/index.html" target="_blank" rel="noopener">Fourier Transforms</a>        <code>画图教程</code></p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr>
-<p>1、工具</p>
-<ul>
-<li><a href="http://www.javascriptkit.com/script/script2/jstohtml.shtml" target="_blank" rel="noopener">html2js</a> <code>把 html 转成 JavaScript</code></li>
-<li><a href="https://github.com/rrweb-io/rrweb/blob/master/README.zh_CN.md" target="_blank" rel="noopener">rrweb/README.zh_CN.md at master · rrweb-io/rrweb</a>    <code>浏览器操作录制</code></li>
-<li><a href="https://github.com/agermanidis/autosub/issues/31" target="_blank" rel="noopener">自动生成字幕</a></li>
-<li><a href="https://cn.overleaf.com/" target="_blank" rel="noopener">Overleaf, 在线LaTeX编辑器</a></li>
-<li><a href="http://writertools.funnyapi.com/#/home" target="_blank" rel="noopener">微信公号写手工具-近期热门文章搜索</a></li>
-</ul>
-<p>2、网站</p>
-<ul>
-<li><a href="https://betterdev.link/" target="_blank" rel="noopener">Better Dev Link - Resource around the web on becoming a better programmer</a>    <code>技术周报</code></li>
-<li><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a>    <code>世界数据可视化</code></li>
-</ul>
-<p>3、书</p>
-<ul>
-<li><a href="https://www.c82.net/euclid/" target="_blank" rel="noopener">Byrne’s Euclid</a>    <code>数学书</code></li>
-<li><a href="http://atomicdesign.bradfrost.com/" target="_blank" rel="noopener">Atomic Design by Brad Frost</a> <code>设计书</code></li>
-<li><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">xitu/gold-miner: 🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：</a></li>
-</ul>
-<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr>
-<p>1、Lazy programming<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Write what you need and no more, but when you write it, do it right.</span><br><span class="line">Avoid implementing features you don’t need. You can’t design a feature without knowing what the constraints are. Implementing features &quot;for completeness&quot; results in unused code that is expensive to maintain, learn about, document, test, etc.</span><br><span class="line">When you do implement a feature, implement it the right way. Avoid workarounds. Workarounds merely kick the problem further down the road, but at a higher cost: someone will have to relearn the problem, figure out the workaround and how to dismantle it (and all the places that now use it), and implement the feature. It’s much better to take longer to fix a problem properly, than to be the one who fixes everything quickly but in a way that will require cleaning up later.</span><br><span class="line">You may hear team members say &quot;embrace the yak shave!&quot;. This is an encouragement to take on the larger effort necessary to perform a proper fix for a problem rather than just applying a band-aid.</span><br></pre></td></tr></table></figure></p>
-<p>2、<a href="https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53" target="_blank" rel="noopener">Goodbye, Object Oriented Programming – Charles Scalfani</a><br>3、<a href="https://www.yuque.com/seeconf/content/kbnzac" target="_blank" rel="noopener">第二届 SEE Conf 2019 精彩回顾（附 PPT 及视频） · 语雀</a><br>4、<a href="https://www.yuque.com/d2forum/content/d213" target="_blank" rel="noopener">第十三届 D2 前端技术论坛精彩回顾[附PPT] · 语雀</a><br>5、<a href="https://overreacted.io/zh-hant/things-i-dont-know-as-of-2018/" target="_blank" rel="noopener">Dan Abramov : 2018年，那些我所不知道的技術</a></p>
-<hr>
-<p>（完）</p>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1396,7 +1023,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1418,7 +1045,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1460,6 +1087,12 @@
                     <a href="mailto:hy.lobby@gmail.com" target="_blank" title="Email">
                       
                         <i class="fa fa-fw fa-globe"></i>Email</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://note.hackettyu.com/" target="_blank" title="Note">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Note</a>
                   </span>
                 
             </div>

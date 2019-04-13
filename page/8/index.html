@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181006_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181202_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -318,7 +318,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181006_1/" itemprop="url">linux ln 命令之硬链接和软连接</a></h2>
+                <a class="post-title-link" href="/181202_1/" itemprop="url">windows git bash 配置颜色主题</a></h2>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T10:00:00+08:00">
-                2018-10-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-02T10:00:00+08:00">
+                2018-12-02
               </time>
             
 
@@ -370,7 +370,7 @@
 
           
           
-             <span id="/181006_1/" class="leancloud_visitors" data-flag-title="linux ln 命令之硬链接和软连接">
+             <span id="/181202_1/" class="leancloud_visitors" data-flag-title="windows git bash 配置颜色主题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,33 +403,10 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本来像利用 link 一个 cheat 文件在 <code>/user</code> 下发现 cat 后时乱码<br>发现 windows 下直接创建 link 会怎样</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><blockquote>
-<p><a href="https://wangchujiang.com/linux-command/c/ln.html" target="_blank" rel="noopener">https://wangchujiang.com/linux-command/c/ln.html</a><br>利用 bash 的 ln 命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln &#123;$filename1&#125; &#123;$$filename2&#125;</span><br><span class="line">cat &#123;$filename2&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><blockquote>
-<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</a></p>
-</blockquote>
-<ul>
-<li>硬链接<ul>
-<li>建立硬链接时，在另外的目录或本目录中增加目标文件的一个目录项，这样，一个文件就登记在多个目录中。如图所示的m2.c文件就在目录mub1和liu中都建立了目录项。<br>创建硬链接后，己经存在的文件的I节点号（Inode）会被多个目录文件项使用。一个文件的硬链接数可以在目录的长列表格式的第二列中看到，无额外链接的文件的链接数为l。<br>在默认情况下，ln命令创建硬链接。ln命令会增加链接数，rm命令会减少链接数。一个文件除非链接数为0，否则不会从文件系统中被物理地删除。<br>对硬链接有如下限制：<ul>
-<li>不能对目录文件做硬链接。</li>
-<li>不能在不同的文件系统之间做硬链接。就是说，链接文件和被链接文件必须位于同一个文件系统中。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>符号连接</p>
-<ul>
-<li>符号链接也称为软链接，是将一个路径名链接到一个文件。这些文件是一种特别类型的文件。事实上，它只是一个文本文件（如图中的abc文件），其中包含它提供链接的另一个文件的路径名，如图中虚线箭头所示。另一个文件是实际包含所有数据的文件。所有读、写文件内容的命令被用于符号链接时，将着链接方向前进来访问实际的文件。<br>与硬链接不同的是，符号链接确实是一个新文件，当然它具有不同的I节点号；而硬链接并没有建立新文件。<br>符号链接没有硬链接的限制，可以对目录文件做符号链接，也可以在不同文件系统之间做符号链接。<br>用ln -s命令建立符号链接时，源文件最好用绝对路径名。这样可以在任何工作目录下进行符号链接。而当源文件用相对路径时，如果当前的工作路径与要创建的符号链接文件所在路径不同，就不能进行链接。<br>符号链接保持了链接与源文件或目录之间的区别：<br>删除源文件或目录，只删除了数据，不会删除链接。一旦以同样文件名创建了源文件，链接将继续指向该文件的新数据。<br>在目录长列表中，符号链接作为一种特殊的文件类型显示出来，其第一个字母是l。符号链接的大小是其链接文件的路径名中的字节数。<br>当用ln -s命令列出文件时，可以看到符号链接名后有一个箭头指向源文件或目录，例如lrwxrwxrwx … 14 jun 20 10:20 /etc/motd-&gt;/original_file其中，表示“文件大小”的数字“14”恰好说明源文件名original_file由14个字符构成。</li>
-</ul>
-</li>
-<li><p>软连接不会更新文件，尽量写绝对路径。</p>
-</li>
-</ul>
-
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在使用 git 配置时点击了颜色配置工具跳转到了一个 <a href="http://ciembor.github.io/4bit/#" target="_blank" rel="noopener">github page</a> 里，发现是一个可视化配置的工具，它可以生成多种终端的颜色主题文件。</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>windows 下的 git bash 的响应配置文件是 <code>c/${username}/.minttyrc</code>，所以你现在项目导出的文件类型也应该是 mintty 的，不过好像要右键打开新的链接，自身不会跳转。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>下面是我的配置文件，导出的文件是下半部分，上半部是其它配置。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">BoldAsFont=-<span class="number">1</span></span><br><span class="line">Locale=zh_CN</span><br><span class="line">Charset=UTF-<span class="number">8</span></span><br><span class="line">Language=zh_CN</span><br><span class="line">FontHeight=<span class="number">12</span></span><br><span class="line">Font=Consolas</span><br><span class="line"></span><br><span class="line">BackgroundColour=<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span></span><br><span class="line">ForegroundColour=<span class="number">166</span>,<span class="number">196</span>,<span class="number">225</span></span><br><span class="line">CursorColour=<span class="number">166</span>,<span class="number">196</span>,<span class="number">225</span></span><br><span class="line">Black=<span class="number">61</span>,<span class="number">61</span>,<span class="number">61</span></span><br><span class="line">BoldBlack=<span class="number">83</span>,<span class="number">83</span>,<span class="number">83</span></span><br><span class="line">Red=<span class="number">210</span>,<span class="number">63</span>,<span class="number">105</span></span><br><span class="line">BoldRed=<span class="number">229</span>,<span class="number">144</span>,<span class="number">168</span></span><br><span class="line">Green=<span class="number">105</span>,<span class="number">210</span>,<span class="number">63</span></span><br><span class="line">BoldGreen=<span class="number">168</span>,<span class="number">229</span>,<span class="number">144</span></span><br><span class="line">Yellow=<span class="number">210</span>,<span class="number">168</span>,<span class="number">63</span></span><br><span class="line">BoldYellow=<span class="number">229</span>,<span class="number">205</span>,<span class="number">144</span></span><br><span class="line">Blue=<span class="number">63</span>,<span class="number">105</span>,<span class="number">210</span></span><br><span class="line">BoldBlue=<span class="number">144</span>,<span class="number">168</span>,<span class="number">229</span></span><br><span class="line">Magenta=<span class="number">168</span>,<span class="number">63</span>,<span class="number">210</span></span><br><span class="line">BoldMagenta=<span class="number">205</span>,<span class="number">144</span>,<span class="number">229</span></span><br><span class="line">Cyan=<span class="number">63</span>,<span class="number">210</span>,<span class="number">168</span></span><br><span class="line">BoldCyan=<span class="number">144</span>,<span class="number">229</span>,<span class="number">205</span></span><br><span class="line">White=<span class="number">233</span>,<span class="number">233</span>,<span class="number">233</span></span><br><span class="line">BoldWhite=<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -481,7 +458,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_4/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181113_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -500,7 +477,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181004_4/" itemprop="url">vim 配置</a></h2>
+                <a class="post-title-link" href="/181113_1/" itemprop="url">SSH 登录时出现如下错误：Disconnected:No supported authentication methods available</a></h2>
         
 
         <div class="post-meta">
@@ -512,8 +489,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
-                2018-10-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-18T12:00:00+08:00">
+                2018-11-18
               </time>
             
 
@@ -535,8 +512,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/log/" itemprop="url" rel="index">
-                    <span itemprop="name">log</span>
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -552,7 +529,7 @@
 
           
           
-             <span id="/181004_4/" class="leancloud_visitors" data-flag-title="vim 配置">
+             <span id="/181113_1/" class="leancloud_visitors" data-flag-title="SSH 登录时出现如下错误：Disconnected:No supported authentication methods available">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -585,186 +562,8 @@
       
         
           
-            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ul>
-<li><p>查找 vim 配置文件在哪</p>
-<ul>
-<li>:version</li>
-<li>echo $vim</li>
-</ul>
-</li>
-<li><p>vim 插件管理器 bundle</p>
-<ul>
-<li>PluginInstall 安装插件，要先写配置文件，bash 的 vim 配置文件在 Git 安装路径里面。</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/181004_3/" class="leancloud_visitors" data-flag-title="命令行开启 | 关闭显卡">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote>
-<p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p>
-</blockquote>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
-<p>例如要关闭 NVIDIA 显卡：</p>
-<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
-<p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
-<p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>ssh 登录时出现如下错误：Disconnected:No supported authentication methods<br>原因：PasswordAuthentication 的默认值为 yes，SSH服务将其值置为 no 以禁用密码验证登录，导致此类故障。需要修改 PasswordAuthentication 配置解决此问题。</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure>
 
           
         
@@ -808,7 +607,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -854,7 +653,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -876,7 +675,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -918,6 +717,12 @@
                     <a href="mailto:hy.lobby@gmail.com" target="_blank" title="Email">
                       
                         <i class="fa fa-fw fa-globe"></i>Email</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://note.hackettyu.com/" target="_blank" title="Note">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Note</a>
                   </span>
                 
             </div>

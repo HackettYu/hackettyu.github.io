@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2019-02-18T06:34:39.868Z</updated>
+  <updated>2019-04-13T02:10:06.639Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>获取 spring framework 的各个版本更新信息</title>
+    <link href="https://hackettyu.com/190413_1/"/>
+    <id>https://hackettyu.com/190413_1/</id>
+    <published>2019-04-13T04:00:00.000Z</published>
+    <updated>2019-04-13T02:10:06.639Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>spring framework 更新后都会有新的特性, 而且 spring framework 是在 github 上开源的, github 上也会有相应的版本更新日志, 所以我采用 github api 可以获取其日志内容, 当然你可以在页面上看, 不过我想要的是所有的信息</p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><ul><li>github 获取的对应仓库的链接 <code>https://api.github.com/repos/spring-projects/spring-framework/releases</code></li></ul><p>##入门篇</p><hr><ul><li>直接贴代码</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.1.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/marked/0.6.2/marked.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            marked.setOptions(&#123;</span></span><br><span class="line"><span class="javascript">                renderer: <span class="keyword">new</span> marked.Renderer(),</span></span><br><span class="line"><span class="javascript">                gfm: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                tables: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                breaks: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                pedantic: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                sanitize: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                smartLists: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                smartypants: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                highlight: <span class="function"><span class="keyword">function</span> (<span class="params">code, lang</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">//使用 highlight 插件解析文档中代码部分</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> hljs.highlightAuto(code, [lang]).value;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> html = <span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">            $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">"https://api.github.com/repos/spring-projects/spring-framework/releases"</span>,   <span class="comment">// 路径</span></span></span><br><span class="line"><span class="undefined">                data: &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">async</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                    $.each(data, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['upload_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'tag_name'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['target_commitish']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['name']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['draft']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['login']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['node_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['avatar_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gravatar_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['followers_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['following_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gists_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['starred_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['subscripttions_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['organizations_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['repos_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['received_events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['type']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['site_admin']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['prerelease']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['created_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['published_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['tarball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['zipball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'body'</span>])</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                        html += <span class="string">`&lt;a href='<span class="subst">$&#123;value[<span class="string">'html_url'</span>]&#125;</span>'&gt;<span class="subst">$&#123;value[<span class="string">'tag_name'</span>]&#125;</span>&lt;/a&gt;&lt;p&gt;<span class="subst">$&#123;value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]&#125;</span>&lt;/p&gt;<span class="subst">$&#123;marked(value[<span class="string">'body'</span>])&#125;</span>&lt;hr&gt;`</span>;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#list"</span>).html(html);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr><ul><li>github 对应的 api <code>https://api.github.com/repos/${github name}/${repo name}/releases</code></li><li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">github api v4</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
+    
+    
+      <category term="html" scheme="https://hackettyu.com/tags/html/"/>
+    
+      <category term="spring" scheme="https://hackettyu.com/tags/spring/"/>
+    
+  </entry>
   
   <entry>
     <title>markdownlint Rules</title>
@@ -271,34 +301,6 @@
   </entry>
   
   <entry>
-    <title>Cannot find one or more componets. Please reinstall the application</title>
-    <link href="https://hackettyu.com/181215_1/"/>
-    <id>https://hackettyu.com/181215_1/</id>
-    <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T01:27:07.922Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
-    
-    
-      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
     <title>切换 eclipse 编译版本</title>
     <link href="https://hackettyu.com/181215_2/"/>
     <id>https://hackettyu.com/181215_2/</id>
@@ -325,6 +327,34 @@
       <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cannot find one or more componets. Please reinstall the application</title>
+    <link href="https://hackettyu.com/181215_1/"/>
+    <id>https://hackettyu.com/181215_1/</id>
+    <published>2018-12-15T04:00:00.000Z</published>
+    <updated>2018-12-15T01:27:07.922Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+    
+    
+      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
     
   </entry>
   
@@ -553,34 +583,6 @@
     
     
       <category term="html" scheme="https://hackettyu.com/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows 下磁盘多余的图标删除</title>
-    <link href="https://hackettyu.com/181010_1/"/>
-    <id>https://hackettyu.com/181010_1/</id>
-    <published>2018-10-10T02:00:00.000Z</published>
-    <updated>2018-10-16T08:48:35.259Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>在注册表里打开下面两个路径看除了默认是否还有其它的，网上的方法只有第一条：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</span><br></pre></td></tr></table></figure></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><ul><li>第一条是系统的。</li><li>第二条是用户的。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="log" scheme="https://hackettyu.com/categories/log/"/>
-    
-    
-      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
     
   </entry>
   
