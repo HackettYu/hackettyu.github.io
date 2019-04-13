@@ -350,9 +350,9 @@
       <category term="note" scheme="https://hackettyu.com/categories/note/"/>
     
     
-      <category term="java" scheme="https://hackettyu.com/tags/java/"/>
-    
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
+    
+      <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
   </entry>
   
