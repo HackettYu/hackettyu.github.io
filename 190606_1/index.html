@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hackettyu" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -81,17 +81,23 @@
 
 
 
-<meta name="description" content="hackettyu">
-<meta name="keywords" content="hackettyu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HackettYu&#39;s blog">
-<meta property="og:url" content="https://hackettyu.com/index.html">
+<meta name="description" content="via:https://github.com/marlkiller/module-web-service  Constants 常量12345678910// WebService俩个参数,帐号跟密码   private static final String USERNAME = &quot;void&quot;;   private static final String PASSWORD = &quot;passwor">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java调用WebService的几种方式">
+<meta property="og:url" content="https://hackettyu.com/190606_1/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="hackettyu">
+<meta property="og:description" content="via:https://github.com/marlkiller/module-web-service  Constants 常量12345678910// WebService俩个参数,帐号跟密码   private static final String USERNAME = &quot;void&quot;;   private static final String PASSWORD = &quot;passwor">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://voidm.com/wp-content/uploads/2019/01/微信截图_20190123162208.png">
+<meta property="og:image" content="http://voidm.com/wp-content/uploads/2019/01/微信截图_20190123171827.png">
+<meta property="og:image" content="http://voidm.com/wp-content/uploads/2019/01/微信截图_20190123162751-1024x291.png">
+<meta property="og:image" content="http://voidm.com/wp-content/uploads/2019/01/WX20190123-205653@2x-1024x898.png">
+<meta property="og:updated_time" content="2019-06-06T08:42:03.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HackettYu&#39;s blog">
-<meta name="twitter:description" content="hackettyu">
+<meta name="twitter:title" content="Java调用WebService的几种方式">
+<meta name="twitter:description" content="via:https://github.com/marlkiller/module-web-service  Constants 常量12345678910// WebService俩个参数,帐号跟密码   private static final String USERNAME = &quot;void&quot;;   private static final String PASSWORD = &quot;passwor">
+<meta name="twitter:image" content="http://voidm.com/wp-content/uploads/2019/01/微信截图_20190123162208.png">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://hackettyu.com/"/>
+  <link rel="canonical" href="https://hackettyu.com/190606_1/"/>
 
 
 
 
 
-  <title>HackettYu's blog - hackettyu</title>
+  <title>Java调用WebService的几种方式 | HackettYu's blog</title>
   
 
 
@@ -146,8 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,9 +289,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -316,9 +321,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/190606_1/" itemprop="url">Java调用WebService的几种方式</a></h2>
+          <h2 class="post-title" itemprop="name headline">Java调用WebService的几种方式</h2>
         
 
         <div class="post-meta">
@@ -366,6 +369,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/190606_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/190606_1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -401,9 +414,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>via:<a href="https://github.com/marlkiller/module-web-service" target="_blank" rel="noopener">https://github.com/marlkiller/module-web-service</a></p>
 </blockquote>
 <h2 id="Constants-常量"><a href="#Constants-常量" class="headerlink" title="Constants 常量"></a>Constants 常量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// WebService俩个参数,帐号跟密码</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String USERNAME = <span class="string">"void"</span>;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String PASSWORD = <span class="string">"password"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// namespace工作空间</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String NAME_SPACE = <span class="string">"http://xxx/kunlun/kws/1.1/"</span>;</span><br><span class="line"><span class="comment">// 接口wsdl地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WSDL_URL = <span class="string">"http://xxx/kws/SecurityService.asmx?WSDL"</span>;</span><br><span class="line"><span class="comment">// SOAPAction地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ACTION_URI = <span class="string">"http://xxx/kunlun/kws/1.1/AppLogin"</span>;</span><br></pre></td></tr></table></figure>
@@ -441,12 +452,24 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">soap:Envelope</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:soap</span>=<span class="string">"http://schemas.xmlsoap.org/soap/envelope/"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsd</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">soap:Header</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KwsSoapHeader</span></span></span><br><span class="line"><span class="tag">			<span class="attr">xmlns</span>=<span class="string">"http://www.shijinet.com.cn/kunlun/kws/1.1/"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">RetCode</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">RetCode</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ErrReason</span>&gt;</span>权限不够<span class="tag">&lt;/<span class="name">ErrReason</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">KwsSoapHeader</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">soap:Header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">soap:Body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">AppLoginResponse</span></span></span><br><span class="line"><span class="tag">			<span class="attr">xmlns</span>=<span class="string">"http://www.shijinet.com.cn/kunlun/kws/1.1/"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">AppLoginResult</span>&gt;</span>false<span class="tag">&lt;/<span class="name">AppLoginResult</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">AppLoginResponse</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">soap:Body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">soap:Envelope</span>&gt;</span></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
 <p><code>`</code></p>
 
-          
-        
       
       <div>    
       
       
+          <ul class="post-copyright">
+            <li class="post-copyright-author">
+                <strong>本文作者：</strong>HackettYu
+            </li>
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="/190606_1/" title="Java调用WebService的几种方式">190606_1/</a>
+            </li>
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        
       </div>
     </div>
     
@@ -461,395 +484,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190414_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/190414_1/" itemprop="url">Tomcat8/maven 部署 web 工程</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-14T12:00:00+08:00">
-                2019-04-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/190414_1/" class="leancloud_visitors" data-flag-title="Tomcat8/maven 部署 web 工程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>今天尝试用 Tomcat8 + maven 部署一下 web 工程, 然后我开始疯狂踩坑</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<p>网上一查如何用 Tomcat8 + maven 部署一般都是这样的教程</p>
-<ul>
-<li>在 maven 工程下的 pom.xml 加入配置如下:</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Tomcat plugin --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Tomcat8 一样可用--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span> </span><br><span class="line">        <span class="comment">&lt;!-- tomcat 管理员地址,有的教程是 `http://localhost:8080/manager/`, 我是用  下面这种--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8080/manager/text<span class="tag">&lt;/<span class="name">url</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- *(From maven &gt; settings.xml)* '$&#123;&#125;' 号内的内容要与环境变量下 maven 路   下的 setting.xml 文件里配置的密码和用户名一致--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- tomcat8 安装目录下 `conf/tomcat-users.xml` 加入配置如下(配置好环境变量):</span><br><span class="line"></span><br><span class="line">```xml</span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注意这是 users 不是 user 所以只要加入下面的内容即可, ps: 这是我最后踩的坑 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 下面的 roles 与上面匹配 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"$&#123;admin&#125;"</span> <span class="attr">password</span>=<span class="string">"$&#123;password&#125;"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script"</span> /&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>maven 安装目录下 <code>conf/settings.xml</code> 加入配置如下(配置好环境变量):</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servers</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">id</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>运行 tomcat 8 (运行 Tomcat 7 就是用 7 部署)</li>
-</ul>
-<blockquote>
-<p>这个一定要运行不然会报  <code>404</code></p>
-</blockquote>
-<ul>
-<li>部署命令</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 都是 tocmat7 不是 `tomcat8 or tomcat`</span></span><br><span class="line">mvn tomcat7:deploy</span><br><span class="line"><span class="comment"># mvn tomcat7:redeploy</span></span><br></pre></td></tr></table></figure>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
-<ul>
-<li>测试环境:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 8.0.5</span><br><span class="line">JDK 1.8</span><br><span class="line">Window 10 X64</span><br><span class="line">Maven 3.6.0</span><br></pre></td></tr></table></figure>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr>
-<ul>
-<li>报 404: 先开启服务器</li>
-<li><p>报 403:</p>
-<p>  无法进入 manager 页面</p>
-</li>
-</ul>
-<ol>
-<li>打开 <code>http://localhost:8080/manager/html</code> 能否用配置好的账号登录</li>
-<li>${Tomcat8_HOME_PATH}/webapps 下有 manager 文件, 如果之前删过, 拷贝一份回来</li>
-<li>确认 username 和 password 正确</li>
-</ol>
-<ul>
-<li>报 401:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ERROR] Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br><span class="line">[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy (default-cli) on project test-mybatis: Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>就是账号没配置好, 回去确认</p>
-</blockquote>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
-<ul>
-<li><a href="https://codeday.me/bug/20170927/78372.html" target="_blank" rel="noopener">Java 8的Tomcat Maven插件 - 代码日志</a></li>
-<li><a href="https://josh-persistence.iteye.com/blog/1900088" target="_blank" rel="noopener">Maven部署项目到Tomcat7出现403 Access Deny. - Josh_Persistence - ITeye博客</a></li>
-<li><a href="http://crocutax.com/blog/hot-deploy-java%20-project-to-remote-server-by-tomcat7-plugin" target="_blank" rel="noopener">使用tomcat7插件将项目一键部署到远程tomcat服务器-热部署 - 王西文</a></li>
-<li>stackoverflow <code>tomcat8 maven 401 403 404</code></li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190413_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/190413_1/" itemprop="url">获取 spring-framework 所有版本更新信息</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T12:00:00+08:00">
-                2019-04-13
-              </time>
+              <a href="/190414_1/" rel="next" title="Tomcat8/maven 部署 web 工程">
+                <i class="fa fa-chevron-left"></i> Tomcat8/maven 部署 web 工程
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/190413_1/" class="leancloud_visitors" data-flag-title="获取 spring-framework 所有版本更新信息">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>spring framework 更新后都会有新的特性, 而且 spring framework 是在 github 上开源的, github 上也会有相应的版本更新日志, 所以我采用 github api 可以获取其日志内容, 当然你可以在页面上看, 不过我想要的是所有的信息</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<ul>
-<li>github 获取的对应仓库的链接 <code>https://api.github.com/repos/spring-projects/spring-framework/releases</code></li>
-</ul>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
-<ul>
-<li>直接贴代码</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.1.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/marked/0.6.2/marked.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            marked.setOptions(&#123;</span></span><br><span class="line"><span class="javascript">                renderer: <span class="keyword">new</span> marked.Renderer(),</span></span><br><span class="line"><span class="javascript">                gfm: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                tables: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                breaks: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                pedantic: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                sanitize: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                smartLists: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                smartypants: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                highlight: <span class="function"><span class="keyword">function</span> (<span class="params">code, lang</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">//使用 highlight 插件解析文档中代码部分</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> hljs.highlightAuto(code, [lang]).value;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> html = <span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">            $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">"https://api.github.com/repos/spring-projects/spring-framework/releases"</span>,   <span class="comment">// 路径</span></span></span><br><span class="line"><span class="undefined">                data: &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">async</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                    $.each(data, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['upload_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'tag_name'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['target_commitish']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['name']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['draft']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['login']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['node_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['avatar_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gravatar_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['followers_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['following_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gists_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['starred_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['subscripttions_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['organizations_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['repos_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['received_events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['type']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['site_admin']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['prerelease']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['created_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['published_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['tarball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['zipball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'body'</span>])</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                        html += <span class="string">`&lt;a href='<span class="subst">$&#123;value[<span class="string">'html_url'</span>]&#125;</span>'&gt;<span class="subst">$&#123;value[<span class="string">'tag_name'</span>]&#125;</span>&lt;/a&gt;&lt;p&gt;<span class="subst">$&#123;value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]&#125;</span>&lt;/p&gt;<span class="subst">$&#123;marked(value[<span class="string">'body'</span>])&#125;</span>&lt;hr&gt;`</span>;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#list"</span>).html(html);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
-<ul>
-<li>github 对应的 api <code>https://api.github.com/repos/${github name}/${repo name}/releases</code></li>
-<li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">github api v4</a></li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -859,14 +523,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -874,6 +535,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -894,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -996,6 +677,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constants-常量"><span class="nav-number">1.</span> <span class="nav-text">Constants 常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式1-Axis2将wsdl转为java代码"><span class="nav-number">2.</span> <span class="nav-text">方式1.Axis2将wsdl转为java代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转换源码"><span class="nav-number">2.1.</span> <span class="nav-text">转换源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java实现"><span class="nav-number">2.2.</span> <span class="nav-text">Java实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式2-maven引入Axis1包-远程调用"><span class="nav-number">3.</span> <span class="nav-text">方式2.maven引入Axis1包 远程调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pom依赖"><span class="nav-number">3.1.</span> <span class="nav-text">Pom依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java实现-1"><span class="nav-number">3.2.</span> <span class="nav-text">Java实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式3-maven引入Axis2包-远程调用"><span class="nav-number">4.</span> <span class="nav-text">方式3.maven引入Axis2包 远程调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#POM依赖"><span class="nav-number">4.1.</span> <span class="nav-text">POM依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java实现-2"><span class="nav-number">4.2.</span> <span class="nav-text">Java实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式4-HTTP方式调用"><span class="nav-number">5.</span> <span class="nav-text">方式4.HTTP方式调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java实现-3"><span class="nav-number">5.1.</span> <span class="nav-text">Java实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostMan调试"><span class="nav-number">5.2.</span> <span class="nav-text">PostMan调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1129,6 +826,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1175,6 +876,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'HackettYu',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'dd0ad0b06a58625bed6aca3615cfd28641a35973',
+            
+                client_id: '4dfb72553595fe8e1c8b'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

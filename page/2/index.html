@@ -299,6 +299,320 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190218_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/190218_2/" itemprop="url">markdownlint Rules(2)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T18:00:00+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/190218_2/" class="leancloud_visitors" data-flag-title="markdownlint Rules(2)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md" target="_blank" rel="noopener">https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md</a></p>
+</blockquote>
+<h2 id="MD029-Ordered-list-item-prefix-有序列表项前缀"><a href="#MD029-Ordered-list-item-prefix-有序列表项前缀" class="headerlink" title="MD029 - Ordered list item prefix | 有序列表项前缀"></a>MD029 - Ordered list item prefix | 有序列表项前缀</h2><p>Tags: ol</p>
+<p>Aliases: ol-prefix</p>
+<p>Parameters: style (“one”, “ordered”, “one_or_ordered”; default “one_or_ordered”)</p>
+<p>This rule is triggered on ordered lists that do not either start with ‘1.’ or<br>do not have a prefix that increases in numerical order (depending on the<br>configured style).</p>
+<p>Example valid list if the style is configured as ‘one’:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>Do this.</span><br><span class="line"><span class="bullet">1. </span>Do that.</span><br><span class="line"><span class="bullet">1. </span>Done.</span><br></pre></td></tr></table></figure>
+<p>Example valid list if the style is configured as ‘ordered’:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>Do this.</span><br><span class="line"><span class="bullet">2. </span>Do that.</span><br><span class="line"><span class="bullet">3. </span>Done.</span><br></pre></td></tr></table></figure>
+<p>Both examples are valid when the style is configured as ‘one_or_ordered’.</p>
+<p>Example invalid list for all styles:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>Do this.</span><br><span class="line"><span class="bullet">3. </span>Done.</span><br></pre></td></tr></table></figure>
+<p>This rule supports 0-prefixing ordered list items for uniform indentation:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="bullet">08. </span>Item</span><br><span class="line"><span class="bullet">09. </span>Item</span><br><span class="line"><span class="bullet">10. </span>Item</span><br><span class="line"><span class="bullet">11. </span>Item</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="MD030-Spaces-after-list-markers-列表标记后的空格"><a href="#MD030-Spaces-after-list-markers-列表标记后的空格" class="headerlink" title="MD030 - Spaces after list markers | 列表标记后的空格"></a>MD030 - Spaces after list markers | 列表标记后的空格</h2><p>Tags: ol, ul, whitespace</p>
+<p>Aliases: list-marker-space</p>
+<p>Parameters: ul_single, ol_single, ul_multi, ol_multi (number; default 1)</p>
+<p>This rule checks for the number of spaces between a list marker (e.g. ‘<code>-</code>‘,<br>‘<code>*</code>‘, ‘<code>+</code>‘ or ‘<code>1.</code>‘) and the text of the list item.</p>
+<p>The number of spaces checked for depends on the document style in use, but the<br>default is 1 space after any list marker:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>Foo</span><br><span class="line"><span class="bullet">* </span>Bar</span><br><span class="line"><span class="bullet">* </span>Baz</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>Foo</span><br><span class="line"><span class="bullet">1. </span>Bar</span><br><span class="line"><span class="bullet">1. </span>Baz</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>Foo</span><br><span class="line">   * Bar</span><br><span class="line"><span class="bullet">1. </span>Baz</span><br></pre></td></tr></table></figure>
+<p>A document style may change the number of spaces after unordered list items<br>and ordered list items independently, as well as based on whether the content<br>of every item in the list consists of a single paragraph, or multiple<br>paragraphs (including sub-lists and code blocks).</p>
+<p>For example, the style guide at<br><a href="https://www.cirosantilli.com/markdown-style-guide/#spaces-after-list-marker" target="_blank" rel="noopener">https://www.cirosantilli.com/markdown-style-guide/#spaces-after-list-marker</a><br>specifies that 1 space after the list marker should be used if every item in<br>the list fits within a single paragraph, but to use 2 or 3 spaces (for ordered<br>and unordered lists respectively) if there are multiple paragraphs of content<br>inside the list:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>Foo</span><br><span class="line"><span class="bullet">* </span>Bar</span><br><span class="line"><span class="bullet">* </span>Baz</span><br></pre></td></tr></table></figure>
+<p>vs.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*   </span>Foo</span><br><span class="line"></span><br><span class="line"><span class="code">    Second paragraph</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">*   </span>Bar</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.  </span>Foo</span><br><span class="line"></span><br><span class="line"><span class="code">    Second paragraph</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">1.  </span>Bar</span><br></pre></td></tr></table></figure>
+<p>To fix this, ensure the correct number of spaces are used after list marker<br>for your selected document style.</p>
+<h2 id="MD031-Fenced-code-blocks-should-be-surrounded-by-blank-lines-受控代码块应该用空行包围"><a href="#MD031-Fenced-code-blocks-should-be-surrounded-by-blank-lines-受控代码块应该用空行包围" class="headerlink" title="MD031 - Fenced code blocks should be surrounded by blank lines | 受控代码块应该用空行包围"></a>MD031 - Fenced code blocks should be surrounded by blank lines | 受控代码块应该用空行包围</h2><p>Tags: code, blank_lines</p>
+<p>Aliases: blanks-around-fences</p>
+<p>This rule is triggered when fenced code blocks are either not preceded or not<br>followed by a blank line:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Some text</span><br><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">Code block</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line"></span><br><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">Another code block</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line">Some more text</span><br></pre></td></tr></table></figure>
+<p>To fix this, ensure that all fenced code blocks have a blank line both before<br>and after (except where the block is at the beginning or end of the document):</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Some text</span><br><span class="line"></span><br><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">Code block</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line"></span><br><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">Another code block</span></span><br><span class="line"><span class="code">```</span></span><br><span class="line"></span><br><span class="line">Some more text</span><br></pre></td></tr></table></figure>
+<p>Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will<br>not parse fenced code blocks that don’t have blank lines before and after them.</p>
+<h2 id="MD032-Lists-should-be-surrounded-by-blank-lines-列表应该用空行包围"><a href="#MD032-Lists-should-be-surrounded-by-blank-lines-列表应该用空行包围" class="headerlink" title="MD032 - Lists should be surrounded by blank lines | 列表应该用空行包围"></a>MD032 - Lists should be surrounded by blank lines | 列表应该用空行包围</h2><p>Tags: bullet, ul, ol, blank_lines</p>
+<p>Aliases: blanks-around-lists</p>
+<p>This rule is triggered when lists (of any kind) are either not preceded or not<br>followed by a blank line:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Some text</span><br><span class="line"><span class="bullet">* </span>Some</span><br><span class="line"><span class="bullet">* </span>List</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>Some</span><br><span class="line"><span class="bullet">2. </span>List</span><br><span class="line">Some text</span><br></pre></td></tr></table></figure>
+<p>To fix this, ensure that all lists have a blank line both before and after<br>(except where the block is at the beginning or end of the document):</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Some text</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>Some</span><br><span class="line"><span class="bullet">* </span>List</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>Some</span><br><span class="line"><span class="bullet">2. </span>List</span><br><span class="line"></span><br><span class="line">Some text</span><br></pre></td></tr></table></figure>
+<p>Rationale: Aside from aesthetic reasons, some parsers, including kramdown, will<br>not parse lists that don’t have blank lines before and after them.</p>
+<p>Note: List items without hanging indents are a violation of this rule; list<br>items with hanging indents are okay:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">* </span>This is</span><br><span class="line">not okay</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>This is</span><br><span class="line">  okay</span><br></pre></td></tr></table></figure>
+<h2 id="MD033-Inline-HTML-内联HTML"><a href="#MD033-Inline-HTML-内联HTML" class="headerlink" title="MD033 - Inline HTML | 内联HTML"></a>MD033 - Inline HTML | 内联HTML</h2><p>Tags: html</p>
+<p>Aliases: no-inline-html</p>
+<p>Parameters: allowed_elements (array of string; default empty)</p>
+<p>This rule is triggered whenever raw HTML is used in a markdown document:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span>Inline HTML heading<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>To fix this, use ‘pure’ markdown instead of including raw HTML:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Markdown heading</span></span><br></pre></td></tr></table></figure>
+<p>Rationale: Raw HTML is allowed in markdown, but this rule is included for<br>those who want their documents to only include “pure” markdown, or for those<br>who are rendering markdown documents in something other than HTML.</p>
+<p>Note: To allow specific HTML elements, use the ‘allowed_elements’ parameter.</p>
+<h2 id="MD034-Bare-URL-used-使用裸-URL"><a href="#MD034-Bare-URL-used-使用裸-URL" class="headerlink" title="MD034 - Bare URL used | 使用裸 URL"></a>MD034 - Bare URL used | 使用裸 URL</h2><p>Tags: links, url</p>
+<p>Aliases: no-bare-urls</p>
+<p>This rule is triggered whenever a URL is given that isn’t surrounded by angle<br>brackets:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For more information, see https://www.example.com/.</span><br></pre></td></tr></table></figure>
+<p>To fix this, add angle brackets around the URL:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For more information, see <span class="xml"><span class="tag">&lt;<span class="name">https:</span>//<span class="attr">www.example.com</span>/&gt;</span></span>.</span><br></pre></td></tr></table></figure>
+<p>Rationale: Without angle brackets, the URL isn’t converted into a link in many<br>markdown parsers.</p>
+<p>Note: if you do want a bare URL without it being converted into a link,<br>enclose it in a code block, otherwise in some markdown parsers it <em>will</em> be<br>converted:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`https://www.example.com`</span></span><br></pre></td></tr></table></figure>
+<h2 id="MD035-Horizontal-rule-style-水平规则样式"><a href="#MD035-Horizontal-rule-style-水平规则样式" class="headerlink" title="MD035 - Horizontal rule style | 水平规则样式"></a>MD035 - Horizontal rule style | 水平规则样式</h2><p>Tags: hr</p>
+<p>Aliases: hr-style</p>
+<p>Parameters: style (“consistent”, “—“, “***”, or other string specifying the<br>horizontal rule; default “consistent”)</p>
+<p>This rule is triggered when inconsistent styles of horizontal rules are used<br>in the document:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>- -</span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span><span class="bullet">* *</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span>*</span><br></pre></td></tr></table></figure>
+<p>To fix this, ensure any horizontal rules used in the document are consistent,<br>or match the given style if the rule is so configured:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>Note: by default, this rule is configured to just require that all horizontal<br>rules in the document are the same, and will trigger if any of the horizontal<br>rules are different than the first one encountered in the document. If you<br>want to configure the rule to match a specific style, the parameter given to<br>the ‘style’ option is a string containing the exact horizontal rule text that<br>is allowed.</p>
+<h2 id="MD036-Emphasis-used-instead-of-a-heading-强调使用而不是标题"><a href="#MD036-Emphasis-used-instead-of-a-heading-强调使用而不是标题" class="headerlink" title="MD036 - Emphasis used instead of a heading | 强调使用而不是标题"></a>MD036 - Emphasis used instead of a heading | 强调使用而不是标题</h2><p>Tags: headings, headers, emphasis</p>
+<p>Aliases: no-emphasis-as-heading, no-emphasis-as-header</p>
+<p>Parameters: punctuation (string; default “.,;:!?”)</p>
+<p>This check looks for instances where emphasized (i.e. bold or italic) text is<br>used to separate sections, where a heading should be used instead:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**My document**</span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet...</span><br><span class="line"></span><br><span class="line"><span class="emphasis">_Another section_</span></span><br><span class="line"></span><br><span class="line">Consectetur adipiscing elit, sed do eiusmod.</span><br></pre></td></tr></table></figure>
+<p>To fix this, use markdown headings instead of emphasized text to denote<br>sections:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># My document</span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet...</span><br><span class="line"></span><br><span class="line"><span class="section">## Another section</span></span><br><span class="line"></span><br><span class="line">Consectetur adipiscing elit, sed do eiusmod.</span><br></pre></td></tr></table></figure>
+<p>Note: this rule looks for single line paragraphs that consist entirely of<br>emphasized text.  It won’t fire on emphasis used within regular text,<br>multi-line emphasized paragraphs, and paragraphs ending in punctuation.<br>Similarly to rule MD026, you can configure what characters are recognized as<br>punctuation.</p>
+<h2 id="MD037-Spaces-inside-emphasis-markers-重点标记内的空格"><a href="#MD037-Spaces-inside-emphasis-markers-重点标记内的空格" class="headerlink" title="MD037 - Spaces inside emphasis markers |  重点标记内的空格"></a>MD037 - Spaces inside emphasis markers |  重点标记内的空格</h2><p>Tags: whitespace, emphasis</p>
+<p>Aliases: no-space-in-emphasis</p>
+<p>This rule is triggered when emphasis markers (bold, italic) are used, but they<br>have spaces between the markers and the text:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Here is some <span class="strong">** bold **</span> text.</span><br><span class="line"></span><br><span class="line">Here is some <span class="bullet">* italic *</span> text.</span><br><span class="line"></span><br><span class="line">Here is some more <span class="strong">__ bold __</span> text.</span><br><span class="line"></span><br><span class="line">Here is some more <span class="emphasis">_ italic _</span> text.</span><br></pre></td></tr></table></figure>
+<p>To fix this, remove the spaces around the emphasis markers:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Here is some <span class="strong">**bold**</span> text.</span><br><span class="line"></span><br><span class="line">Here is some <span class="emphasis">*italic*</span> text.</span><br><span class="line"></span><br><span class="line">Here is some more <span class="strong">__bold__</span> text.</span><br><span class="line"></span><br><span class="line">Here is some more <span class="emphasis">_italic_</span> text.</span><br></pre></td></tr></table></figure>
+<p>Rationale: Emphasis is only parsed as such when the asterisks/underscores<br>aren’t completely surrounded by spaces. This rule attempts to detect where<br>they were surrounded by spaces, but it appears that emphasized text was<br>intended by the author.</p>
+<h2 id="MD038-Spaces-inside-code-span-elements-代码范围内的空格元素"><a href="#MD038-Spaces-inside-code-span-elements-代码范围内的空格元素" class="headerlink" title="MD038 - Spaces inside code span elements | 代码范围内的空格元素"></a>MD038 - Spaces inside code span elements | 代码范围内的空格元素</h2><p>Tags: whitespace, code</p>
+<p>Aliases: no-space-in-code</p>
+<p>This rule is triggered on code span elements that have spaces right inside the<br>backticks:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">` some text `</span></span><br><span class="line"></span><br><span class="line"><span class="code">`some text `</span></span><br><span class="line"></span><br><span class="line"><span class="code">` some text`</span></span><br></pre></td></tr></table></figure>
+<p>To fix this, remove the spaces inside the codespan markers:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`some text`</span></span><br></pre></td></tr></table></figure>
+<p>Note: A single leading or trailing space is allowed if used to separate codespan<br>markers from an embedded backtick:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`` `</span> embedded backtick``</span><br></pre></td></tr></table></figure>
+<h2 id="MD039-Spaces-inside-link-text-链接文本中的空格"><a href="#MD039-Spaces-inside-link-text-链接文本中的空格" class="headerlink" title="MD039 - Spaces inside link text | 链接文本中的空格"></a>MD039 - Spaces inside link text | 链接文本中的空格</h2><p>Tags: whitespace, links</p>
+<p>Aliases: no-space-in-links</p>
+<p>This rule is triggered on links that have spaces surrounding the link text:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string"> a link </span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
+<p>To fix this, remove the spaces surrounding the link text:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">a link</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="MD040-Fenced-code-blocks-should-have-a-language-specified-受控代码块应具有指定的语言"><a href="#MD040-Fenced-code-blocks-should-have-a-language-specified-受控代码块应具有指定的语言" class="headerlink" title="MD040 - Fenced code blocks should have a language specified | 受控代码块应具有指定的语言"></a>MD040 - Fenced code blocks should have a language specified | 受控代码块应具有指定的语言</h2><p>Tags: code, language</p>
+<p>Aliases: fenced-code-language</p>
+<p>This rule is triggered when fenced code blocks are used, but a language isn’t<br>specified:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```</span></span><br><span class="line"><span class="code">#!/bin/bash</span></span><br><span class="line"><span class="code">echo Hello world</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<p>To fix this, add a language specifier to the code block:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```bash</span></span><br><span class="line"><span class="code">#!/bin/bash</span></span><br><span class="line"><span class="code">echo Hello world</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="MD041-First-line-in-file-should-be-a-top-level-heading-文件中的第一行应该是顶级标题"><a href="#MD041-First-line-in-file-should-be-a-top-level-heading-文件中的第一行应该是顶级标题" class="headerlink" title="MD041 - First line in file should be a top level heading | 文件中的第一行应该是顶级标题"></a>MD041 - First line in file should be a top level heading | 文件中的第一行应该是顶级标题</h2><p>Tags: headings, headers</p>
+<p>Aliases: first-line-h1</p>
+<p>Parameters: level, front_matter_title (number; default 1, string; default “^\s*title:”)</p>
+<p>This rule is triggered when the first line in the file isn’t a top level (h1)<br>heading:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a file without a heading</span><br></pre></td></tr></table></figure>
+<p>To fix this, add a heading to the top of your file:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># File with heading</span></span><br><span class="line"></span><br><span class="line">This is a file with a top level heading</span><br></pre></td></tr></table></figure>
+<p>The <code>level</code> parameter can be used to change the top level (ex: to h2) in cases<br>where an h1 is added externally.</p>
+<p>If front matter is present and contains a <a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YAML</a><br><code>title</code> property (commonly used with blog posts), this rule will not report a<br>violation. To use a different property name in front matter, specify the text<br>of a regular expression via the <code>front_matter_title</code> parameter. To disable the<br>use of front matter by this rule, specify <code>&quot;&quot;</code> for <code>front_matter_title</code>.</p>
+<h2 id="MD042-No-empty-links-没有空链接"><a href="#MD042-No-empty-links-没有空链接" class="headerlink" title="MD042 - No empty links | 没有空链接"></a>MD042 - No empty links | 没有空链接</h2><p>Tags: links</p>
+<p>Aliases: no-empty-links</p>
+<p>This rule is triggered when an empty link is encountered:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">an empty link</span>](<span class="link"></span>)</span><br></pre></td></tr></table></figure>
+<p>To fix the violation, provide a destination for the link:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">a valid link</span>](<span class="link">https://example.com/</span>)</span><br></pre></td></tr></table></figure>
+<p>Empty fragments will trigger this rule:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">an empty fragment</span>](<span class="link">#</span>)</span><br></pre></td></tr></table></figure>
+<p>But non-empty fragments will not:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">a valid fragment</span>](<span class="link">#fragment</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="MD043-Required-heading-structure-必需的标题结构"><a href="#MD043-Required-heading-structure-必需的标题结构" class="headerlink" title="MD043 - Required heading structure | 必需的标题结构"></a>MD043 - Required heading structure | 必需的标题结构</h2><p>Tags: headings, headers</p>
+<p>Aliases: required-headings, required-headers</p>
+<p>Parameters: headings, headers (array of string; default <code>null</code> for disabled)</p>
+<blockquote>
+<p>If <code>headings</code> is not provided, <code>headers</code> (deprecated) will be used.</p>
+</blockquote>
+<p>This rule is triggered when the headings in a file do not match the array of<br>headings passed to the rule. It can be used to enforce a standard heading<br>structure for a set of files.</p>
+<p>To require exactly the following structure:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Head</span></span><br><span class="line"><span class="section">## Item</span></span><br><span class="line"><span class="section">### Detail</span></span><br></pre></td></tr></table></figure>
+<p>Set the <code>headings</code> parameter to:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    <span class="string">"# Head"</span>,</span><br><span class="line">    <span class="string">"## Item"</span>,</span><br><span class="line">    <span class="string">"### Detail"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>To allow optional headings as with the following structure:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Head</span></span><br><span class="line"><span class="section">## Item</span></span><br><span class="line"><span class="section">### Detail (optional)</span></span><br><span class="line"><span class="section">## Foot</span></span><br><span class="line"><span class="section">### Notes (optional)</span></span><br></pre></td></tr></table></figure>
+<p>Use the special value <code>&quot;*&quot;</code> meaning “one or more unspecified headings” and set<br>the <code>headings</code> parameter to:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    <span class="string">"# Head"</span>,</span><br><span class="line">    <span class="string">"## Item"</span>,</span><br><span class="line">    <span class="string">"*"</span>,</span><br><span class="line">    <span class="string">"## Foot"</span>,</span><br><span class="line">    <span class="string">"*"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>When an error is detected, this rule outputs the line number of the first<br>problematic heading (otherwise, it outputs the last line number of the file).</p>
+<p>Note that while the <code>headings</code> parameter uses the “## Text” ATX heading style for<br>simplicity, a file may use any supported heading style.</p>
+<h2 id="MD044-Proper-names-should-have-the-correct-capitalization-正确的名称应具有正确的大小写"><a href="#MD044-Proper-names-should-have-the-correct-capitalization-正确的名称应具有正确的大小写" class="headerlink" title="MD044 - Proper names should have the correct capitalization | 正确的名称应具有正确的大小写"></a>MD044 - Proper names should have the correct capitalization | 正确的名称应具有正确的大小写</h2><p>Tags: spelling</p>
+<p>Aliases: proper-names</p>
+<p>Parameters: names, code_blocks (string array; default <code>null</code>, boolean; default <code>true</code>)</p>
+<p>This rule is triggered when any of the strings in the <code>names</code> array do not have<br>the specified capitalization. It can be used to enforce a standard letter case<br>for the names of projects and products.</p>
+<p>For example, the language “JavaScript” is usually written with both the ‘J’ and<br>‘S’ capitalized - though sometimes the ‘s’ or ‘j’ appear in lower-case. To enforce<br>the proper capitalization, specify the desired letter case in the <code>names</code> array:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    <span class="string">"JavaScript"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>Set the <code>code_blocks</code> parameter to <code>false</code> to disable this rule for code blocks.</p>
+<h2 id="MD045-Images-should-have-alternate-text-alt-text-图像应具有替代文本（替代文字）"><a href="#MD045-Images-should-have-alternate-text-alt-text-图像应具有替代文本（替代文字）" class="headerlink" title="MD045 - Images should have alternate text (alt text) | 图像应具有替代文本（替代文字）"></a>MD045 - Images should have alternate text (alt text) | 图像应具有替代文本（替代文字）</h2><p>Tags: accessibility, images</p>
+<p>Aliases: no-alt-text</p>
+<p>This rule is triggered when an image is missing alternate text (alt text) information.<br>Alternate text is important for accessibility, describing the content of an image for<br>people who may not be able to see it.</p>
+<p>Alternate text is commonly specified inline as:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Alternate text</span>](<span class="link">image.jpg</span>)</span><br></pre></td></tr></table></figure>
+<p>Or with reference syntax as:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Alternate text</span>][<span class="symbol">ref</span>]</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">[<span class="symbol">ref</span>]: <span class="link">image.jpg "Optional title"</span></span><br></pre></td></tr></table></figure>
+<p>Guidance for writing alternate text is available from the <a href="https://www.w3.org/WAI/alt/" target="_blank" rel="noopener">W3C</a>,<br><a href="https://en.wikipedia.org/wiki/Alt_attribute" target="_blank" rel="noopener">Wikipedia</a>, and<br><a href="https://www.phase2technology.com/blog/no-more-excuses-definitive-guide-alt-text-field" target="_blank" rel="noopener">other locations</a>.</p>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190218_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1008,189 +1322,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_07/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/weekly_07/" itemprop="url">每周分享第 7 期</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T12:00:00+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/weekly/" itemprop="url" rel="index">
-                    <span itemprop="name">weekly</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/weekly_07/" class="leancloud_visitors" data-flag-title="每周分享第 7 期">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr>
-<p>1、<a href="https://standardjs.com/readme-zhcn.html" target="_blank" rel="noopener">JavaScript Standard Style</a> <code>JavaScript 规范</code><br>2、<a href="https://www.yuque.com/umijs/umi/hello" target="_blank" rel="noopener">Hello，Umi · 语雀</a>   <code>umi 实战</code><br>3、<a href="https://github.com/MRNIU/SimpleKernel/blob/TODO/README.md" target="_blank" rel="noopener">SimpleKernel/README.md at TODO · MRNIU/SimpleKernel</a>    <code>内核学习</code><br>4、<a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="noopener">Quick start / Methodology / BEM</a> <code>一种 css 命名规范</code><br>5、<a href="https://docs.emmet.io/" target="_blank" rel="noopener">Emmet Documentation</a> <code>emmet 文档</code><br>6、<a href="https://github.com/google/styleguide" target="_blank" rel="noopener">google/styleguide: Style guides for Google-originated open-source projects</a><br>7、<a href="http://www.jezzamon.com/fourier/index.html" target="_blank" rel="noopener">Fourier Transforms</a>        <code>画图教程</code></p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr>
-<p>1、工具</p>
-<ul>
-<li><a href="http://www.javascriptkit.com/script/script2/jstohtml.shtml" target="_blank" rel="noopener">html2js</a> <code>把 html 转成 JavaScript</code></li>
-<li><a href="https://github.com/rrweb-io/rrweb/blob/master/README.zh_CN.md" target="_blank" rel="noopener">rrweb/README.zh_CN.md at master · rrweb-io/rrweb</a>    <code>浏览器操作录制</code></li>
-<li><a href="https://github.com/agermanidis/autosub/issues/31" target="_blank" rel="noopener">自动生成字幕</a></li>
-<li><a href="https://cn.overleaf.com/" target="_blank" rel="noopener">Overleaf, 在线LaTeX编辑器</a></li>
-<li><a href="http://writertools.funnyapi.com/#/home" target="_blank" rel="noopener">微信公号写手工具-近期热门文章搜索</a></li>
-</ul>
-<p>2、网站</p>
-<ul>
-<li><a href="https://betterdev.link/" target="_blank" rel="noopener">Better Dev Link - Resource around the web on becoming a better programmer</a>    <code>技术周报</code></li>
-<li><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a>    <code>世界数据可视化</code></li>
-</ul>
-<p>3、书</p>
-<ul>
-<li><a href="https://www.c82.net/euclid/" target="_blank" rel="noopener">Byrne’s Euclid</a>    <code>数学书</code></li>
-<li><a href="http://atomicdesign.bradfrost.com/" target="_blank" rel="noopener">Atomic Design by Brad Frost</a> <code>设计书</code></li>
-<li><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">xitu/gold-miner: 🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：</a></li>
-</ul>
-<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr>
-<p>1、Lazy programming<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Write what you need and no more, but when you write it, do it right.</span><br><span class="line">Avoid implementing features you don’t need. You can’t design a feature without knowing what the constraints are. Implementing features &quot;for completeness&quot; results in unused code that is expensive to maintain, learn about, document, test, etc.</span><br><span class="line">When you do implement a feature, implement it the right way. Avoid workarounds. Workarounds merely kick the problem further down the road, but at a higher cost: someone will have to relearn the problem, figure out the workaround and how to dismantle it (and all the places that now use it), and implement the feature. It’s much better to take longer to fix a problem properly, than to be the one who fixes everything quickly but in a way that will require cleaning up later.</span><br><span class="line">You may hear team members say &quot;embrace the yak shave!&quot;. This is an encouragement to take on the larger effort necessary to perform a proper fix for a problem rather than just applying a band-aid.</span><br></pre></td></tr></table></figure></p>
-<p>2、<a href="https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53" target="_blank" rel="noopener">Goodbye, Object Oriented Programming – Charles Scalfani</a><br>3、<a href="https://www.yuque.com/seeconf/content/kbnzac" target="_blank" rel="noopener">第二届 SEE Conf 2019 精彩回顾（附 PPT 及视频） · 语雀</a><br>4、<a href="https://www.yuque.com/d2forum/content/d213" target="_blank" rel="noopener">第十三届 D2 前端技术论坛精彩回顾[附PPT] · 语雀</a><br>5、<a href="https://overreacted.io/zh-hant/things-i-dont-know-as-of-2018/" target="_blank" rel="noopener">Dan Abramov : 2018年，那些我所不知道的技術</a></p>
-<hr>
-<p>（完）</p>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1241,7 +1372,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
