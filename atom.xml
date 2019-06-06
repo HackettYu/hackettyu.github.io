@@ -359,13 +359,13 @@
   </entry>
   
   <entry>
-    <title>Cannot find one or more componets. Please reinstall the application</title>
-    <link href="https://hackettyu.com/181215_1/"/>
-    <id>https://hackettyu.com/181215_1/</id>
+    <title>每周分享第 2 期</title>
+    <link href="https://hackettyu.com/weekly_02/"/>
+    <id>https://hackettyu.com/weekly_02/</id>
     <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T01:27:07.922Z</updated>
+    <updated>2018-12-15T02:40:39.217Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a><br>Mybatis通用分页插件</p><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a><br>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><p>一周都在弄报告 ）0（<br>（完）</p>]]></content>
     
     <summary type="html">
     
@@ -379,10 +379,10 @@
     
     </summary>
     
-      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
     
     
-      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
+      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
     
   </entry>
   
@@ -410,20 +410,20 @@
       <category term="note" scheme="https://hackettyu.com/categories/note/"/>
     
     
-      <category term="java" scheme="https://hackettyu.com/tags/java/"/>
-    
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
+    
+      <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
   </entry>
   
   <entry>
-    <title>每周分享第 2 期</title>
-    <link href="https://hackettyu.com/weekly_02/"/>
-    <id>https://hackettyu.com/weekly_02/</id>
+    <title>Cannot find one or more componets. Please reinstall the application</title>
+    <link href="https://hackettyu.com/181215_1/"/>
+    <id>https://hackettyu.com/181215_1/</id>
     <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T02:40:39.217Z</updated>
+    <updated>2018-12-15T01:27:07.922Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a><br>Mybatis通用分页插件</p><h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a><br>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr><p>一周都在弄报告 ）0（<br>（完）</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>]]></content>
     
     <summary type="html">
     
@@ -437,10 +437,10 @@
     
     </summary>
     
-      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
     
     
-      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
+      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
     
   </entry>
   
