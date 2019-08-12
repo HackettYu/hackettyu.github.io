@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="hackettyu" />
 
 
 
@@ -82,10 +82,10 @@
 
 
 <meta name="description" content="via:https://github.com/marlkiller/module-web-service  Constants 常量12345678910// WebService俩个参数,帐号跟密码   private static final String USERNAME = &quot;void&quot;;   private static final String PASSWORD = &quot;passwor">
-<meta name="keywords" content="java">
-<meta property="og:type" content="article">
+<meta name="keywords" content="hackettyu">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Java调用WebService的几种方式">
-<meta property="og:url" content="https://hackettyu.com/digest/190606_1/index.html">
+<meta property="og:url" content="https://hackettyu.com/digest/190606_1.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
 <meta property="og:description" content="via:https://github.com/marlkiller/module-web-service  Constants 常量12345678910// WebService俩个参数,帐号跟密码   private static final String USERNAME = &quot;void&quot;;   private static final String PASSWORD = &quot;passwor">
 <meta property="og:locale" content="zh-Hans">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="https://hackettyu.com/digest/190606_1/"/>
+  <link rel="canonical" href="https://hackettyu.com/digest/190606_1.html"/>
 
 
 
@@ -292,129 +292,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/digest/190606_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">Java调用WebService的几种方式</h2>
-        
+	<h2 class="post-title" itemprop="name headline">Java调用WebService的几种方式</h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T12:00:00+08:00">
-                2019-06-06
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/digest/190606_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/digest/190606_1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/digest/190606_1/" class="leancloud_visitors" data-flag-title="Java调用WebService的几种方式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <blockquote>
+      <div class="post-body">
+        
+        
+          <blockquote>
 <p>via:<a href="https://github.com/marlkiller/module-web-service" target="_blank" rel="noopener">https://github.com/marlkiller/module-web-service</a></p>
 </blockquote>
 <h2 id="Constants-常量"><a href="#Constants-常量" class="headerlink" title="Constants 常量"></a>Constants 常量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// WebService俩个参数,帐号跟密码</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String USERNAME = <span class="string">"void"</span>;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String PASSWORD = <span class="string">"password"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// namespace工作空间</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String NAME_SPACE = <span class="string">"http://xxx/kunlun/kws/1.1/"</span>;</span><br><span class="line"><span class="comment">// 接口wsdl地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WSDL_URL = <span class="string">"http://xxx/kws/SecurityService.asmx?WSDL"</span>;</span><br><span class="line"><span class="comment">// SOAPAction地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String ACTION_URI = <span class="string">"http://xxx/kunlun/kws/1.1/AppLogin"</span>;</span><br></pre></td></tr></table></figure>
@@ -452,81 +347,15 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">soap:Envelope</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:soap</span>=<span class="string">"http://schemas.xmlsoap.org/soap/envelope/"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsd</span>=<span class="string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">soap:Header</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">KwsSoapHeader</span></span></span><br><span class="line"><span class="tag">			<span class="attr">xmlns</span>=<span class="string">"http://www.shijinet.com.cn/kunlun/kws/1.1/"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">RetCode</span>&gt;</span>0000<span class="tag">&lt;/<span class="name">RetCode</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ErrReason</span>&gt;</span>权限不够<span class="tag">&lt;/<span class="name">ErrReason</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">KwsSoapHeader</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">soap:Header</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">soap:Body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">AppLoginResponse</span></span></span><br><span class="line"><span class="tag">			<span class="attr">xmlns</span>=<span class="string">"http://www.shijinet.com.cn/kunlun/kws/1.1/"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">AppLoginResult</span>&gt;</span>false<span class="tag">&lt;/<span class="name">AppLoginResult</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">AppLoginResponse</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">soap:Body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">soap:Envelope</span>&gt;</span></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
 <p><code>`</code></p>
 
-      
-      <div>    
-      
-      
-          <ul class="post-copyright">
-            <li class="post-copyright-author">
-                <strong>本文作者：</strong>HackettYu
-            </li>
-            <li class="post-copyright-link">
-              <strong>本文链接：</strong>
-              <a href="/digest/190606_1/" title="Java调用WebService的几种方式">digest/190606_1/</a>
-            </li>
-            <li class="post-copyright-license">
-              <strong>版权声明： </strong>
-              本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
-            </li>
-          </ul>
         
       </div>
+      
+      
+      
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/190414_1/" rel="next" title="Tomcat8/maven 部署 web 工程">
-                <i class="fa fa-chevron-left"></i> Tomcat8/maven 部署 web 工程
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -591,7 +420,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,7 +442,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181018_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181006_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -318,7 +318,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181018_1/" itemprop="url">关于 java swap 函数</a></h2>
+                <a class="post-title-link" href="/181006_1/" itemprop="url">linux ln 命令之硬链接和软连接</a></h2>
         
 
         <div class="post-meta">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T10:00:00+08:00">
-                2018-10-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T10:00:00+08:00">
+                2018-10-06
               </time>
             
 
@@ -353,8 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/debug/" itemprop="url" rel="index">
-                    <span itemprop="name">debug</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -370,7 +370,7 @@
 
           
           
-             <span id="/181018_1/" class="leancloud_visitors" data-flag-title="关于 java swap 函数">
+             <span id="/181006_1/" class="leancloud_visitors" data-flag-title="linux ln 命令之硬链接和软连接">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,11 +403,32 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在写算法的时候，书本里使用的 c 语言里的 swap 函数，头一热就在 java 里写了一个。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> temp = a;</span><br><span class="line">      a = b;</span><br><span class="line">      b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>美滋滋运行自己的排序算法，居然原样输出，后来发现 java 里没有引用这个概念，自己写的函数不能真正的交换。</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>这样写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> itself, <span class="keyword">int</span> dummy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> itself;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    a = swap(b, b = a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>还可以这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyInteger</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> x;                   <span class="comment">// single data member</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyInteger</span><span class="params">(<span class="keyword">int</span> xIn)</span> </span>&#123; x = xIn; &#125; <span class="comment">// constructor</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x; &#125;  <span class="comment">// retrieve value</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertValue</span><span class="params">(<span class="keyword">int</span> xIn)</span> </span>&#123; x = xIn;&#125; <span class="comment">// insert</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swapping</span> </span>&#123;</span><br><span class="line">   <span class="comment">// swap: pass references to objects</span></span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(MyInteger rWrap, MyInteger sWrap)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// interchange values inside objects</span></span><br><span class="line">      <span class="keyword">int</span> t = rWrap.getValue();</span><br><span class="line">      rWrap.insertValue(sWrap.getValue());</span><br><span class="line">      sWrap.insertValue(t);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a = <span class="number">23</span>, b = <span class="number">47</span>;</span><br><span class="line">      System.out.println(<span class="string">"Before. a:"</span> + a + <span class="string">", b: "</span> + b);</span><br><span class="line">      MyInteger aWrap = <span class="keyword">new</span> MyInteger(a);</span><br><span class="line">      MyInteger bWrap = <span class="keyword">new</span> MyInteger(b);</span><br><span class="line">      swap(aWrap, bWrap);</span><br><span class="line">      a = aWrap.getValue();</span><br><span class="line">      b = bWrap.getValue();</span><br><span class="line">      System.out.println(<span class="string">"After.  a:"</span> + a + <span class="string">", b: "</span> + b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>是不是三行代码的方式更简单~~~</p>
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本来像利用 link 一个 cheat 文件在 <code>/user</code> 下发现 cat 后时乱码<br>发现 windows 下直接创建 link 会怎样</p>
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><blockquote>
+<p><a href="https://wangchujiang.com/linux-command/c/ln.html" target="_blank" rel="noopener">https://wangchujiang.com/linux-command/c/ln.html</a><br>利用 bash 的 ln 命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln &#123;$filename1&#125; &#123;$$filename2&#125;</span><br><span class="line">cat &#123;$filename2&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><blockquote>
+<p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</a></p>
+</blockquote>
+<ul>
+<li>硬链接<ul>
+<li>建立硬链接时，在另外的目录或本目录中增加目标文件的一个目录项，这样，一个文件就登记在多个目录中。如图所示的m2.c文件就在目录mub1和liu中都建立了目录项。<br>创建硬链接后，己经存在的文件的I节点号（Inode）会被多个目录文件项使用。一个文件的硬链接数可以在目录的长列表格式的第二列中看到，无额外链接的文件的链接数为l。<br>在默认情况下，ln命令创建硬链接。ln命令会增加链接数，rm命令会减少链接数。一个文件除非链接数为0，否则不会从文件系统中被物理地删除。<br>对硬链接有如下限制：<ul>
+<li>不能对目录文件做硬链接。</li>
+<li>不能在不同的文件系统之间做硬链接。就是说，链接文件和被链接文件必须位于同一个文件系统中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>符号连接</p>
+<ul>
+<li>符号链接也称为软链接，是将一个路径名链接到一个文件。这些文件是一种特别类型的文件。事实上，它只是一个文本文件（如图中的abc文件），其中包含它提供链接的另一个文件的路径名，如图中虚线箭头所示。另一个文件是实际包含所有数据的文件。所有读、写文件内容的命令被用于符号链接时，将着链接方向前进来访问实际的文件。<br>与硬链接不同的是，符号链接确实是一个新文件，当然它具有不同的I节点号；而硬链接并没有建立新文件。<br>符号链接没有硬链接的限制，可以对目录文件做符号链接，也可以在不同文件系统之间做符号链接。<br>用ln -s命令建立符号链接时，源文件最好用绝对路径名。这样可以在任何工作目录下进行符号链接。而当源文件用相对路径时，如果当前的工作路径与要创建的符号链接文件所在路径不同，就不能进行链接。<br>符号链接保持了链接与源文件或目录之间的区别：<br>删除源文件或目录，只删除了数据，不会删除链接。一旦以同样文件名创建了源文件，链接将继续指向该文件的新数据。<br>在目录长列表中，符号链接作为一种特殊的文件类型显示出来，其第一个字母是l。符号链接的大小是其链接文件的路径名中的字节数。<br>当用ln -s命令列出文件时，可以看到符号链接名后有一个箭头指向源文件或目录，例如lrwxrwxrwx … 14 jun 20 10:20 /etc/motd-&gt;/original_file其中，表示“文件大小”的数字“14”恰好说明源文件名original_file由14个字符构成。</li>
+</ul>
+</li>
+<li><p>软连接不会更新文件，尽量写绝对路径。</p>
+</li>
+</ul>
 
           
         
@@ -460,7 +481,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/digest/181016_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -479,7 +500,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/digest/181016_1/" itemprop="url">一段用 html 创建流程图的源码</a></h2>
+                <a class="post-title-link" href="/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h2>
         
 
         <div class="post-meta">
@@ -491,8 +512,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T10:00:00+08:00">
-                2018-10-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
+                2018-10-04
               </time>
             
 
@@ -514,8 +535,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/digest/" itemprop="url" rel="index">
-                    <span itemprop="name">digest</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -531,7 +552,7 @@
 
           
           
-             <span id="/digest/181016_1/" class="leancloud_visitors" data-flag-title="一段用 html 创建流程图的源码">
+             <span id="/181004_3/" class="leancloud_visitors" data-flag-title="命令行开启 | 关闭显卡">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -564,7 +585,18 @@
       
         
           
-            <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>flowchart.js · Playground<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">          .end-element &#123; background-color : #FFCCFF; &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://flowchart.js.org/flowchart-latest.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;script src="../release/flowchart.min.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"run"</span>),</span></span><br><span class="line"><span class="javascript">                    cd = <span class="built_in">document</span>.getElementById(<span class="string">"code"</span>),</span></span><br><span class="line"><span class="undefined">                    chart;</span></span><br><span class="line"><span class="javascript">                (btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> code = cd.value;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span> (chart) &#123;</span></span><br><span class="line"><span class="undefined">                      chart.clean();</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                    chart = flowchart.parse(code);</span></span><br><span class="line"><span class="javascript">                    chart.drawSVG(<span class="string">'canvas'</span>, &#123;</span></span><br><span class="line"><span class="javascript">                      <span class="comment">// 'x': 30,</span></span></span><br><span class="line"><span class="javascript">                      <span class="comment">// 'y': 50,</span></span></span><br><span class="line"><span class="javascript">                      <span class="string">'line-width'</span>: <span class="number">3</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'maxWidth'</span>: <span class="number">3</span>,<span class="comment">//ensures the flowcharts fits within a certian width</span></span></span><br><span class="line"><span class="javascript">                      <span class="string">'line-length'</span>: <span class="number">50</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'text-margin'</span>: <span class="number">10</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'font-size'</span>: <span class="number">14</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'font'</span>: <span class="string">'normal'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'font-family'</span>: <span class="string">'Helvetica'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'font-weight'</span>: <span class="string">'normal'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'font-color'</span>: <span class="string">'black'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'line-color'</span>: <span class="string">'black'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'element-color'</span>: <span class="string">'black'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'fill'</span>: <span class="string">'white'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'yes-text'</span>: <span class="string">'yes'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'no-text'</span>: <span class="string">'no'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'arrow-end'</span>: <span class="string">'block'</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'scale'</span>: <span class="number">1</span>,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'symbols'</span>: &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="string">'start'</span>: &#123;</span></span><br><span class="line"><span class="javascript">                          <span class="string">'font-color'</span>: <span class="string">'red'</span>,</span></span><br><span class="line"><span class="javascript">                          <span class="string">'element-color'</span>: <span class="string">'green'</span>,</span></span><br><span class="line"><span class="javascript">                          <span class="string">'fill'</span>: <span class="string">'yellow'</span></span></span><br><span class="line"><span class="undefined">                        &#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'end'</span>:&#123;</span></span><br><span class="line"><span class="javascript">                          <span class="string">'class'</span>: <span class="string">'end-element'</span></span></span><br><span class="line"><span class="undefined">                        &#125;</span></span><br><span class="line"><span class="undefined">                      &#125;,</span></span><br><span class="line"><span class="javascript">                      <span class="string">'flowstate'</span> : &#123;</span></span><br><span class="line"><span class="javascript">                        <span class="string">'past'</span> : &#123; <span class="string">'fill'</span> : <span class="string">'#CCCCCC'</span>, <span class="string">'font-size'</span> : <span class="number">12</span>&#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'current'</span> : &#123;<span class="string">'fill'</span> : <span class="string">'yellow'</span>, <span class="string">'font-color'</span> : <span class="string">'red'</span>, <span class="string">'font-weight'</span> : <span class="string">'bold'</span>&#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'future'</span> : &#123; <span class="string">'fill'</span> : <span class="string">'#FFFF99'</span>&#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'request'</span> : &#123; <span class="string">'fill'</span> : <span class="string">'blue'</span>&#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'invalid'</span>: &#123;<span class="string">'fill'</span> : <span class="string">'#444444'</span>&#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'approved'</span> : &#123; <span class="string">'fill'</span> : <span class="string">'#58C4A3'</span>, <span class="string">'font-size'</span> : <span class="number">12</span>, <span class="string">'yes-text'</span> : <span class="string">'APPROVED'</span>, <span class="string">'no-text'</span> : <span class="string">'n/a'</span> &#125;,</span></span><br><span class="line"><span class="javascript">                        <span class="string">'rejected'</span> : &#123; <span class="string">'fill'</span> : <span class="string">'#C45879'</span>, <span class="string">'font-size'</span> : <span class="number">12</span>, <span class="string">'yes-text'</span> : <span class="string">'n/a'</span>, <span class="string">'no-text'</span> : <span class="string">'REJECTED'</span> &#125;</span></span><br><span class="line"><span class="undefined">                      &#125;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="javascript">                    $(<span class="string">'[id^=sub1]'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                      alert(<span class="string">'info here'</span>);</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined">                &#125;)();</span></span><br><span class="line"><span class="undefined">            &#125;;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"code"</span> <span class="attr">style</span>=<span class="string">"width: 100%;"</span> <span class="attr">rows</span>=<span class="string">"11"</span>&gt;</span></span><br><span class="line">st=&gt;start: Start|past:&gt;http://www.google.com[blank]</span><br><span class="line">e=&gt;end: End:&gt;http://www.google.com</span><br><span class="line">op1=&gt;operation: My Operation|past</span><br><span class="line">op2=&gt;operation: Stuff|current</span><br><span class="line">sub1=&gt;subroutine: My Subroutine|invalid</span><br><span class="line">cond=&gt;condition: Yes</span><br><span class="line">or No?|approved:&gt;http://www.google.com</span><br><span class="line">c2=&gt;condition: Good idea|rejected</span><br><span class="line">io=&gt;inputoutput: catch something...|request</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;cond</span><br><span class="line">cond(yes, right)-&gt;c2</span><br><span class="line">cond(no)-&gt;sub1(left)-&gt;op1</span><br><span class="line">c2(yes)-&gt;io-&gt;e</span><br><span class="line">c2(no)-&gt;op2-&gt;e</span><br><span class="line"></span><br><span class="line">st@&gt;op1(&#123;"stroke":"Red"&#125;)@&gt;cond(&#123;"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"&#125;)@&gt;c2(&#123;"stroke":"Red"&#125;)@&gt;op2(&#123;"stroke":"Red"&#125;)@&gt;e(&#123;"stroke":"Red"&#125;)<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"run"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>Run<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><blockquote>
+<p>安装 devcon :<br><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</a></p>
+</blockquote>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
+<p>例如要关闭 NVIDIA 显卡：</p>
+<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
+<p>截取一段编号查询并查询到唯一驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
+<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>查询服务的命令 <code>sc</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
+<p>打开图形驱动管理界面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
+
           
         
       
@@ -616,7 +648,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181010_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -635,7 +667,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181010_1/" itemprop="url">Windows 下磁盘多余的图标删除</a></h2>
+                <a class="post-title-link" href="/181004_4/" itemprop="url">vim 配置</a></h2>
         
 
         <div class="post-meta">
@@ -647,8 +679,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T10:00:00+08:00">
-                2018-10-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T14:00:00+08:00">
+                2018-10-04
               </time>
             
 
@@ -687,7 +719,7 @@
 
           
           
-             <span id="/181010_1/" class="leancloud_visitors" data-flag-title="Windows 下磁盘多余的图标删除">
+             <span id="/181004_4/" class="leancloud_visitors" data-flag-title="vim 配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -720,10 +752,18 @@
       
         
           
-            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>在注册表里打开下面两个路径看除了默认是否还有其它的，网上的方法只有第一条：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</span><br><span class="line">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</span><br></pre></td></tr></table></figure></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><ul>
-<li>第一条是系统的。</li>
-<li>第二条是用户的。</li>
+            <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><ul>
+<li><p>查找 vim 配置文件在哪</p>
+<ul>
+<li>:version</li>
+<li>echo $vim</li>
+</ul>
+</li>
+<li><p>vim 插件管理器 bundle</p>
+<ul>
+<li>PluginInstall 安装插件，要先写配置文件，bash 的 vim 配置文件在 Git 安装路径里面。</li>
+</ul>
+</li>
 </ul>
 
           
@@ -768,7 +808,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -814,7 +854,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -836,7 +876,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
