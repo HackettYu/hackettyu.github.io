@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Chrome 解决第三方扩展安装的问题</title>
+      <link href="/190916_1/"/>
+      <url>/190916_1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr><p>Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，<code>百度经验</code>上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist</p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr><h3 id="windows-添加-policy"><a href="#windows-添加-policy" class="headerlink" title="windows 添加 policy"></a>windows 添加 policy</h3><p>使用注册表添加的方式（懒得写了）</p><h3 id="mac-命令行添加-policy"><a href="#mac-命令行添加-policy" class="headerlink" title="mac 命令行添加 policy"></a>mac 命令行添加 policy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add</span></span><br><span class="line">defaults write com.google.Chrome ExtensionInstallWhitelist -array &#123;id&#125;</span><br><span class="line"><span class="comment"># delete</span></span><br><span class="line">defaults delete com.google.Chrome ExtensionInstallWhitelist</span><br></pre></td></tr></table></figure><h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><hr><ul><li><p>利用链接下载 Chrome extension</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># wget https://chrome.google.com/webstore/detail/cookies/&#123;id&#125;?hl=en</span></span><br><span class="line">wegt https://chrome.google.com/webstore/detail/cookies/iphcomljdfghbkdcfndaijbokpgddeno?hl=en</span><br></pre></td></tr></table></figure></li><li><p>查看 policy 是否添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start chrome://policy/</span><br></pre></td></tr></table></figure></li></ul><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr><ul><li><a href="https://www.chromium.org/administrators/policy-list-3#ExtensionInstallWhitelist" target="_blank" rel="noopener">Policy List</a></li><li><a href="https://www.chromium.org/administrators/mac-quick-start" target="_blank" rel="noopener">chromium mac-quick-start</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Tomcat8/maven 部署 web 工程</title>
       <link href="/190414_1/"/>
       <url>/190414_1/</url>
@@ -251,9 +274,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> eclipse </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -777,9 +800,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> eclipse </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
