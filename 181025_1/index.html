@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -81,18 +88,18 @@
 
 
 
-<meta name="description" content="简介centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：1yum install firewalld 开启防火墙1systemctl start firewalld.service 关闭防火墙1systemctl stop firewalld.service 开机自动启动1systemctl enable fire">
+<meta name="description" content="简介 centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下： 1yum install firewalld 开启防火墙 1systemctl start firewalld.service 关闭防火墙 1systemctl stop firewalld.service 开机自动启动 1systemctl enable">
 <meta name="keywords" content="linux,centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos 7 防火墙命令 firewall-cmd">
 <meta property="og:url" content="https://hackettyu.com/181025_1/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="简介centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：1yum install firewalld 开启防火墙1systemctl start firewalld.service 关闭防火墙1systemctl stop firewalld.service 开机自动启动1systemctl enable fire">
+<meta property="og:description" content="简介 centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下： 1yum install firewalld 开启防火墙 1systemctl start firewalld.service 关闭防火墙 1systemctl stop firewalld.service 开机自动启动 1systemctl enable">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-10-25T10:24:26.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos 7 防火墙命令 firewall-cmd">
-<meta name="twitter:description" content="简介centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：1yum install firewalld 开启防火墙1systemctl start firewalld.service 关闭防火墙1systemctl stop firewalld.service 开机自动启动1systemctl enable fire">
+<meta name="twitter:description" content="简介 centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下： 1yum install firewalld 开启防火墙 1systemctl start firewalld.service 关闭防火墙 1systemctl stop firewalld.service 开机自动启动 1systemctl enable">
 
 
 
@@ -399,17 +406,29 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install firewalld</span><br></pre></td></tr></table></figure></p>
-<p>开启防火墙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure></p>
-<p>关闭防火墙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure></p>
-<p>开机自动启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br></pre></td></tr></table></figure></p>
-<p>关闭开机制动启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure></p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>基本的添加端口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=9001/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=9001/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
-<p>查看：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure></p>
-<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-service=https //临时</span><br><span class="line">firewall-cmd --zone=public --add-port=8080-8081/tcp //临时</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-service=https //永久</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080-8081/tcp //永久</span><br></pre></td></tr></table></figure>
-<p>删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --remove-rich-rule=<span class="string">"rule family="</span>ipv4<span class="string">" source address="</span>192.168.1.1<span class="string">"</span></span><br></pre></td></tr></table></figure></p>
-<p>查询<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-service ftp</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service ssh</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service samba</span><br><span class="line">no</span><br><span class="line">firewall-cmd --query-service http</span><br><span class="line">no</span><br></pre></td></tr></table></figure></p>
+        <h2>简介</h2>
+<p>centos 7 和 centos 6 有不同的防火墙命令，centos 7 的是 firewall-cmd，如果没安装，安装方法如下：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install firewalld</span><br></pre></td></tr></table></figure></p>
+<p>开启防火墙
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld.service</span><br></pre></td></tr></table></figure></p>
+<p>关闭防火墙
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure></p>
+<p>开机自动启动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> firewalld.service</span><br></pre></td></tr></table></figure></p>
+<p>关闭开机制动启动
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure></p>
+<h2>快速入门</h2>
+<p>基本的添加端口：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=9001/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=9001/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
+<p>查看：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure></p>
+<h2>进阶篇</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-service=https //临时</span><br><span class="line">firewall-cmd --zone=public --add-port=8080-8081/tcp //临时</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-service=https //永久</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080-8081/tcp //永久</span><br></pre></td></tr></table></figure></p>
+<p>删除
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --remove-rich-rule=<span class="string">"rule family="</span>ipv4<span class="string">" source address="</span>192.168.1.1<span class="string">"</span></span><br></pre></td></tr></table></figure></p>
+<p>查询
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-service ftp</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service ssh</span><br><span class="line">yes</span><br><span class="line">firewall-cmd --query-service samba</span><br><span class="line">no</span><br><span class="line">firewall-cmd --query-service http</span><br><span class="line">no</span><br></pre></td></tr></table></figure></p>
 
       
       <div>    
@@ -549,7 +568,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">2.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶篇"><span class="nav-number">3.</span> <span class="nav-text">进阶篇</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">进阶篇</span></a></li></ol></div>
             
 
           </div>

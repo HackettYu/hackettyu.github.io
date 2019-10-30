@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -299,6 +306,196 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/191030_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/191030_1/" itemprop="url">test tag preview</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T12:00:00+08:00">
+                2019-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/191030_1/" class="leancloud_visitors" data-flag-title="test tag preview">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2>简介</h2>
+<hr>
+<h2>最近了解到有一种预览网址的协议叫 <a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a>，想在 hexo 博客里添加，找到了这个<a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">插件</a></h2>
+<h2>安装</h2>
+<hr>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-tag-link-preview</span><br><span class="line"></span><br><span class="line"><span class="comment"># usage</span></span><br><span class="line"><span class="comment"># 在文章中添加 &#123;% linkPreview https://www.amazon.com/ _blank nofollow %&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2>预览</h2>
+<hr>
+<blockquote>
+<p>想要好看的预览需要如下的标签</p>
+</blockquote>
+<ul>
+<li>Title 最长 65 个字符，否则 Google 结果就会被截断</li>
+<li>Meta description 最好小于 155 字符</li>
+<li>og:title 最好不超过 35 个字符，否则预览会截断</li>
+<li>og:description 65 字符</li>
+<li>og:url 页面 url</li>
+<li>og: image JPG 或者 PNG，最小分辨率 300 × 200 像素</li>
+<li>favicon 网站 logo， 32 × 32 像素</li>
+</ul>
+<p>上面的网站目前支持很多聊天工具，比如 WhatsApp, Telegram, Skype ，还有社交网站 Facebook，Twitter 等等。</p>
+<p><a href="https://www.amazon.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img src="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png"></div><div class="descriptions"><div class="og-title">Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</div><div class="og-description">Online shopping from the earth&#39;s biggest selection of books, magazines, music, DVDs, videos, electronics, computers, software, apparel &amp; acc…</div></div></div></a></p>
+<p><a href="https://hackettyu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">HackettYu&#39;s blog</div><div class="og-description">hackettyu</div></div></div></a></p>
+<p><a href="https://baidu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">百度一下，你就知道</div></div></div></a></p>
+<p>在 <code>.\themes\next\layout\_partials\head.swig</code> 下添加了下面代码</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hackettyu.com/image/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>感觉没用 😄</p>
+<h2>附录</h2>
+<hr>
+<ul>
+<li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a></li>
+<li><a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">hexo-tag-link-preview</a></li>
+<li><a href="http://einverne.github.io/post/2016/08/rich-preview.html" target="_blank" rel="noopener">让网站在分享时预览更美观</a></li>
+</ul>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190916_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -403,21 +600,29 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+            <h2>简介</h2>
+<hr>
 <p>Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，<code>百度经验</code>上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<h3 id="windows-添加-policy"><a href="#windows-添加-policy" class="headerlink" title="windows 添加 policy"></a>windows 添加 policy</h3><p>使用注册表添加的方式（懒得写了）</p>
-<h3 id="mac-命令行添加-policy"><a href="#mac-命令行添加-policy" class="headerlink" title="mac 命令行添加 policy"></a>mac 命令行添加 policy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add</span></span><br><span class="line">defaults write com.google.Chrome ExtensionInstallWhitelist -array &#123;id&#125;</span><br><span class="line"><span class="comment"># delete</span></span><br><span class="line">defaults delete com.google.Chrome ExtensionInstallWhitelist</span><br></pre></td></tr></table></figure>
-<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><hr>
+<h2>快速上手</h2>
+<hr>
+<h3>windows 添加 policy</h3>
+<p>使用注册表添加的方式（懒得写了）</p>
+<h3>mac 命令行添加 policy</h3>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add</span></span><br><span class="line">defaults write com.google.Chrome ExtensionInstallWhitelist -array &#123;id&#125;</span><br><span class="line"><span class="comment"># delete</span></span><br><span class="line">defaults delete com.google.Chrome ExtensionInstallWhitelist</span><br></pre></td></tr></table></figure></p>
+<h2>进阶篇</h2>
+<hr>
 <ul>
-<li><p>利用链接下载 Chrome extension</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># wget https://chrome.google.com/webstore/detail/cookies/&#123;id&#125;?hl=en</span></span><br><span class="line">wegt https://chrome.google.com/webstore/detail/cookies/iphcomljdfghbkdcfndaijbokpgddeno?hl=en</span><br></pre></td></tr></table></figure>
+<li>
+<p>利用链接下载 Chrome extension
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># wget https://chrome.google.com/webstore/detail/cookies/&#123;id&#125;?hl=en</span></span><br><span class="line">wegt https://chrome.google.com/webstore/detail/cookies/iphcomljdfghbkdcfndaijbokpgddeno?hl=en</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>查看 policy 是否添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start chrome://policy/</span><br></pre></td></tr></table></figure>
+<li>
+<p>查看 policy 是否添加
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start chrome://policy/</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
+<h2>附录</h2>
+<hr>
 <ul>
 <li><a href="https://www.chromium.org/administrators/policy-list-3#ExtensionInstallWhitelist" target="_blank" rel="noopener">Policy List</a></li>
 <li><a href="https://www.chromium.org/administrators/mac-quick-start" target="_blank" rel="noopener">chromium mac-quick-start</a></li>
@@ -578,18 +783,20 @@
       
         
           
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+            <h2>简介</h2>
+<hr>
 <p>今天尝试用 Tomcat8 + maven 部署一下 web 工程, 然后我开始疯狂踩坑</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
+<h2>快速上手</h2>
+<hr>
 <p>网上一查如何用 Tomcat8 + maven 部署一般都是这样的教程</p>
 <ul>
 <li>在 maven 工程下的 pom.xml 加入配置如下:</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Tomcat plugin --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Tomcat8 一样可用--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span> </span><br><span class="line">        <span class="comment">&lt;!-- tomcat 管理员地址,有的教程是 `http://localhost:8080/manager/`, 我是用  下面这种--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8080/manager/text<span class="tag">&lt;/<span class="name">url</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- *(From maven &gt; settings.xml)* '$&#123;&#125;' 号内的内容要与环境变量下 maven 路   下的 setting.xml 文件里配置的密码和用户名一致--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- tomcat8 安装目录下 `conf/tomcat-users.xml` 加入配置如下(配置好环境变量):</span><br><span class="line"></span><br><span class="line">```xml</span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注意这是 users 不是 user 所以只要加入下面的内容即可, ps: 这是我最后踩的坑 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 下面的 roles 与上面匹配 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"$&#123;admin&#125;"</span> <span class="attr">password</span>=<span class="string">"$&#123;password&#125;"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script"</span> /&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Tomcat plugin --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Tomcat8 一样可用--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span> </span><br><span class="line">        <span class="comment">&lt;!-- tomcat 管理员地址,有的教程是 `http://localhost:8080/manager/`, 我是用  下面这种--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://localhost:8080/manager/text<span class="tag">&lt;/<span class="name">url</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">server</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- *(From maven &gt; settings.xml)* '$&#123;&#125;' 号内的内容要与环境变量下 maven 路   下的 setting.xml 文件里配置的密码和用户名一致--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span>  </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- tomcat8 安装目录下 `conf/tomcat-users.xml` 加入配置如下(配置好环境变量):</span><br><span class="line"></span><br><span class="line">```xml</span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 注意这是 users 不是 user 所以只要加入下面的内容即可, ps: 这是我最后踩的坑 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 下面的 roles 与上面匹配 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"$&#123;admin&#125;"</span> <span class="attr">password</span>=<span class="string">"$&#123;password&#125;"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script"</span> /&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>maven 安装目录下 <code>conf/settings.xml</code> 加入配置如下(配置好环境变量):</li>
 </ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servers</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">id</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servers</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 匹配内容 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">id</span>&gt;</span>TomcatServer<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">username</span>&gt;</span>$&#123;admin&#125;<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">password</span>&gt;</span>$&#123;password&#125;<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>运行 tomcat 8 (运行 Tomcat 7 就是用 7 部署)</li>
 </ul>
@@ -599,17 +806,22 @@
 <ul>
 <li>部署命令</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 都是 tocmat7 不是 `tomcat8 or tomcat`</span></span><br><span class="line">mvn tomcat7:deploy</span><br><span class="line"><span class="comment"># mvn tomcat7:redeploy</span></span><br></pre></td></tr></table></figure>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 都是 tocmat7 不是 `tomcat8 or tomcat`</span></span><br><span class="line">mvn tomcat7:deploy</span><br><span class="line"><span class="comment"># mvn tomcat7:redeploy</span></span><br></pre></td></tr></table></figure></p>
+<h2>入门篇</h2>
+<hr>
 <ul>
 <li>测试环境:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 8.0.5</span><br><span class="line">JDK 1.8</span><br><span class="line">Window 10 X64</span><br><span class="line">Maven 3.6.0</span><br></pre></td></tr></table></figure>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tomcat 8.0.5</span><br><span class="line">JDK 1.8</span><br><span class="line">Window 10 X64</span><br><span class="line">Maven 3.6.0</span><br></pre></td></tr></table></figure></p>
+<h2>FAQ</h2>
+<hr>
 <ul>
-<li>报 404: 先开启服务器</li>
-<li><p>报 403:</p>
-<p>  无法进入 manager 页面</p>
+<li>
+<p>报 404: 先开启服务器</p>
+</li>
+<li>
+<p>报 403:</p>
+<p>无法进入 manager 页面</p>
 </li>
 </ul>
 <ol>
@@ -620,11 +832,12 @@
 <ul>
 <li>报 401:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ERROR] Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br><span class="line">[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy (default-cli) on project test-mybatis: Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ERROR] Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br><span class="line">[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy (default-cli) on project test-mybatis: Tomcat return http status error: 401, Reason Phrase: Unauthorized</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>就是账号没配置好, 回去确认</p>
 </blockquote>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
+<h2>附录</h2>
+<hr>
 <ul>
 <li><a href="https://codeday.me/bug/20170927/78372.html" target="_blank" rel="noopener">Java 8的Tomcat Maven插件 - 代码日志</a></li>
 <li><a href="https://josh-persistence.iteye.com/blog/1900088" target="_blank" rel="noopener">Maven部署项目到Tomcat7出现403 Access Deny. - Josh_Persistence - ITeye博客</a></li>
@@ -670,183 +883,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190413_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/190413_1/" itemprop="url">获取 spring-framework 所有版本更新信息</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T12:00:00+08:00">
-                2019-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/190413_1/" class="leancloud_visitors" data-flag-title="获取 spring-framework 所有版本更新信息">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>spring framework 更新后都会有新的特性, 而且 spring framework 是在 github 上开源的, github 上也会有相应的版本更新日志, 所以我采用 github api 可以获取其日志内容, 当然你可以在页面上看, 不过我想要的是所有的信息</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<ul>
-<li>github 获取的对应仓库的链接 <code>https://api.github.com/repos/spring-projects/spring-framework/releases</code></li>
-</ul>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
-<ul>
-<li>直接贴代码</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/2.1.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/marked/0.6.2/marked.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            marked.setOptions(&#123;</span></span><br><span class="line"><span class="javascript">                renderer: <span class="keyword">new</span> marked.Renderer(),</span></span><br><span class="line"><span class="javascript">                gfm: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                tables: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                breaks: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                pedantic: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                sanitize: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                smartLists: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                smartypants: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                highlight: <span class="function"><span class="keyword">function</span> (<span class="params">code, lang</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="comment">//使用 highlight 插件解析文档中代码部分</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> hljs.highlightAuto(code, [lang]).value;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> html = <span class="string">""</span>;</span></span><br><span class="line"><span class="javascript">            $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="string">"get"</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">"https://api.github.com/repos/spring-projects/spring-framework/releases"</span>,   <span class="comment">// 路径</span></span></span><br><span class="line"><span class="undefined">                data: &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="javascript">                dataType: <span class="string">"json"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">async</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                    $.each(data, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['upload_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'tag_name'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['target_commitish']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['name']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['draft']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['login']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['node_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['avatar_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gravatar_id']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]);</span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['followers_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['following_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['gists_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['starred_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['subscripttions_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['organizations_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['repos_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['received_events_url']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['type']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['author']['site_admin']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['prerelease']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['created_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['published_at']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['assets']);</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['tarball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="comment">// console.log(value['zipball_url'])</span></span></span><br><span class="line"><span class="javascript">                        <span class="built_in">console</span>.log(value[<span class="string">'body'</span>])</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                        html += <span class="string">`&lt;a href='<span class="subst">$&#123;value[<span class="string">'html_url'</span>]&#125;</span>'&gt;<span class="subst">$&#123;value[<span class="string">'tag_name'</span>]&#125;</span>&lt;/a&gt;&lt;p&gt;<span class="subst">$&#123;value[<span class="string">'author'</span>][<span class="string">'html_url'</span>]&#125;</span>&lt;/p&gt;<span class="subst">$&#123;marked(value[<span class="string">'body'</span>])&#125;</span>&lt;hr&gt;`</span>;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            $(<span class="string">"#list"</span>).html(html);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
-<ul>
-<li>github 对应的 api <code>https://api.github.com/repos/${github name}/${repo name}/releases</code></li>
-<li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">github api v4</a></li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -892,7 +933,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

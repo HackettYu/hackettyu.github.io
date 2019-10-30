@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -81,18 +88,18 @@
 
 
 
-<meta name="description" content="简介 Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手 windows 添加 policy使用注册表添加的方式（懒得写了） mac 命令行添加 policy1234# adddefaults write com.google.Chrome">
+<meta name="description" content="简介  Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手  windows 添加 policy 使用注册表添加的方式（懒得写了） mac 命令行添加 policy 1234# adddefaults write com.google.Ch">
 <meta name="keywords" content="Chrome">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chrome 解决第三方扩展安装的问题">
 <meta property="og:url" content="https://hackettyu.com/190916_1/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="简介 Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手 windows 添加 policy使用注册表添加的方式（懒得写了） mac 命令行添加 policy1234# adddefaults write com.google.Chrome">
+<meta property="og:description" content="简介  Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手  windows 添加 policy 使用注册表添加的方式（懒得写了） mac 命令行添加 policy 1234# adddefaults write com.google.Ch">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-16T02:59:42.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome 解决第三方扩展安装的问题">
-<meta name="twitter:description" content="简介 Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手 windows 添加 policy使用注册表添加的方式（懒得写了） mac 命令行添加 policy1234# adddefaults write com.google.Chrome">
+<meta name="twitter:description" content="简介  Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，百度经验上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist 快速上手  windows 添加 policy 使用注册表添加的方式（懒得写了） mac 命令行添加 policy 1234# adddefaults write com.google.Ch">
 
 
 
@@ -399,21 +406,29 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+        <h2>简介</h2>
+<hr>
 <p>Chrome 在后面新的版本不支持第三方扩展了，这使得我自己去下载一些开发者的扩展安装时有点感到不方便，<code>百度经验</code>上到多数都是用开发者模式的方法安装，其实最完美的方法是 policy whitelist</p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<h3 id="windows-添加-policy"><a href="#windows-添加-policy" class="headerlink" title="windows 添加 policy"></a>windows 添加 policy</h3><p>使用注册表添加的方式（懒得写了）</p>
-<h3 id="mac-命令行添加-policy"><a href="#mac-命令行添加-policy" class="headerlink" title="mac 命令行添加 policy"></a>mac 命令行添加 policy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add</span></span><br><span class="line">defaults write com.google.Chrome ExtensionInstallWhitelist -array &#123;id&#125;</span><br><span class="line"><span class="comment"># delete</span></span><br><span class="line">defaults delete com.google.Chrome ExtensionInstallWhitelist</span><br></pre></td></tr></table></figure>
-<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><hr>
+<h2>快速上手</h2>
+<hr>
+<h3>windows 添加 policy</h3>
+<p>使用注册表添加的方式（懒得写了）</p>
+<h3>mac 命令行添加 policy</h3>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add</span></span><br><span class="line">defaults write com.google.Chrome ExtensionInstallWhitelist -array &#123;id&#125;</span><br><span class="line"><span class="comment"># delete</span></span><br><span class="line">defaults delete com.google.Chrome ExtensionInstallWhitelist</span><br></pre></td></tr></table></figure></p>
+<h2>进阶篇</h2>
+<hr>
 <ul>
-<li><p>利用链接下载 Chrome extension</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># wget https://chrome.google.com/webstore/detail/cookies/&#123;id&#125;?hl=en</span></span><br><span class="line">wegt https://chrome.google.com/webstore/detail/cookies/iphcomljdfghbkdcfndaijbokpgddeno?hl=en</span><br></pre></td></tr></table></figure>
+<li>
+<p>利用链接下载 Chrome extension
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"><span class="comment"># wget https://chrome.google.com/webstore/detail/cookies/&#123;id&#125;?hl=en</span></span><br><span class="line">wegt https://chrome.google.com/webstore/detail/cookies/iphcomljdfghbkdcfndaijbokpgddeno?hl=en</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>查看 policy 是否添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start chrome://policy/</span><br></pre></td></tr></table></figure>
+<li>
+<p>查看 policy 是否添加
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start chrome://policy/</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><hr>
+<h2>附录</h2>
+<hr>
 <ul>
 <li><a href="https://www.chromium.org/administrators/policy-list-3#ExtensionInstallWhitelist" target="_blank" rel="noopener">Policy List</a></li>
 <li><a href="https://www.chromium.org/administrators/mac-quick-start" target="_blank" rel="noopener">chromium mac-quick-start</a></li>
@@ -475,6 +490,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/191030_1/" rel="prev" title="test tag preview">
+                test tag preview <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -551,7 +570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -647,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速上手"><span class="nav-number">2.</span> <span class="nav-text">快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-添加-policy"><span class="nav-number">2.1.</span> <span class="nav-text">windows 添加 policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac-命令行添加-policy"><span class="nav-number">2.2.</span> <span class="nav-text">mac 命令行添加 policy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶篇"><span class="nav-number">3.</span> <span class="nav-text">进阶篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">windows 添加 policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">mac 命令行添加 policy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">进阶篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a></li></ol></div>
             
 
           </div>

@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -81,18 +88,18 @@
 
 
 
-<meta name="description" content="简介hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常：123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this applic">
+<meta name="description" content="简介 hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常： 123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this appl">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="j2ee 的 jstl 找不到包">
 <meta property="og:url" content="https://hackettyu.com/181208_1/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="简介hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常：123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this applic">
+<meta property="og:description" content="简介 hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常： 123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this appl">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-12-07T16:57:47.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="j2ee 的 jstl 找不到包">
-<meta name="twitter:description" content="简介hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常：123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this applic">
+<meta name="twitter:description" content="简介 hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常： 123The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved in either web.xml or the jar files deployed with this appl">
 
 
 
@@ -399,8 +406,12 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved <span class="keyword">in</span> either web.xml or the jar files deployed with this application</span><br><span class="line"></span><br><span class="line">org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved <span class="keyword">in</span> either web.xml or the jar files deployed with this application</span><br></pre></td></tr></table></figure></p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>这个问题的可能原因之一是找不到 jstl 的 jar 包，需要两个包 jstl.jar 和 standar.jar。<br>下载地址：</p>
+        <h2>简介</h2>
+<p>hy 在 eclipse 导入一个 jsp 工程时，因为里面的 jsp 页面使用了 jsp 的 c 语句导致运行时抛出如下异常：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved <span class="keyword">in</span> either web.xml or the jar files deployed with this application</span><br><span class="line"></span><br><span class="line">org.apache.jasper.JasperException: The absolute uri: http://java.sun.com/jsp/jstl/core cannot be resolved <span class="keyword">in</span> either web.xml or the jar files deployed with this application</span><br></pre></td></tr></table></figure></p>
+<h2>快速上手</h2>
+<p>这个问题的可能原因之一是找不到 jstl 的 jar 包，需要两个包 jstl.jar 和 standar.jar。
+下载地址：</p>
 <ul>
 <li><a href="http://repo2.maven.org/maven2/javax/servlet/jstl/" target="_blank" rel="noopener">jstl</a></li>
 <li><a href="http://repo2.maven.org/maven2/taglibs/standard/" target="_blank" rel="noopener">standard</a></li>
@@ -542,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -638,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速上手"><span class="nav-number">2.</span> <span class="nav-text">快速上手</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">快速上手</span></a></li></ol></div>
             
 
           </div>

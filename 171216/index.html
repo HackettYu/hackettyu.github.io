@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -81,20 +88,20 @@
 
 
 
-<meta name="description" content="软件版本 CentOS 6.7 LAMP PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务 [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysqld s">
+<meta name="description" content="软件版本  CentOS 6.7 LAMP  PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql  [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务  [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysq">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOs 6.7 安装 owncloud">
 <meta property="og:url" content="https://hackettyu.com/171216/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="软件版本 CentOS 6.7 LAMP PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务 [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysqld s">
+<meta property="og:description" content="软件版本  CentOS 6.7 LAMP  PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql  [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务  [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysq">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2017/12/16/5a34d4cecfe55.png">
 <meta property="og:image" content="https://i.loli.net/2017/12/16/5a34d58b7ff3c.png">
 <meta property="og:updated_time" content="2018-10-16T08:53:48.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOs 6.7 安装 owncloud">
-<meta name="twitter:description" content="软件版本 CentOS 6.7 LAMP PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务 [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysqld s">
+<meta name="twitter:description" content="软件版本  CentOS 6.7 LAMP  PHP 5.6 MySql Apache   OwnCloud 9.0.10  安装MySql  [~]# yum -y install mysql mysql-server mysql-devel  配置MySql开机自启动服务  [~]# chkconfig mysqld on   #设置mysql服务随开机启动 [~]# service mysq">
 <meta name="twitter:image" content="https://i.loli.net/2017/12/16/5a34d4cecfe55.png">
 
 
@@ -402,9 +409,11 @@
       
 
       
-        <h2 id="软件版本"><a href="#软件版本" class="headerlink" title="软件版本"></a>软件版本</h2><ul>
+        <h2>软件版本</h2>
+<ul>
 <li>CentOS 6.7</li>
-<li>LAMP<ul>
+<li>LAMP
+<ul>
 <li>PHP 5.6</li>
 <li>MySql</li>
 <li>Apache</li>
@@ -412,50 +421,61 @@
 </li>
 <li>OwnCloud 9.0.10</li>
 </ul>
-<h2 id="安装MySql"><a href="#安装MySql" class="headerlink" title="安装MySql"></a>安装MySql</h2><ul>
+<h2>安装MySql</h2>
+<ul>
 <li>[~]# yum -y install mysql mysql-server mysql-devel</li>
 </ul>
-<h2 id="配置MySql开机自启动服务"><a href="#配置MySql开机自启动服务" class="headerlink" title="配置MySql开机自启动服务"></a>配置MySql开机自启动服务</h2><ul>
+<h2>配置MySql开机自启动服务</h2>
+<ul>
 <li>[~]# chkconfig mysqld on   #设置mysql服务随开机启动</li>
 <li>[~]# service mysqld start  #启动mysql服务</li>
 <li>[~]# service mysqld start  #启动mysql服务</li>
-<li>[~]# chkconfig –list | grep mysqld #检查自启动服务是否处于开启on状态</li>
+<li>[~]# chkconfig --list | grep mysqld #检查自启动服务是否处于开启on状态</li>
 </ul>
-<h2 id="安装PHP环境"><a href="#安装PHP环境" class="headerlink" title="安装PHP环境"></a>安装PHP环境</h2><ul>
+<h2>安装PHP环境</h2>
+<ul>
 <li>[~]# yum -y update</li>
-<li>[~]# rpm -Uvh <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="noopener">https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm</a> #<a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="noopener">链接测试</a></li>
-<li>[~]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el6/latest.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el6/latest.rpm</a> #<a href="https://mirror.webtatic.com/yum/el6/latest.rpm" target="_blank" rel="noopener">链接测试</a></li>
+<li>[~]# rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm #<a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm" target="_blank" rel="noopener">链接测试</a></li>
+<li>[~]# rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm #<a href="https://mirror.webtatic.com/yum/el6/latest.rpm" target="_blank" rel="noopener">链接测试</a></li>
 <li>[~]# yum install -y php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64 #安装不成功，尝试换顺序</li>
 <li>[~]# yum install -y php56w-xml</li>
 </ul>
-<h2 id="调试PHP环境"><a href="#调试PHP环境" class="headerlink" title="调试PHP环境"></a>调试PHP环境</h2><ul>
+<h2>调试PHP环境</h2>
+<ul>
 <li>[~]# chkconfig httpd on        #httpd服务加入自启动</li>
-<li>[~]# chkconfig –list | grep httpd  #检查启动httpd服务</li>
+<li>[~]# chkconfig --list | grep httpd  #检查启动httpd服务</li>
 <li>[~]# service httpd restart  #重启httpd服务</li>
 </ul>
-<h2 id="验证httpd服务"><a href="#验证httpd服务" class="headerlink" title="验证httpd服务"></a>验证httpd服务</h2><ul>
-<li>打开浏览器,访问<a href="http://192.168.XXX.XXX" target="_blank" rel="noopener">http://192.168.XXX.XXX</a></li>
+<h2>验证httpd服务</h2>
+<ul>
+<li>打开浏览器,访问http://192.168.XXX.XXX</li>
 </ul>
-<h2 id="安装owncloud"><a href="#安装owncloud" class="headerlink" title="安装owncloud"></a>安装owncloud</h2><ul>
-<li>[~]# wget <a href="https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2" target="_blank" rel="noopener">https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2</a> #<a href="https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2" target="_blank" rel="noopener">链接测试</a></li>
+<h2>安装owncloud</h2>
+<ul>
+<li>[~]# wget https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2 #<a href="https://download.owncloud.org/community/owncloud-9.0.10.tar.bz2" target="_blank" rel="noopener">链接测试</a></li>
 <li>[~]# tar -jxf owncloud-9.0.10.tar.bz2</li>
 <li>[~]# mv owncloud /var/www/html</li>
 <li>[~]# cd /var/www/html  # 检查解压文件路径是否正确</li>
-<li>[html]# ls </li>
-<li>[html]# pwd </li>
+<li>[html]# ls</li>
+<li>[html]# pwd</li>
 <li>[html]# chown -R apache:apache /var/www/html/owncloud/ # 更改owncloud文件夹所属用户组</li>
 <li>[~]# chmod 777 /var/www/html/owncloud/config/</li>
-<li>浏览器访问 <a href="http://192.168.XXX.XXX/owncloud" target="_blank" rel="noopener">http://192.168.XXX.XXX/owncloud</a></li>
+<li>浏览器访问 http://192.168.XXX.XXX/owncloud</li>
 <li>验证安装,并配置管理员用户</li>
 <li>owncloud安装完成,简单配置语言</li>
 </ul>
-<p><a href="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" alt="1.png"></a><br><!-- delete[1] --><br><!-- https://sm.ms/delete/ASq7gfIDGl3FHu8 --></p>
-<p><img src="https://i.loli.net/2017/12/16/5a34d58b7ff3c.png" alt="2.png"><br><!-- delete[2] --><br><!-- https://sm.ms/delete/XEapbOv3RN74DLn --></p>
+<p><a href="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" target="_blank" rel="noopener"><img src="https://i.loli.net/2017/12/16/5a34d4cecfe55.png" alt="1.png"></a>
+&lt;!-- delete[1] --&gt;
+&lt;!-- https://sm.ms/delete/ASq7gfIDGl3FHu8 --&gt;</p>
+<p><img src="https://i.loli.net/2017/12/16/5a34d58b7ff3c.png" alt="2.png">
+&lt;!-- delete[2] --&gt;
+&lt;!-- https://sm.ms/delete/XEapbOv3RN74DLn --&gt;</p>
 <ul>
 <li>完成</li>
 </ul>
 <hr>
-<p>##参考链接<br><a href="https://jingyan.baidu.com/article/414eccf644cebb6b431f0abb.html" target="_blank" rel="noopener">CentOS 6.7 安装私有云owncloud</a></p>
+<p>##参考链接
+<a href="https://jingyan.baidu.com/article/414eccf644cebb6b431f0abb.html" target="_blank" rel="noopener">CentOS 6.7 安装私有云owncloud</a></p>
 
       
       <div>    
@@ -589,7 +609,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -685,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件版本"><span class="nav-number">1.</span> <span class="nav-text">软件版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装MySql"><span class="nav-number">2.</span> <span class="nav-text">安装MySql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置MySql开机自启动服务"><span class="nav-number">3.</span> <span class="nav-text">配置MySql开机自启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装PHP环境"><span class="nav-number">4.</span> <span class="nav-text">安装PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试PHP环境"><span class="nav-number">5.</span> <span class="nav-text">调试PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证httpd服务"><span class="nav-number">6.</span> <span class="nav-text">验证httpd服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装owncloud"><span class="nav-number">7.</span> <span class="nav-text">安装owncloud</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">软件版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">安装MySql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">配置MySql开机自启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">安装PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">调试PHP环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">验证httpd服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">安装owncloud</span></a></li></ol></div>
             
 
           </div>

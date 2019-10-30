@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -299,6 +306,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/weekly_04/" itemprop="url">每周分享第 4 期</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-31T23:59:59+08:00">
+                2018-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/weekly/" itemprop="url" rel="index">
+                    <span itemprop="name">weekly</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/weekly_04/" class="leancloud_visitors" data-flag-title="每周分享第 4 期">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2>文摘</h2>
+<hr>
+<p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a>
+<code>|</code> =&gt; <code>\</code></p>
+<p>| 符号 	| 名称 	| 描述 	| 示例 	|
+|----------	|--------------	|--------------------------------------	|---------------------------------------------------	|
+| 组合符号 	|  	|  	|  	|
+|  	| 并置 	| 各部分必须出现且按顺序出现 	| solid <code>&lt;length&gt;</code>	|
+| &amp;&amp; 	| “与”组合符 	| 各部分必须出现，但可以不按顺序 	| <code>&lt;length&gt;</code> &amp;&amp; <code>&lt;string&gt;</code> 	|
+| \ 	| “或”组合符 	| 各部分至少出现一个，可以不按顺序 	| <code>&lt;'border-image-outset'&gt;</code> \ <code>&lt;'border-image-slice'&gt;</code> 	|
+| \ 	| “互斥”组合符 	| 各部分恰好出现一个 	| smaller \ small \ normal \ big \ bigger 	|
+| [ ] 	| 方括号 	| 强调优先级 	| bold [ thin &amp;&amp; <code>&lt;length&gt;</code> ] 	|
+| 数量符号 	|  	|  	|  	|
+|  	| 无数量符号 	| 恰好一次 	| solid 	|
+| * 	| 星号 	| 零次、一次或多次 	| bold smaller* 	|
+| +  	| 加号 	| 一次或多次 	| bold smaller+ 	|
+| ？ 	| 问号 	| 零次或一次（即可选） 	| bold smaller？ 	|
+| {A,B} 	| 大括号 	| 至少A次，至多B次 	| bold smaller{1,3} 	|
+| # 	| 井号 	| 一次或多次，但多次出现必须以逗号分隔 	| bold smaller# 	|</p>
+<p>2、python3 打印圣诞树
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"for i in list(range(0, 5)) + list(range(2, 8)) + list(range(3, 12)) + [2, 2]: print(' ' * int((40-2*i-i/2)) + '*' * int((4*i+1+i)))"</span></span><br></pre></td></tr></table></figure></p>
+<p>3、python3 开启内置服务器
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure></p>
+<p>4、windows 装 python2 和 python3 后安装 python2 的 pip 包
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install &lt;package&gt;</span><br></pre></td></tr></table></figure></p>
+<p>5、windows 修改 dns command</p>
+<ul>
+<li>netsh interface ip set dns &quot;以太网&quot; static 114.114.114.114    # 设置 dns 管理员权限下
+6、全球 BGP
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">telnet route-server.ip.att.NET</span><br><span class="line">username: rviews</span><br><span class="line">password: rviews</span><br><span class="line">show route all</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2>结语</h2>
+<p>----       ----     ---    ----
+     |     |     |     |     |     |
+     |     |     |     |     |     |
+----      |     |     |      ----
+|          |     |     |           |
+|          |     |     |           |
+----       ----     ---     ----</p>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -403,20 +605,26 @@
       
         
           
-            <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr>
-<p>1、<a href="https://segmentfault.com/a/1190000000721142" target="_blank" rel="noopener">html2docset</a><br>html 文件转 docset</p>
-<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr>
-<p>1、镜像网站<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains \&lt;name&gt; --no-parent \&lt;url&gt;</span><br><span class="line">wget -m \&lt;url&gt;    </span><br><span class="line">wget -r -p -k -np \&lt;url&gt;</span><br></pre></td></tr></table></figure></p>
-<p>2、python 2.x to python 3.x<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> lib2to3.main <span class="keyword">import</span> main</span><br><span class="line">sys.exit(main(<span class="string">"lib2to3.fixes"</span>))</span><br></pre></td></tr></table></figure></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr>
+            <h2>教程</h2>
+<hr>
+<p>1、<a href="https://segmentfault.com/a/1190000000721142" target="_blank" rel="noopener">html2docset</a>
+html 文件转 docset</p>
+<h2>文摘</h2>
+<hr>
+<p>1、镜像网站
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains \&lt;name&gt; --no-parent \&lt;url&gt;</span><br><span class="line">wget -m \&lt;url&gt;    </span><br><span class="line">wget -r -p -k -np \&lt;url&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、python 2.x to python 3.x
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> lib2to3.main <span class="keyword">import</span> main</span><br><span class="line">sys.exit(main(<span class="string">"lib2to3.fixes"</span>))</span><br></pre></td></tr></table></figure></p>
+<h2>结语</h2>
+<hr>
 <blockquote>
-<p><a href="http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html</a></p>
+<p>http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html</p>
 </blockquote>
 <p>美国一个编程培训班的老板，写了一篇文章。他说自己很担忧。现在，那么多人学习编程，他的公司全靠培训赚钱，将来会不会程序员过剩？</p>
 <p>培训班的目的，就是让那些没有受过四年计算机教育的人，经过四个月的培训，找到一份软件开发的工作。某种程度上，这种做法是可行的，大量的程序员就是通过这种模式生产出来。</p>
 <p>但是，人工智能正变得越来越强，终有一天，简单代码都会由计算机自已生成，低级程序员的需求将会大量减少。另一方面，云服务的兴起，使得很多任务不需要自己编程，可以购买云服务，这也减少了程序员的需求。</p>
 <p>同时，由于不断的抽象和封装，应用层的软件开发正变得越来越简单，如果只是简单地遵循在线教程，就能编写软件，或者将一系列API混合在一起，就能做出一个服务，有必要向开发人员支付高额薪水吗？毕竟开发过程是那么简单。</p>
-<p>他认为，学习编程是值得的，它可以帮助你理解世界。但是，梦想仅仅学会软件开发，就能解决你的人生问题是不现实的。”只是能够编写一个安卓程序，不会为你赢得竞争优势，也没法在这个超级饱和的科技世界里，获得自己的一席之地。这个世界里，每个想法都已由十位企业家在你前面完成了。”</p>
+<p>他认为，学习编程是值得的，它可以帮助你理解世界。但是，梦想仅仅学会软件开发，就能解决你的人生问题是不现实的。&quot;只是能够编写一个安卓程序，不会为你赢得竞争优势，也没法在这个超级饱和的科技世界里，获得自己的一席之地。这个世界里，每个想法都已由十位企业家在你前面完成了。&quot;</p>
 <p>由于其他行业不景气，大量年轻人正在转向软件业就业。但是，程序员的淘汰也很厉害，上车的人多，下车的人也多。大家应该对这一点有清醒的认识。</p>
 <p>（完）</p>
 
@@ -575,18 +783,24 @@
       
         
           
-            <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><hr>
+            <h2>教程</h2>
+<p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p>
+<h2>资源</h2>
+<hr>
 <p>1、IP 查询 API</p>
 <ul>
-<li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl 	http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure>
-</li>
+<li>实例：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl 	http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a><br>Mybatis通用分页插件</p>
-<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><hr>
+<p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a>
+Mybatis通用分页插件</p>
+<h2>文摘</h2>
+<hr>
 <ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a><br>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li>
-<li>linux使用的进程间通信方式<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a>
+文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li>
+<li>linux使用的进程间通信方式
+<ul>
 <li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li>
 <li>信号（signal）</li>
 <li>消息队列</li>
@@ -596,176 +810,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr>
-<p>一周都在弄报告 ）0（<br>（完）</p>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/181215_1/" itemprop="url">Cannot find one or more componets. Please reinstall the application</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-15T12:00:00+08:00">
-                2018-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/debug/" itemprop="url" rel="index">
-                    <span itemprop="name">debug</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/181215_1/" class="leancloud_visitors" data-flag-title="Cannot find one or more componets. Please reinstall the application">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
-<p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><hr>
-<p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p>
-<ul>
-<li>没安装</li>
-<li>没安装正确</li>
-</ul>
-<p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p>
-<p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><hr>
-<p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表…… 放弃:)</p>
+<h2>结语</h2>
+<hr>
+<p>一周都在弄报告 ）0（
+（完）</p>
 
           
         
@@ -809,7 +857,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -855,7 +903,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

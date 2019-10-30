@@ -11,6 +11,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+<meta name="description" content="Also want these pretty website previews?" />
+
+<meta property="og:title" content="hackettyu.com" />
+<meta property="og:description" content="OGP" />
+<meta property="og:url" content="http://hackettyu.com/" />
+<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
+<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
 
 
 
@@ -81,18 +88,18 @@
 
 
 
-<meta name="description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将本">
+<meta name="description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp 0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 6.7 开启 DHCP 服务">
 <meta property="og:url" content="https://hackettyu.com/180510/index.html">
 <meta property="og:site_name" content="HackettYu&#39;s blog">
-<meta property="og:description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将本">
+<meta property="og:description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp 0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-10-16T08:59:22.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 6.7 开启 DHCP 服务">
-<meta name="twitter:description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将本">
+<meta name="twitter:description" content="###IP地址  192.168.1.11  ###网关  192.168.1.1  ###在CentOS 6.7下搭建DHCP服务  [~]# yum install dhcpd      #安装dhcp 0X01 配置服务器网络服务  首先我们要将本地的网络配置成静态地址，并重启网络服务  [~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将">
 
 
 
@@ -409,35 +416,40 @@
 </ul>
 <p>###在CentOS 6.7下搭建DHCP服务</p>
 <ul>
-<li>[~]# yum install dhcpd      #安装dhcp<br>0X01 配置服务器网络服务</li>
+<li>[~]# yum install dhcpd      #安装dhcp
+0X01 配置服务器网络服务</li>
 </ul>
 <p>首先我们要将本地的网络配置成静态地址，并重启网络服务</p>
 <ul>
 <li>[~]# vi /etc/sysconfig/network-scripts/icf-eth0   #将本地的网络配置成静态地址，并重启网络服务</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static <span class="comment">#之前很有可能是dhcp，现在我们修改它为静态</span></span><br><span class="line">ONBOOT=yes       <span class="comment">#以前可能是no，改为yes、就是打开网络服务的时候启动这个网卡</span></span><br><span class="line">IPADDR=192.168.1.11 <span class="comment">#配置文件中可能没有这个，没有的话就自己添加这行</span></span><br></pre></td></tr></table></figure>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static <span class="comment">#之前很有可能是dhcp，现在我们修改它为静态</span></span><br><span class="line">ONBOOT=yes       <span class="comment">#以前可能是no，改为yes、就是打开网络服务的时候启动这个网卡</span></span><br><span class="line">IPADDR=192.168.1.11 <span class="comment">#配置文件中可能没有这个，没有的话就自己添加这行</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>[~]# service network restart</li>
 <li>[~]# vi /etc/dhcp/dhcpd.conf</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置DHCP于DNS服务器的动态信息更新模式。初学时完全可以不理这个选项，但是全局设置中一定要有这个选项，否则DHCP服务不能成功启动。</span></span><br><span class="line">ddns-update-style interim;</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面开始分配子网，网段是192.168.1.11 子网掩码是 255.255.255.0</span></span><br><span class="line"><span class="comment">#不能理解网段和子网掩码的可以去网上查一下。简单的说网段规定了分配IP的段（分配哪一段IP给客户机），子网掩码规定了网段的大小 subnet</span></span><br><span class="line">192.168.1.11 netmask 255.255.255.0 &#123;     </span><br><span class="line">    range 192.168.1.100 192.168.1.199;</span><br><span class="line"><span class="comment">#同一网段，分配给客户机的IP     </span></span><br><span class="line">    option routers 192.168.1.1; <span class="comment">#设置网关    </span></span><br><span class="line">    default-lease-time</span><br><span class="line">    600; <span class="comment">#默认租约时间     </span></span><br><span class="line">    max-lease-time 7200; <span class="comment">#最大租约时间 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置DHCP于DNS服务器的动态信息更新模式。初学时完全可以不理这个选项，但是全局设置中一定要有这个选项，否则DHCP服务不能成功启动。</span></span><br><span class="line">ddns-update-style interim;</span><br><span class="line"></span><br><span class="line"><span class="comment">#下面开始分配子网，网段是192.168.1.11 子网掩码是 255.255.255.0</span></span><br><span class="line"><span class="comment">#不能理解网段和子网掩码的可以去网上查一下。简单的说网段规定了分配IP的段（分配哪一段IP给客户机），子网掩码规定了网段的大小 subnet</span></span><br><span class="line">192.168.1.11 netmask 255.255.255.0 &#123;     </span><br><span class="line">    range 192.168.1.100 192.168.1.199;</span><br><span class="line"><span class="comment">#同一网段，分配给客户机的IP     </span></span><br><span class="line">    option routers 192.168.1.1; <span class="comment">#设置网关    </span></span><br><span class="line">    default-lease-time</span><br><span class="line">    600; <span class="comment">#默认租约时间     </span></span><br><span class="line">    max-lease-time 7200; <span class="comment">#最大租约时间 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>###给特定MAC设置</p>
 <ul>
 <li>[~]# vi /etc/dhcp/dhcpd.conf  #添加如下</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">host Client &#123; <span class="comment">#名字随便起</span></span><br><span class="line">    hardware ethernet 08:00:27:5e:04:27; <span class="comment">#MAC地址</span></span><br><span class="line">    fixed-address 192.168.1.123;       <span class="comment">#分配给它192.168.1.123的IP</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">host Client &#123; <span class="comment">#名字随便起</span></span><br><span class="line">    hardware ethernet 08:00:27:5e:04:27; <span class="comment">#MAC地址</span></span><br><span class="line">    fixed-address 192.168.1.123;       <span class="comment">#分配给它192.168.1.123的IP</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>[~]# service dhcpd restart</li>
 </ul>
-<h3 id="Linux-下测试DHCP"><a href="#Linux-下测试DHCP" class="headerlink" title="Linux 下测试DHCP"></a>Linux 下测试DHCP</h3><ul>
-<li><p>[~]# vi /etc/sysconfig/network-scripts/icf-eth0 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=dhcp  <span class="comment">#dhcp</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line">HWADDR=08:00:27:5e:04:27 <span class="comment">#MAC</span></span><br></pre></td></tr></table></figure>
+<h3>Linux 下测试DHCP</h3>
+<ul>
+<li>
+<p>[~]# vi /etc/sysconfig/network-scripts/icf-eth0
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DEVICE=eth0</span><br><span class="line">BOOTPROTO=dhcp  <span class="comment">#dhcp</span></span><br><span class="line">ONBOOT=yes</span><br><span class="line">HWADDR=08:00:27:5e:04:27 <span class="comment">#MAC</span></span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>[~]# service network restart</p>
+<li>
+<p>[~]# service network restart</p>
 </li>
 </ul>
 <hr>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<h3>参考链接</h3>
+<ul>
 <li><a href="http://blog.csdn.net/mouse_ts/article/details/51382971" target="_blank" rel="noopener">CentOS 7.x 下配置 DHCP 服务器 基础篇</a></li>
 </ul>
 
@@ -577,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-下测试DHCP"><span class="nav-number">1.</span> <span class="nav-text">Linux 下测试DHCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Linux 下测试DHCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
