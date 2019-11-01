@@ -11,14 +11,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-<meta name="description" content="Also want these pretty website previews?" />
+<meta name="description" content="hackettyu.com" />
 
-<meta property="og:title" content="hackettyu.com" />
-<meta property="og:description" content="OGP" />
-<meta property="og:url" content="http://hackettyu.com/" />
-<meta property="og:image" content="http://richpreview.com/richpreview.jpg" />
-<link rel="shortcut icon" href="https://hackettyu.com/image/weekly_01_falling_through_code.gif" type="image/x-icon" />
-
+<%- open_graph() %>
 
 
 
@@ -432,17 +427,26 @@
 </ul>
 <p>上面的网站目前支持很多聊天工具，比如 WhatsApp, Telegram, Skype ，还有社交网站 Facebook，Twitter 等等。</p>
 <p><a href="https://www.amazon.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img src="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png"></div><div class="descriptions"><div class="og-title">Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</div><div class="og-description">Online shopping from the earth&#39;s biggest selection of books, magazines, music, DVDs, videos, electronics, computers, software, apparel &amp; acc…</div></div></div></a></p>
-<p><a href="https://hackettyu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">HackettYu&#39;s blog</div><div class="og-description">hackettyu</div></div></div></a></p>
+<p><a href="https://hackettyu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img src="http://richpreview.com/richpreview.jpg"></div><div class="descriptions"><div class="og-title">HackettYu&#39;s blog</div><div class="og-description">hackettyu</div></div></div></a></p>
 <p><a href="https://baidu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">百度一下，你就知道</div></div></div></a></p>
 <p>在 <code>.\themes\next\layout\_partials\head.swig</code> 下添加了下面代码</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hackettyu.com/image/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>感觉没用 😄</p>
+<h2>使用 hexo 自带的 open graph 参数</h2>
+<p>open_graph</p>
+<p>插入 open graph 资源。</p>
+<blockquote>
+<p>&lt;%- open_graph([options]) %&gt;</p>
+</blockquote>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数 	描述 	默认值</span><br><span class="line">title 	页面标题 (og:title) 	page.title</span><br><span class="line">type 	页面类型 (og:type) 	blog</span><br><span class="line">url 	页面网址 (og:url) 	url</span><br><span class="line">image 	页面图片 (og:image) 	内容中的图片</span><br><span class="line">site_name 	网站名称 (og:site_name) 	config.title</span><br><span class="line">description 	页面描述 (og:description) 	内容摘要或前 200 字</span><br><span class="line">twitter_card 	Twitter 卡片类型 (twitter:card) 	summary</span><br><span class="line">twitter_id 	Twitter ID (twitter:creator) 	</span><br><span class="line">twitter_site 	Twitter 网站 (twitter:site) 	</span><br><span class="line">google_plus 	Google+ 个人资料链接 	</span><br><span class="line">fb_admins 	Facebook 管理者 ID 	</span><br><span class="line">fb_app_id 	Facebook 应用程序 ID</span><br></pre></td></tr></table></figure></p>
 <h2>附录</h2>
 <hr>
 <ul>
 <li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/helpers.html#open-graph" target="_blank" rel="noopener">hexo open graph</a></li>
 <li><a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">hexo-tag-link-preview</a></li>
 <li><a href="http://einverne.github.io/post/2016/08/rich-preview.html" target="_blank" rel="noopener">让网站在分享时预览更美观</a></li>
+<li><a href="https://dwatow.github.io/2018/02-07-hexo/hexo-open-graph/" target="_blank" rel="noopener">hexo 加上 Open Graph</a></li>
 </ul>
 
           
@@ -474,6 +478,8 @@
       
         <div class="post-eof"></div>
       
+
+      fuck <p>""</p>
     </footer>
   </div>
   
@@ -657,6 +663,8 @@
       
         <div class="post-eof"></div>
       
+
+      fuck <p>""</p>
     </footer>
   </div>
   
@@ -874,6 +882,8 @@
       
         <div class="post-eof"></div>
       
+
+      fuck <p>""</p>
     </footer>
   </div>
   
@@ -1052,6 +1062,9 @@
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
 
 
 
