@@ -12,8 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 <meta name="description" content="hackettyu.com" />
-
-<%- open_graph() %>
+<meta name="description" content="hackettyu">
+<meta name="keywords" content="hackettyu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HackettYu&#39;s blog">
+<meta property="og:url" content="https://hackettyu.com/page/8/index.html">
+<meta property="og:site_name" content="HackettYu&#39;s blog">
+<meta property="og:description" content="hackettyu">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HackettYu&#39;s blog">
+<meta name="twitter:description" content="hackettyu">
 
 
 
@@ -301,6 +310,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181018_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HackettYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HackettYu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/181018_1/" itemprop="url">关于 java swap 函数</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T10:00:00+08:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/181018_1/" class="leancloud_visitors" data-flag-title="关于 java swap 函数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2>简介</h2>
+<p>在写算法的时候，书本里使用的 c 语言里的 swap 函数，头一热就在 java 里写了一个。
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> temp = a;</span><br><span class="line">      a = b;</span><br><span class="line">      b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>美滋滋运行自己的排序算法，居然原样输出，后来发现 java 里没有引用这个概念，自己写的函数不能真正的交换。</p>
+<h2>快速入门</h2>
+<p>这样写：
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> itself, <span class="keyword">int</span> dummy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> itself;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    a = swap(b, b = a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还可以这样：
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyInteger</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> x;                   <span class="comment">// single data member</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">MyInteger</span><span class="params">(<span class="keyword">int</span> xIn)</span> </span>&#123; x = xIn; &#125; <span class="comment">// constructor</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x; &#125;  <span class="comment">// retrieve value</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertValue</span><span class="params">(<span class="keyword">int</span> xIn)</span> </span>&#123; x = xIn;&#125; <span class="comment">// insert</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swapping</span> </span>&#123;</span><br><span class="line">   <span class="comment">// swap: pass references to objects</span></span><br><span class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(MyInteger rWrap, MyInteger sWrap)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// interchange values inside objects</span></span><br><span class="line">      <span class="keyword">int</span> t = rWrap.getValue();</span><br><span class="line">      rWrap.insertValue(sWrap.getValue());</span><br><span class="line">      sWrap.insertValue(t);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a = <span class="number">23</span>, b = <span class="number">47</span>;</span><br><span class="line">      System.out.println(<span class="string">"Before. a:"</span> + a + <span class="string">", b: "</span> + b);</span><br><span class="line">      MyInteger aWrap = <span class="keyword">new</span> MyInteger(a);</span><br><span class="line">      MyInteger bWrap = <span class="keyword">new</span> MyInteger(b);</span><br><span class="line">      swap(aWrap, bWrap);</span><br><span class="line">      a = aWrap.getValue();</span><br><span class="line">      b = bWrap.getValue();</span><br><span class="line">      System.out.println(<span class="string">"After.  a:"</span> + a + <span class="string">", b: "</span> + b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>附录</h2>
+<p>是不是三行代码的方式更简单~~~</p>
+
+          
+        
+      
+      <div>    
+      
+      
+      </div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+      <a href="https://pushtokindle.fivefilters.org/send.php?url=">send to kindle</a>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181010_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,7 +623,8 @@
         <div class="post-eof"></div>
       
 
-      fuck <p>""</p>
+      <a href="https://pushtokindle.fivefilters.org/send.php?url=">send to kindle</a>
+      
     </footer>
   </div>
   
@@ -607,211 +787,8 @@
         <div class="post-eof"></div>
       
 
-      fuck <p>""</p>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
+      <a href="https://pushtokindle.fivefilters.org/send.php?url=">send to kindle</a>
       
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181006_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HackettYu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="HackettYu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/181006_1/" itemprop="url">linux ln 命令之硬链接和软连接</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T10:00:00+08:00">
-                2018-10-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/181006_1/" class="leancloud_visitors" data-flag-title="linux ln 命令之硬链接和软连接">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2>简介</h2>
-<p>本来像利用 link 一个 cheat 文件在 <code>/user</code> 下发现 cat 后时乱码
-发现 windows 下直接创建 link 会怎样</p>
-<h2>快速上手</h2>
-<blockquote>
-<p>https://wangchujiang.com/linux-command/c/ln.html
-利用 bash 的 ln 命令：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln &#123;$filename1&#125; &#123;$$filename2&#125;</span><br><span class="line">cat &#123;$filename2&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2>附录</h2>
-<blockquote>
-<p>https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html</p>
-</blockquote>
-<ul>
-<li>硬链接
-<ul>
-<li>建立硬链接时，在另外的目录或本目录中增加目标文件的一个目录项，这样，一个文件就登记在多个目录中。如图所示的m2.c文件就在目录mub1和liu中都建立了目录项。
-创建硬链接后，己经存在的文件的I节点号（Inode）会被多个目录文件项使用。一个文件的硬链接数可以在目录的长列表格式的第二列中看到，无额外链接的文件的链接数为l。
-在默认情况下，ln命令创建硬链接。ln命令会增加链接数，rm命令会减少链接数。一个文件除非链接数为0，否则不会从文件系统中被物理地删除。
-对硬链接有如下限制：
-<ul>
-<li>不能对目录文件做硬链接。</li>
-<li>不能在不同的文件系统之间做硬链接。就是说，链接文件和被链接文件必须位于同一个文件系统中。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>符号连接</p>
-<ul>
-<li>符号链接也称为软链接，是将一个路径名链接到一个文件。这些文件是一种特别类型的文件。事实上，它只是一个文本文件（如图中的abc文件），其中包含它提供链接的另一个文件的路径名，如图中虚线箭头所示。另一个文件是实际包含所有数据的文件。所有读、写文件内容的命令被用于符号链接时，将着链接方向前进来访问实际的文件。
-与硬链接不同的是，符号链接确实是一个新文件，当然它具有不同的I节点号；而硬链接并没有建立新文件。
-符号链接没有硬链接的限制，可以对目录文件做符号链接，也可以在不同文件系统之间做符号链接。
-用ln -s命令建立符号链接时，源文件最好用绝对路径名。这样可以在任何工作目录下进行符号链接。而当源文件用相对路径时，如果当前的工作路径与要创建的符号链接文件所在路径不同，就不能进行链接。
-符号链接保持了链接与源文件或目录之间的区别：
-删除源文件或目录，只删除了数据，不会删除链接。一旦以同样文件名创建了源文件，链接将继续指向该文件的新数据。
-在目录长列表中，符号链接作为一种特殊的文件类型显示出来，其第一个字母是l。符号链接的大小是其链接文件的路径名中的字节数。
-当用ln -s命令列出文件时，可以看到符号链接名后有一个箭头指向源文件或目录，例如lrwxrwxrwx … 14 jun 20 10:20 /etc/motd-&gt;/original_file其中，表示“文件大小”的数字“14”恰好说明源文件名original_file由14个字符构成。</li>
-</ul>
-</li>
-<li>
-<p>软连接不会更新文件，尽量写绝对路径。</p>
-</li>
-</ul>
-
-          
-        
-      
-      <div>    
-      
-      
-      </div>
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-      fuck <p>""</p>
     </footer>
   </div>
   
@@ -871,7 +848,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
