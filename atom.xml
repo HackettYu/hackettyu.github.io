@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2019-12-05T02:52:50.611Z</updated>
+  <updated>2019-11-05T00:52:16.084Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://hackettyu.com/about/"/>
-    <id>https://hackettyu.com/about/</id>
-    <published>2019-11-13T03:37:34.604Z</published>
-    <updated>2019-12-05T02:52:50.611Z</updated>
-    
-    <content type="html"><![CDATA[<h1>hackettyu</h1><p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="addition">+ [2019-11-13]:[send to kindle]</span></span><br><span class="line"><span class="addition">+ [2019-11-13]:[OGP plugin]</span></span><br><span class="line"><span class="addition">+ [2019-11-13]:[support markdown emoji]</span></span><br><span class="line"><span class="addition">+ [2019-12-05]:[add google analytics]</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>给 hexo 添加 send to kindle 链接</title>
@@ -575,6 +551,34 @@
       <category term="linux" scheme="https://hackettyu.com/tags/linux/"/>
     
       <category term="ssh" scheme="https://hackettyu.com/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 配置 dns 分流的问题</title>
+    <link href="https://hackettyu.com/181025_2/"/>
+    <id>https://hackettyu.com/181025_2/</id>
+    <published>2018-10-25T04:00:00.000Z</published>
+    <updated>2018-10-25T10:36:14.681Z</updated>
+    
+    <content type="html"><![CDATA[<h2>简介</h2><p>hexo 同时部署在 coding page 和 github page 后，在域名服务器设置 dns 分流后发现 coding 一直无法申请 ssl。</p><h2>快速入门</h2><p>网上说的把 dns 设置境外线路和国内线路让 dns 分流让国内访问 coding 国外访问 github 加速网页加载，不过分流要看用户配置的 dns 不是看 ip。这导致 我的 coding ssl 证书 申请不成功 因为域名验证成功的必要条件还是要让证书服务提供方能读取到申请者（即 Coding Pages 服务器）所提供的验证信息所以要先暂停境外的分流再申请 coding 的 ssl。</p><h2>附录</h2><p>我一直找不到问题的原因是我使用的 dns 是 <code>1.1.1.1</code>，这是国外的 dns，导致我一直使用的是 github page，没有加载到 coding page。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+    
+    
+      <category term="hexo" scheme="https://hackettyu.com/tags/hexo/"/>
     
   </entry>
   

@@ -1,4 +1,3 @@
-https://hackettyu.com/about/
 https://hackettyu.com/191104_1/
 https://hackettyu.com/191030_1/
 https://hackettyu.com/190916_1/
@@ -18,3 +17,4 @@ https://hackettyu.com/weekly_01/
 https://hackettyu.com/181208_1/
 https://hackettyu.com/181202_1/
 https://hackettyu.com/181113_1/
+https://hackettyu.com/181025_2/
