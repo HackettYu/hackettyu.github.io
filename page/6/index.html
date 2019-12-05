@@ -144,6 +144,15 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 
@@ -310,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_2/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -329,7 +338,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181215_2/" itemprop="url">切换 eclipse 编译版本</a></h2>
+                <a class="post-title-link" href="/181215_1/" itemprop="url">Cannot find one or more componets. Please reinstall the application</a></h2>
         
 
         <div class="post-meta">
@@ -364,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -381,7 +390,7 @@
 
           
           
-             <span id="/181215_2/" class="leancloud_visitors" data-flag-title="切换 eclipse 编译版本">
+             <span id="/181215_1/" class="leancloud_visitors" data-flag-title="Cannot find one or more componets. Please reinstall the application">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,49 +425,19 @@
           
             <h2>简介</h2>
 <hr>
-<p>导入其它编译器或别人的项目的时候，有时候 jre 会不一样</p>
+<p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p>
 <h2>快速上手</h2>
 <hr>
+<p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p>
 <ul>
-<li>
-<p>查看你的工程编译版本：</p>
-<ul>
-<li>命令行：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javap -verbose src/source.class</span><br></pre></td></tr></table></figure></li>
+<li>没安装</li>
+<li>没安装正确</li>
 </ul>
-<p>可以直接看前面显示的 version</p>
-<ul>
-<li>eclipse 打开 src/*.class</li>
-</ul>
-</li>
-<li>
-<p>对应信息：</p>
-</li>
-</ul>
-<p>| 版本号 	| 对应十进制 	| jdk 版本号 	|
-|:------:	|:----------:	|:----------:	|
-|   2E   	|     46     	|     1.2    	|
-|   2F   	|     47     	|     1.3    	|
-|   30   	|     48     	|     1.4    	|
-|   31   	|     49     	|     1.5    	|
-|   32   	|     50     	|     1.6    	|
-|   33   	|     51     	|     1.7    	|
-|   34   	|     52     	|     1.8    	|</p>
-<ul>
-<li>切换 eclipse 编译版本
-<ul>
-<li>全局
-<code>Preferences--&gt;Java--&gt;Compiler-&gt;Compiler compliance level</code></li>
-<li>局部
-<code>工程右键--&gt;属性--&gt;Java Compiler</code></li>
-</ul>
-</li>
-</ul>
-<h2>附录</h2>
+<p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p>
+<p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p>
+<h2>FAQ</h2>
 <hr>
-<blockquote>
-<p>https://blog.csdn.net/gnail_oug/article/details/47145047</p>
-</blockquote>
+<p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>
 
           
         
