@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hackettyu.com/"/>
-  <updated>2019-11-05T00:52:16.084Z</updated>
+  <updated>2020-02-06T11:30:54.013Z</updated>
   <id>https://hackettyu.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python Relative precedence of := 海象运算符 翻译</title>
+    <link href="https://hackettyu.com/200206_1/"/>
+    <id>https://hackettyu.com/200206_1/</id>
+    <published>2020-02-06T04:00:00.000Z</published>
+    <updated>2020-02-06T11:30:54.013Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>参考链接：<a href="https://www.python.org/dev/peps/pep-0572/#relative-precedence-of" target="_blank" rel="noopener">pep-0572/#relative-precedence-of</a></p></blockquote><p>在所有合法的语法位置上，海象运算符 groups 更接近逗号，不接近其他所有运算符（包括 or，and，not，以及条件表达式（A if C else B）。 如上文”例外情况”部分所述，绝不允许与 = 相同的 group。 如果需要不同的分组，则应使用括号。</p><p>海象运算符可以直接在位置函数调用参数中使用，但是它在关键字参数中是无效的。</p><p>面是一些例子来说明什么在技术上是有效的或者无效的:</p><p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">(x := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x = y := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">x = (y := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">len(lines := f.readlines())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">foo(x := <span class="number">3</span>, cat=<span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">foo(cat=category := <span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">foo(cat=(category := <span class="string">'vector'</span>))</span><br></pre></td></tr></table></figure></p><p>上面的大多数“有效”示例都不推荐，因为阅读 Python 源代码的人在快速浏览某些代码时可能会忽略其中的区别。 但简单的情况并不令人反感:</p><p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valid</span></span><br><span class="line"><span class="keyword">if</span> any(len(longline := line) &gt;= <span class="number">100</span> <span class="keyword">for</span> line <span class="keyword">in</span> lines):</span><br><span class="line">    print(<span class="string">"Extremely long line:"</span>, longline)</span><br></pre></td></tr></table></figure></p><p>这个 PEP 建议总是在: 左右放置空格，类似于 PEP 8对用于分配的建议，而后者不允许在关键字参数周围使用空格</p><hr><h2>附录</h2><ul><li><a href="https://www.pythonhunter.org/episodes/5" target="_blank" rel="noopener">Ep 05. 聊聊单元测试最佳实践和 PEP 572</a></li></ul><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="note" scheme="https://hackettyu.com/categories/note/"/>
+    
+    
+      <category term="python" scheme="https://hackettyu.com/tags/python/"/>
+    
+      <category term="translate" scheme="https://hackettyu.com/tags/translate/"/>
+    
+  </entry>
   
   <entry>
     <title>给 hexo 添加 send to kindle 链接</title>
@@ -51,7 +81,7 @@
     <published>2019-10-30T04:00:00.000Z</published>
     <updated>2019-11-05T00:55:14.336Z</updated>
     
-    <content type="html"><![CDATA[<h2>简介</h2><hr><h2>最近了解到有一种预览网址的协议叫 <a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a>，想在 hexo 博客里添加，找到了这个<a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">插件</a></h2><h2>安装</h2><hr><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-tag-link-preview</span><br><span class="line"></span><br><span class="line"><span class="comment"># usage</span></span><br><span class="line"></span><br><span class="line">在文章中添加 \&#123;\% linkPreview https://www.amazon.com/ _blank nofollow \%\&#125;</span><br></pre></td></tr></table></figure></p><h2>预览</h2><hr><blockquote><p>想要好看的预览需要如下的标签</p></blockquote><ul><li>Title 最长 65 个字符，否则 Google 结果就会被截断</li><li>Meta description 最好小于 155 字符</li><li>og:title 最好不超过 35 个字符，否则预览会截断</li><li>og:description 65 字符</li><li>og:url 页面 url</li><li>og: image JPG 或者 PNG，最小分辨率 300 × 200 像素</li><li>favicon 网站 logo， 32 × 32 像素</li></ul><p>上面的网站目前支持很多聊天工具，比如 WhatsApp, Telegram, Skype ，还有社交网站 Facebook，Twitter 等等。</p><p><a href="https://www.amazon.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img src="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png"></div><div class="descriptions"><div class="og-title">Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs &amp; more</div><div class="og-description">Free One-Day Delivery on millions of items with Prime. Low prices across earth&#39;s biggest selection of books, music, DVDs, electronics, compu…</div></div></div></a></p><p><a href="https://hackettyu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">HackettYu&#39;s blog</div><div class="og-description">hackettyu</div></div></div></a></p><p><a href="https://baidu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">百度一下，你就知道</div></div></div></a></p><p>在 <code>.\themes\next\layout\_partials\head.swig</code> 下添加了下面代码</p><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hackettyu.com/image/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p><p>感觉没用 😄</p><h2>使用 hexo 自带的 open graph 参数</h2><p>open_graph</p><p>插入 open graph 资源。</p><blockquote><p>&lt;%- open_graph([options]) %&gt;</p></blockquote><p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ &#123;&#123; open_graph([options]) %&gt; &#125;&#125;</span></span><br><span class="line"><span class="deletion">- &lt;%- open_graph([options]) %&gt;</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数 描述 默认值</span><br><span class="line">title 页面标题 (og:title) page.title</span><br><span class="line">type 页面类型 (og:type) blog</span><br><span class="line">url 页面网址 (og:url) url</span><br><span class="line">image 页面图片 (og:image) 内容中的图片</span><br><span class="line">site_name 网站名称 (og:site_name) config.title</span><br><span class="line">description 页面描述 (og:description) 内容摘要或前 200 字</span><br><span class="line">twitter_card Twitter 卡片类型 (twitter:card) summary</span><br><span class="line">twitter_id Twitter ID (twitter:creator) </span><br><span class="line">twitter_site Twitter 网站 (twitter:site) </span><br><span class="line">google_plus Google+ 个人资料链接 </span><br><span class="line">fb_admins Facebook 管理者 ID </span><br><span class="line">fb_app_id Facebook 应用程序 ID</span><br></pre></td></tr></table></figure></p><h2>附录</h2><hr><ul><li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a></li><li><a href="https://hexo.io/zh-cn/docs/helpers.html#open-graph" target="_blank" rel="noopener">hexo open graph</a></li><li><a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">hexo-tag-link-preview</a></li><li><a href="http://einverne.github.io/post/2016/08/rich-preview.html" target="_blank" rel="noopener">让网站在分享时预览更美观</a></li><li><a href="https://dwatow.github.io/2018/02-07-hexo/hexo-open-graph/" target="_blank" rel="noopener">hexo 加上 Open Graph</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2>简介</h2><hr><h2>最近了解到有一种预览网址的协议叫 <a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a>，想在 hexo 博客里添加，找到了这个<a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">插件</a></h2><h2>安装</h2><hr><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-tag-link-preview</span><br><span class="line"></span><br><span class="line"><span class="comment"># usage</span></span><br><span class="line"></span><br><span class="line">在文章中添加 \&#123;\% linkPreview https://www.amazon.com/ _blank nofollow \%\&#125;</span><br></pre></td></tr></table></figure></p><h2>预览</h2><hr><blockquote><p>想要好看的预览需要如下的标签</p></blockquote><ul><li>Title 最长 65 个字符，否则 Google 结果就会被截断</li><li>Meta description 最好小于 155 字符</li><li>og:title 最好不超过 35 个字符，否则预览会截断</li><li>og:description 65 字符</li><li>og:url 页面 url</li><li>og: image JPG 或者 PNG，最小分辨率 300 × 200 像素</li><li>favicon 网站 logo， 32 × 32 像素</li></ul><p>上面的网站目前支持很多聊天工具，比如 WhatsApp, Telegram, Skype ，还有社交网站 Facebook，Twitter 等等。</p><p></p><p></p><p><a href="https://baidu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">百度一下，你就知道</div></div></div></a></p><p>在 <code>.\themes\next\layout\_partials\head.swig</code> 下添加了下面代码</p><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hackettyu.com/image/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p><p>感觉没用 😄</p><h2>使用 hexo 自带的 open graph 参数</h2><p>open_graph</p><p>插入 open graph 资源。</p><blockquote><p>&lt;%- open_graph([options]) %&gt;</p></blockquote><p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ &#123;&#123; open_graph([options]) %&gt; &#125;&#125;</span></span><br><span class="line"><span class="deletion">- &lt;%- open_graph([options]) %&gt;</span></span><br></pre></td></tr></table></figure></p><p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数 描述 默认值</span><br><span class="line">title 页面标题 (og:title) page.title</span><br><span class="line">type 页面类型 (og:type) blog</span><br><span class="line">url 页面网址 (og:url) url</span><br><span class="line">image 页面图片 (og:image) 内容中的图片</span><br><span class="line">site_name 网站名称 (og:site_name) config.title</span><br><span class="line">description 页面描述 (og:description) 内容摘要或前 200 字</span><br><span class="line">twitter_card Twitter 卡片类型 (twitter:card) summary</span><br><span class="line">twitter_id Twitter ID (twitter:creator) </span><br><span class="line">twitter_site Twitter 网站 (twitter:site) </span><br><span class="line">google_plus Google+ 个人资料链接 </span><br><span class="line">fb_admins Facebook 管理者 ID </span><br><span class="line">fb_app_id Facebook 应用程序 ID</span><br></pre></td></tr></table></figure></p><h2>附录</h2><hr><ul><li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a></li><li><a href="https://hexo.io/zh-cn/docs/helpers.html#open-graph" target="_blank" rel="noopener">hexo open graph</a></li><li><a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">hexo-tag-link-preview</a></li><li><a href="http://einverne.github.io/post/2016/08/rich-preview.html" target="_blank" rel="noopener">让网站在分享时预览更美观</a></li><li><a href="https://dwatow.github.io/2018/02-07-hexo/hexo-open-graph/" target="_blank" rel="noopener">hexo 加上 Open Graph</a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -355,34 +385,6 @@
   </entry>
   
   <entry>
-    <title>Cannot find one or more componets. Please reinstall the application</title>
-    <link href="https://hackettyu.com/181215_1/"/>
-    <id>https://hackettyu.com/181215_1/</id>
-    <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T01:27:07.922Z</updated>
-    
-    <content type="html"><![CDATA[<h2>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
-    
-    
-      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
-    
-  </entry>
-  
-  <entry>
     <title>切换 eclipse 编译版本</title>
     <link href="https://hackettyu.com/181215_2/"/>
     <id>https://hackettyu.com/181215_2/</id>
@@ -409,6 +411,34 @@
       <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cannot find one or more componets. Please reinstall the application</title>
+    <link href="https://hackettyu.com/181215_1/"/>
+    <id>https://hackettyu.com/181215_1/</id>
+    <published>2018-12-15T04:00:00.000Z</published>
+    <updated>2018-12-15T01:27:07.922Z</updated>
+    
+    <content type="html"><![CDATA[<h2>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
+    
+    
+      <category term="windows" scheme="https://hackettyu.com/tags/windows/"/>
     
   </entry>
   
@@ -551,34 +581,6 @@
       <category term="linux" scheme="https://hackettyu.com/tags/linux/"/>
     
       <category term="ssh" scheme="https://hackettyu.com/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 配置 dns 分流的问题</title>
-    <link href="https://hackettyu.com/181025_2/"/>
-    <id>https://hackettyu.com/181025_2/</id>
-    <published>2018-10-25T04:00:00.000Z</published>
-    <updated>2018-10-25T10:36:14.681Z</updated>
-    
-    <content type="html"><![CDATA[<h2>简介</h2><p>hexo 同时部署在 coding page 和 github page 后，在域名服务器设置 dns 分流后发现 coding 一直无法申请 ssl。</p><h2>快速入门</h2><p>网上说的把 dns 设置境外线路和国内线路让 dns 分流让国内访问 coding 国外访问 github 加速网页加载，不过分流要看用户配置的 dns 不是看 ip。这导致 我的 coding ssl 证书 申请不成功 因为域名验证成功的必要条件还是要让证书服务提供方能读取到申请者（即 Coding Pages 服务器）所提供的验证信息所以要先暂停境外的分流再申请 coding 的 ssl。</p><h2>附录</h2><p>我一直找不到问题的原因是我使用的 dns 是 <code>1.1.1.1</code>，这是国外的 dns，导致我一直使用的是 github page，没有加载到 coding page。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="debug" scheme="https://hackettyu.com/categories/debug/"/>
-    
-    
-      <category term="hexo" scheme="https://hackettyu.com/tags/hexo/"/>
     
   </entry>
   

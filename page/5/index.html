@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -338,7 +338,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181215_1/" itemprop="url">Cannot find one or more componets. Please reinstall the application</a></h2>
+                <a class="post-title-link" href="/weekly_03/" itemprop="url">每周分享第 3 期</a></h2>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-15T12:00:00+08:00">
-                2018-12-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T12:00:00+08:00">
+                2018-12-23
               </time>
             
 
@@ -373,8 +373,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/debug/" itemprop="url" rel="index">
-                    <span itemprop="name">debug</span>
+                  <a href="/categories/weekly/" itemprop="url" rel="index">
+                    <span itemprop="name">weekly</span>
                   </a>
                 </span>
 
@@ -390,7 +390,7 @@
 
           
           
-             <span id="/181215_1/" class="leancloud_visitors" data-flag-title="Cannot find one or more componets. Please reinstall the application">
+             <span id="/weekly_03/" class="leancloud_visitors" data-flag-title="每周分享第 3 期">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,21 +423,28 @@
       
         
           
-            <h2>简介</h2>
+            <h2>教程</h2>
 <hr>
-<p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p>
-<h2>快速上手</h2>
+<p>1、<a href="https://segmentfault.com/a/1190000000721142" target="_blank" rel="noopener">html2docset</a>
+html 文件转 docset</p>
+<h2>文摘</h2>
 <hr>
-<p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p>
-<ul>
-<li>没安装</li>
-<li>没安装正确</li>
-</ul>
-<p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p>
-<p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p>
-<h2>FAQ</h2>
+<p>1、镜像网站
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains \&lt;name&gt; --no-parent \&lt;url&gt;</span><br><span class="line">wget -m \&lt;url&gt;    </span><br><span class="line">wget -r -p -k -np \&lt;url&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、python 2.x to python 3.x
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> lib2to3.main <span class="keyword">import</span> main</span><br><span class="line">sys.exit(main(<span class="string">"lib2to3.fixes"</span>))</span><br></pre></td></tr></table></figure></p>
+<h2>结语</h2>
 <hr>
-<p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>
+<blockquote>
+<p>http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html</p>
+</blockquote>
+<p>美国一个编程培训班的老板，写了一篇文章。他说自己很担忧。现在，那么多人学习编程，他的公司全靠培训赚钱，将来会不会程序员过剩？</p>
+<p>培训班的目的，就是让那些没有受过四年计算机教育的人，经过四个月的培训，找到一份软件开发的工作。某种程度上，这种做法是可行的，大量的程序员就是通过这种模式生产出来。</p>
+<p>但是，人工智能正变得越来越强，终有一天，简单代码都会由计算机自已生成，低级程序员的需求将会大量减少。另一方面，云服务的兴起，使得很多任务不需要自己编程，可以购买云服务，这也减少了程序员的需求。</p>
+<p>同时，由于不断的抽象和封装，应用层的软件开发正变得越来越简单，如果只是简单地遵循在线教程，就能编写软件，或者将一系列API混合在一起，就能做出一个服务，有必要向开发人员支付高额薪水吗？毕竟开发过程是那么简单。</p>
+<p>他认为，学习编程是值得的，它可以帮助你理解世界。但是，梦想仅仅学会软件开发，就能解决你的人生问题是不现实的。&quot;只是能够编写一个安卓程序，不会为你赢得竞争优势，也没法在这个超级饱和的科技世界里，获得自己的一席之地。这个世界里，每个想法都已由十位企业家在你前面完成了。&quot;</p>
+<p>由于其他行业不景气，大量年轻人正在转向软件业就业。但是，程序员的淘汰也很厉害，上车的人多，下车的人也多。大家应该对这一点有清醒的认识。</p>
+<p>（完）</p>
 
           
         
@@ -697,7 +704,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_02/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -716,7 +723,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/weekly_02/" itemprop="url">每周分享第 2 期</a></h2>
+                <a class="post-title-link" href="/181215_1/" itemprop="url">Cannot find one or more componets. Please reinstall the application</a></h2>
         
 
         <div class="post-meta">
@@ -751,8 +758,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/weekly/" itemprop="url" rel="index">
-                    <span itemprop="name">weekly</span>
+                  <a href="/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -768,7 +775,7 @@
 
           
           
-             <span id="/weekly_02/" class="leancloud_visitors" data-flag-title="每周分享第 2 期">
+             <span id="/181215_1/" class="leancloud_visitors" data-flag-title="Cannot find one or more componets. Please reinstall the application">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -801,37 +808,21 @@
       
         
           
-            <h2>教程</h2>
-<p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p>
-<h2>资源</h2>
+            <h2>简介</h2>
 <hr>
-<p>1、IP 查询 API</p>
-<ul>
-<li>实例：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl 	http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a>
-Mybatis通用分页插件</p>
-<h2>文摘</h2>
+<p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p>
+<h2>快速上手</h2>
 <hr>
+<p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p>
 <ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a>
-文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li>
-<li>linux使用的进程间通信方式
-<ul>
-<li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li>
-<li>信号（signal）</li>
-<li>消息队列</li>
-<li>共享内存</li>
-<li>信号量</li>
-<li>套接字（socket)</li>
+<li>没安装</li>
+<li>没安装正确</li>
 </ul>
-</li>
-</ul>
-<h2>结语</h2>
+<p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p>
+<p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p>
+<h2>FAQ</h2>
 <hr>
-<p>一周都在弄报告 ）0（
-（完）</p>
+<p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>
 
           
         
@@ -878,7 +869,7 @@ Mybatis通用分页插件</p>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -924,7 +915,7 @@ Mybatis通用分页插件</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -946,7 +937,7 @@ Mybatis通用分页插件</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1024,7 +1015,7 @@ Mybatis通用分页插件</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
