@@ -149,7 +149,7 @@
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '[object Object]', 'auto');
+  ga('create', 'UA-146236033-1', 'auto');
   ga('send', 'pageview');
 </script>
 
@@ -688,7 +688,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_4/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181004_3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -707,7 +707,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/181004_4/" itemprop="url">vim 配置</a></h2>
+                <a class="post-title-link" href="/181004_3/" itemprop="url">命令行开启 | 关闭显卡</a></h2>
         
 
         <div class="post-meta">
@@ -742,8 +742,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/log/" itemprop="url" rel="index">
-                    <span itemprop="name">log</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -759,7 +759,7 @@
 
           
           
-             <span id="/181004_4/" class="leancloud_visitors" data-flag-title="vim 配置">
+             <span id="/181004_3/" class="leancloud_visitors" data-flag-title="命令行开启 | 关闭显卡">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -792,22 +792,28 @@
       
         
           
-            <h2>快速入门</h2>
-<ul>
-<li>
-<p>查找 vim 配置文件在哪</p>
-<ul>
-<li>:version</li>
-<li>echo $vim</li>
-</ul>
-</li>
-<li>
-<p>vim 插件管理器 bundle</p>
-<ul>
-<li>PluginInstall 安装插件，要先写配置文件，bash 的 vim 配置文件在 Git 安装路径里面。</li>
-</ul>
-</li>
-</ul>
+            <h2>简介</h2>
+<p>寻找一种命令行开关驱动的方式以及关闭独显省电。</p>
+<h2>快速入门</h2>
+<h3>软件安装</h3>
+<blockquote>
+<p>安装 devcon :
+https://docs.microsoft.com/zh-cn/windows-hardware/drivers/download-the-wdk</p>
+</blockquote>
+<h3>使用</h3>
+<p>管理员运行，进入你的安装路径（<code>C:\Program Files (x86)\Windows Kits\10\Tools\x64&gt;</code>这是 64 位的）下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find * &gt; driver.txt</span><br></pre></td></tr></table></figure></p>
+<p>例如要关闭 NVIDIA 显卡：</p>
+<p><code>PCI\VEN_10DE&amp;DEV_139B&amp;SUBSYS_01521558&amp;REV_A2\4&amp;BED9AB3&amp;0&amp;0008: NVIDIA GeForce GTX 960M</code></p>
+<p>截取一段编号查询并查询到唯一驱动：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devcon find *VEN_10DE</span><br></pre></td></tr></table></figure></p>
+<p>运行：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 关闭</span><br><span class="line">devcon disacble *VEN_10DE</span><br><span class="line">// 打开</span><br><span class="line">// devcon enable *VEN_10DE</span><br></pre></td></tr></table></figure></p>
+<h2>附录</h2>
+<p>查询服务的命令 <code>sc</code>:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// New-Alias -Name Run-SC -Value &apos;C:\Windows\System32\sc.exe&apos;</span><br><span class="line">// Run-SC query ALG</span><br><span class="line">sc query type= driver | findstr NVIDIA</span><br></pre></td></tr></table></figure></p>
+<p>打开图形驱动管理界面：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start devmgmt.msc</span><br></pre></td></tr></table></figure></p>
 
           
         
