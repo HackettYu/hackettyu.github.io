@@ -424,7 +424,7 @@
         
           
             <blockquote>
-<p>参考链接：<a href="https://www.python.org/dev/peps/pep-0572/#relative-precedence-of" target="_blank" rel="noopener">pep-0572/#relative-precedence-of</a></p>
+<p>PS：机翻</p>
 </blockquote>
 <p>在所有合法的语法位置上，海象运算符 groups 更接近逗号，不接近其他所有运算符（包括 or，and，not，以及条件表达式（A if C else B）。 如上文”例外情况”部分所述，绝不允许与 = 相同的 group。 如果需要不同的分组，则应使用括号。</p>
 <p>海象运算符可以直接在位置函数调用参数中使用，但是它在关键字参数中是无效的。</p>
@@ -436,9 +436,13 @@
 <hr>
 <h2>附录</h2>
 <ul>
-<li><a href="https://www.pythonhunter.org/episodes/5" target="_blank" rel="noopener">Ep 05. 聊聊单元测试最佳实践和 PEP 572</a></li>
+<li>
+<p><a href="https://www.pythonhunter.org/episodes/5" target="_blank" rel="noopener">捕蛇者说 | Ep 05. 聊聊单元测试最佳实践和 PEP 572</a></p>
+</li>
+<li>
+<p><a href="https://www.python.org/dev/peps/pep-0572/#relative-precedence-of" target="_blank" rel="noopener">pep-0572/#relative-precedence-of</a></p>
+</li>
 </ul>
-<hr>
 
           
         
@@ -772,13 +776,10 @@
         
           
             <h2>简介</h2>
-<hr>
-<h2>最近了解到有一种预览网址的协议叫 <a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a>，想在 hexo 博客里添加，找到了这个<a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">插件</a></h2>
+<p>最近了解到有一种预览网址的协议叫 <a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a>，想在 hexo 博客里添加，找到了这个<a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">插件</a></p>
 <h2>安装</h2>
-<hr>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-tag-link-preview</span><br><span class="line"></span><br><span class="line"><span class="comment"># usage</span></span><br><span class="line"></span><br><span class="line">在文章中添加 \&#123;\% linkPreview https://www.amazon.com/ _blank nofollow \%\&#125;</span><br></pre></td></tr></table></figure></p>
 <h2>预览</h2>
-<hr>
 <blockquote>
 <p>想要好看的预览需要如下的标签</p>
 </blockquote>
@@ -792,24 +793,90 @@
 <li>favicon 网站 logo， 32 × 32 像素</li>
 </ul>
 <p>上面的网站目前支持很多聊天工具，比如 WhatsApp, Telegram, Skype ，还有社交网站 Facebook，Twitter 等等。</p>
-<p></p>
-<p></p>
-<p><a href="https://baidu.com/" class="link-preview" target="_blank" rel="nofollow"><div class="link-area"><div class="og-image"><img></div><div class="descriptions"><div class="og-title">百度一下，你就知道</div></div></div></a></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 可以用下面的代码内嵌到 hexo 的文章中</span></span><br><span class="line">&#123;% linkPreview https://www.amazon.com/ _blank nofollow %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% linkPreview https://hackettyu.com/ _blank nofollow %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% linkPreview https://baidu.com/ _blank nofollow %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在 <code>.\themes\next\layout\_partials\head.swig</code> 下添加了下面代码</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hackettyu.com/image/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta property=&quot;og:title&quot; content=&quot;hackettyu.com&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:description&quot; content=&quot;OGP&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:url&quot; content=&quot;http://hackettyu.com/&quot; /&gt;</span><br><span class="line">&lt;meta property=&quot;og:image&quot; content=&quot;http://richpreview.com/richpreview.jpg&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://hy-picgo.oss-cn-shenzhen.aliyuncs.com/img/blog-hackettyu-com/weekly_01_falling_through_code.gif&quot; type=&quot;image/x-icon&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>感觉没用 😄</p>
 <h2>使用 hexo 自带的 open graph 参数</h2>
-<p>open_graph</p>
 <p>插入 open graph 资源。</p>
 <blockquote>
 <p>&lt;%- open_graph([options]) %&gt;</p>
 </blockquote>
 <p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ &#123;&#123; open_graph([options]) %&gt; &#125;&#125;</span></span><br><span class="line"><span class="deletion">- &lt;%- open_graph([options]) %&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数 	描述 	默认值</span><br><span class="line">title 	页面标题 (og:title) 	page.title</span><br><span class="line">type 	页面类型 (og:type) 	blog</span><br><span class="line">url 	页面网址 (og:url) 	url</span><br><span class="line">image 	页面图片 (og:image) 	内容中的图片</span><br><span class="line">site_name 	网站名称 (og:site_name) 	config.title</span><br><span class="line">description 	页面描述 (og:description) 	内容摘要或前 200 字</span><br><span class="line">twitter_card 	Twitter 卡片类型 (twitter:card) 	summary</span><br><span class="line">twitter_id 	Twitter ID (twitter:creator) 	</span><br><span class="line">twitter_site 	Twitter 网站 (twitter:site) 	</span><br><span class="line">google_plus 	Google+ 个人资料链接 	</span><br><span class="line">fb_admins 	Facebook 管理者 ID 	</span><br><span class="line">fb_app_id 	Facebook 应用程序 ID</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>页面标题</td>
+<td>(og:title) page.title</td>
+</tr>
+<tr>
+<td>type</td>
+<td>页面类型 (og:type)</td>
+<td>blog</td>
+</tr>
+<tr>
+<td>url</td>
+<td>页面网址 (og:url)</td>
+<td>url</td>
+</tr>
+<tr>
+<td>image</td>
+<td>页面图片 (og:image)</td>
+<td>内容中的图片</td>
+</tr>
+<tr>
+<td>site_name</td>
+<td>网站名称 (og:site_name)</td>
+<td>config.title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>页面描述 (og:description)</td>
+<td>内容摘要或前 200 字</td>
+</tr>
+<tr>
+<td>twitter_card</td>
+<td>Twitter 卡片类型 (twitter:card)</td>
+<td>summary</td>
+</tr>
+<tr>
+<td>twitter_id</td>
+<td>Twitter ID (twitter:creator)</td>
+<td></td>
+</tr>
+<tr>
+<td>twitter_site</td>
+<td>Twitter 网站 (twitter:site</td>
+<td></td>
+</tr>
+<tr>
+<td>google_plus</td>
+<td>Google+ 个人资料链接</td>
+<td></td>
+</tr>
+<tr>
+<td>fb_admins</td>
+<td>Facebook 管理者 ID</td>
+<td></td>
+</tr>
+<tr>
+<td>fb_app_id</td>
+<td>Facebook 应用程序 ID</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2>附录</h2>
-<hr>
 <ul>
-<li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP</a></li>
+<li><a href="https://ogp.me/" target="_blank" rel="noopener">OGP 简介</a></li>
 <li><a href="https://hexo.io/zh-cn/docs/helpers.html#open-graph" target="_blank" rel="noopener">hexo open graph</a></li>
 <li><a href="https://github.com/minamo173/hexo-tag-link-preview" target="_blank" rel="noopener">hexo-tag-link-preview</a></li>
 <li><a href="http://einverne.github.io/post/2016/08/rich-preview.html" target="_blank" rel="noopener">让网站在分享时预览更美观</a></li>
@@ -861,7 +928,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -907,7 +974,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -918,7 +985,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -929,7 +996,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
