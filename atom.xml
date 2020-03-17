@@ -413,6 +413,34 @@
   </entry>
   
   <entry>
+    <title>每周分享第 2 期</title>
+    <link href="https://hackettyu.com/weekly_02/"/>
+    <id>https://hackettyu.com/weekly_02/</id>
+    <published>2018-12-15T04:00:00.000Z</published>
+    <updated>2018-12-15T02:40:39.217Z</updated>
+    
+    <content type="html"><![CDATA[<h2>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a>Mybatis通用分页插件</p><h2>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2>结语</h2><hr><p>一周都在弄报告 ）0（（完）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
+    
+    
+      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
+    
+  </entry>
+  
+  <entry>
     <title>切换 eclipse 编译版本</title>
     <link href="https://hackettyu.com/181215_2/"/>
     <id>https://hackettyu.com/181215_2/</id>
@@ -439,34 +467,6 @@
       <category term="java" scheme="https://hackettyu.com/tags/java/"/>
     
       <category term="eclipse" scheme="https://hackettyu.com/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每周分享第 2 期</title>
-    <link href="https://hackettyu.com/weekly_02/"/>
-    <id>https://hackettyu.com/weekly_02/</id>
-    <published>2018-12-15T04:00:00.000Z</published>
-    <updated>2018-12-15T02:40:39.217Z</updated>
-    
-    <content type="html"><![CDATA[<h2>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a>Mybatis通用分页插件</p><h2>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2>结语</h2><hr><p>一周都在弄报告 ）0（（完）</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-        
-      
-    
-    </summary>
-    
-      <category term="weekly" scheme="https://hackettyu.com/categories/weekly/"/>
-    
-    
-      <category term="weekly" scheme="https://hackettyu.com/tags/weekly/"/>
     
   </entry>
   
