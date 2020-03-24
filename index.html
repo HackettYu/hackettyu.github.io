@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/200206_1/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/2020-03-20-vscode-diff/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -338,7 +338,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/200206_1/" itemprop="url">python Relative precedence of := 海象运算符 翻译</a></h2>
+                <a class="post-title-link" href="/2020-03-20-vscode-diff/" itemprop="url">命令行下打开 Visual Studio Code</a></h2>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-06T12:00:00+08:00">
-                2020-02-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T12:00:00+08:00">
+                2020-03-20
               </time>
             
 
@@ -390,7 +390,7 @@
 
           
           
-             <span id="/200206_1/" class="leancloud_visitors" data-flag-title="python Relative precedence of := 海象运算符 翻译">
+             <span id="/2020-03-20-vscode-diff/" class="leancloud_visitors" data-flag-title="命令行下打开 Visual Studio Code">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,25 +424,18 @@
         
           
             <blockquote>
-<p>PS：机翻</p>
+<p>环境：WIN10</p>
 </blockquote>
-<p>在所有合法的语法位置上，海象运算符 groups 更接近逗号，不接近其他所有运算符（包括 or，and，not，以及条件表达式（A if C else B）。 如上文”例外情况”部分所述，绝不允许与 = 相同的 group。 如果需要不同的分组，则应使用括号。</p>
-<p>海象运算符可以直接在位置函数调用参数中使用，但是它在关键字参数中是无效的。</p>
-<p>面是一些例子来说明什么在技术上是有效的或者无效的:</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">(x := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x = y := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">x = (y := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">len(lines := f.readlines())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">foo(x := <span class="number">3</span>, cat=<span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">foo(cat=category := <span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">foo(cat=(category := <span class="string">'vector'</span>))</span><br></pre></td></tr></table></figure></p>
-<p>上面的大多数“有效”示例都不推荐，因为阅读 Python 源代码的人在快速浏览某些代码时可能会忽略其中的区别。 但简单的情况并不令人反感:</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valid</span></span><br><span class="line"><span class="keyword">if</span> any(len(longline := line) &gt;= <span class="number">100</span> <span class="keyword">for</span> line <span class="keyword">in</span> lines):</span><br><span class="line">    print(<span class="string">"Extremely long line:"</span>, longline)</span><br></pre></td></tr></table></figure></p>
-<p>这个 PEP 建议总是在: 左右放置空格，类似于 PEP 8对用于分配的建议，而后者不允许在关键字参数周围使用空格</p>
-<hr>
-<h2>附录</h2>
-<ul>
-<li>
-<p><a href="https://www.pythonhunter.org/episodes/5" target="_blank" rel="noopener">捕蛇者说 | Ep 05. 聊聊单元测试最佳实践和 PEP 572</a></p>
-</li>
-<li>
-<p><a href="https://www.python.org/dev/peps/pep-0572/#relative-precedence-of" target="_blank" rel="noopener">pep-0572/#relative-precedence-of</a></p>
-</li>
-</ul>
+<h2>VSCode 的命令行方式</h2>
+<p>配置环境变量：<code>%LOCALAPPDATA%\Programs\Microsoft VS Code\code.exe</code></p>
+<p>code 命令：</p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件</span></span><br><span class="line">code README.md</span><br><span class="line"><span class="comment"># 新建两个文件</span></span><br><span class="line">code foo.md bar.md</span><br><span class="line"><span class="comment"># 编辑一个已存在的文件</span></span><br><span class="line">code foo.md</span><br><span class="line"><span class="comment"># diff 比较两个文件</span></span><br><span class="line">code -d foo.md bar.md</span><br><span class="line">code --diff foo.md bar.md</span><br><span class="line"><span class="comment"># 新打开一个窗口</span></span><br><span class="line">code -n</span><br></pre></td></tr></table></figure></p>
+<h2>修改 VSCode 为 git 默认 diff tool</h2>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改 VSCode 为 git 默认 diff</span></span><br><span class="line">git config --global diff.tool vscode</span><br><span class="line">git config --global difftool.vscode.cmd <span class="string">"code --wait --diff <span class="variable">$LOCAL</span> <span class="variable">$REMOTE</span>"</span></span><br><span class="line"><span class="comment"># 修改 git 默认编辑器</span></span><br><span class="line">git config --global core.editor <span class="string">"code --wait"</span></span><br></pre></td></tr></table></figure></p>
+<h2>参考</h2>
+<p><a href="https://www.meziantou.net/comparing-files-using-visual-studio-code.htm" target="_blank" rel="noopener">Comparing files using Visual Studio Code</a></p>
+<p><strong>code --help</strong></p>
+<p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">HY <span class="variable">$code</span> --<span class="built_in">help</span></span><br><span class="line">Visual Studio Code 1.43.1</span><br><span class="line"></span><br><span class="line">Usage: code.exe [options][paths...]</span><br><span class="line"></span><br><span class="line">To <span class="built_in">read</span> output from another program, append <span class="string">'-'</span> (e.g. <span class="string">'echo Hello World | code.exe -'</span>)</span><br><span class="line"></span><br><span class="line">Options</span><br><span class="line">  -d --diff &lt;file&gt; &lt;file&gt;           Compare two files with each other.</span><br><span class="line">  -a --add &lt;folder&gt;                 Add folder(s) to the last active window.</span><br><span class="line">  -g --goto &lt;file:line[:character]&gt; Open a file at the path on the specified</span><br><span class="line">									line and character position.</span><br><span class="line">  -n --new-window                   Force to open a new window.</span><br><span class="line">  -r --reuse-window                 Force to open a file or folder <span class="keyword">in</span> an</span><br><span class="line">									already opened window.</span><br><span class="line">  -w --<span class="built_in">wait</span>                         Wait <span class="keyword">for</span> the files to be closed before</span><br><span class="line">									returning.</span><br><span class="line">  --locale &lt;locale&gt;                 The locale to use (e.g. en-US or zh-TW).</span><br><span class="line">  --user-data-dir &lt;dir&gt;             Specifies the directory that user data is</span><br><span class="line">									kept <span class="keyword">in</span>. Can be used to open multiple</span><br><span class="line">									distinct instances of Code.</span><br><span class="line">  -v --version                      Print version.</span><br><span class="line">  -h --<span class="built_in">help</span>                         Print usage.</span><br><span class="line">  --telemetry                       Shows all telemetry events <span class="built_in">which</span> VS code</span><br><span class="line">									collects.</span><br><span class="line">  --folder-uri &lt;uri&gt;                Opens a window with given folder uri(s)</span><br><span class="line">  --file-uri &lt;uri&gt;                  Opens a window with given file uri(s)</span><br><span class="line"></span><br><span class="line">Extensions Management</span><br><span class="line">  --extensions-dir &lt;dir&gt;                            Set the root path <span class="keyword">for</span></span><br><span class="line">													extensions.</span><br><span class="line">  --list-extensions                                 List the installed</span><br><span class="line">													extensions.</span><br><span class="line">  --show-versions                                   Show versions of installed</span><br><span class="line">													extensions, when using</span><br><span class="line">													--list-extension.</span><br><span class="line">  --category                                        Filters installed</span><br><span class="line">													extensions by provided</span><br><span class="line">													category, when using</span><br><span class="line">													--list-extension.</span><br><span class="line">  --install-extension &lt;extension-id | path-to-vsix&gt; Installs or updates the</span><br><span class="line">													extension. Use `--force`</span><br><span class="line">													argument to avoid</span><br><span class="line">													prompts.</span><br><span class="line">  --uninstall-extension &lt;extension-id&gt;              Uninstalls an extension.</span><br><span class="line">  --<span class="built_in">enable</span>-proposed-api &lt;extension-id&gt;              Enables proposed API</span><br><span class="line">													features <span class="keyword">for</span> extensions.</span><br><span class="line">													Can receive one or more</span><br><span class="line">													extension IDs to <span class="built_in">enable</span></span><br><span class="line">													individually.</span><br><span class="line"></span><br><span class="line">Troubleshooting</span><br><span class="line">  --verbose                          Print verbose output (implies --<span class="built_in">wait</span>).</span><br><span class="line">  --<span class="built_in">log</span> &lt;level&gt;                      Log level to use. Default is <span class="string">'info'</span>.</span><br><span class="line">									 Allowed values are <span class="string">'critical'</span>, <span class="string">'error'</span>,</span><br><span class="line">									 <span class="string">'warn'</span>, <span class="string">'info'</span>, <span class="string">'debug'</span>, <span class="string">'trace'</span>, <span class="string">'off'</span>.</span><br><span class="line">  -s --status                        Print process usage and diagnostics</span><br><span class="line">									 information.</span><br><span class="line">  --prof-startup                     Run CPU profiler during startup</span><br><span class="line">  --<span class="built_in">disable</span>-extensions               Disable all installed extensions.</span><br><span class="line">  --<span class="built_in">disable</span>-extension &lt;extension-id&gt; Disable an extension.</span><br><span class="line">  --inspect-extensions &lt;port&gt;        Allow debugging and profiling of</span><br><span class="line">									 extensions. Check the developer tools <span class="keyword">for</span></span><br><span class="line">									 the connection URI.</span><br><span class="line">  --inspect-brk-extensions &lt;port&gt;    Allow debugging and profiling of</span><br><span class="line">									 extensions with the extension host being</span><br><span class="line">									 paused after start. Check the developer</span><br><span class="line">									 tools <span class="keyword">for</span> the connection URI.</span><br><span class="line">  --<span class="built_in">disable</span>-gpu                      Disable GPU hardware acceleration.</span><br><span class="line">  --max-memory                       Max memory size <span class="keyword">for</span> a window (<span class="keyword">in</span> Mbytes).</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -928,7 +921,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -974,7 +967,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -985,7 +978,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -996,7 +989,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

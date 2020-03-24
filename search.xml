@@ -3,11 +3,11 @@
   
     
     <entry>
-      <title>python Relative precedence of := 海象运算符 翻译</title>
-      <link href="/200206_1/"/>
-      <url>/200206_1/</url>
+      <title>命令行下打开 Visual Studio Code</title>
+      <link href="/2020-03-20-vscode-diff/"/>
+      <url>/2020-03-20-vscode-diff/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>PS：机翻</p></blockquote><p>在所有合法的语法位置上，海象运算符 groups 更接近逗号，不接近其他所有运算符（包括 or，and，not，以及条件表达式（A if C else B）。 如上文”例外情况”部分所述，绝不允许与 = 相同的 group。 如果需要不同的分组，则应使用括号。</p><p>海象运算符可以直接在位置函数调用参数中使用，但是它在关键字参数中是无效的。</p><p>面是一些例子来说明什么在技术上是有效的或者无效的:</p><p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">(x := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">x = y := <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">x = (y := <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">len(lines := f.readlines())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid</span></span><br><span class="line">foo(x := <span class="number">3</span>, cat=<span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INVALID</span></span><br><span class="line">foo(cat=category := <span class="string">'vector'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Valid alternative</span></span><br><span class="line">foo(cat=(category := <span class="string">'vector'</span>))</span><br></pre></td></tr></table></figure></p><p>上面的大多数“有效”示例都不推荐，因为阅读 Python 源代码的人在快速浏览某些代码时可能会忽略其中的区别。 但简单的情况并不令人反感:</p><p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valid</span></span><br><span class="line"><span class="keyword">if</span> any(len(longline := line) &gt;= <span class="number">100</span> <span class="keyword">for</span> line <span class="keyword">in</span> lines):</span><br><span class="line">    print(<span class="string">"Extremely long line:"</span>, longline)</span><br></pre></td></tr></table></figure></p><p>这个 PEP 建议总是在: 左右放置空格，类似于 PEP 8对用于分配的建议，而后者不允许在关键字参数周围使用空格</p><hr><h2>附录</h2><ul><li><p><a href="https://www.pythonhunter.org/episodes/5" target="_blank" rel="noopener">捕蛇者说 | Ep 05. 聊聊单元测试最佳实践和 PEP 572</a></p></li><li><p><a href="https://www.python.org/dev/peps/pep-0572/#relative-precedence-of" target="_blank" rel="noopener">pep-0572/#relative-precedence-of</a></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>环境：WIN10</p></blockquote><h2>VSCode 的命令行方式</h2><p>配置环境变量：<code>%LOCALAPPDATA%\Programs\Microsoft VS Code\code.exe</code></p><p>code 命令：</p><p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件</span></span><br><span class="line">code README.md</span><br><span class="line"><span class="comment"># 新建两个文件</span></span><br><span class="line">code foo.md bar.md</span><br><span class="line"><span class="comment"># 编辑一个已存在的文件</span></span><br><span class="line">code foo.md</span><br><span class="line"><span class="comment"># diff 比较两个文件</span></span><br><span class="line">code -d foo.md bar.md</span><br><span class="line">code --diff foo.md bar.md</span><br><span class="line"><span class="comment"># 新打开一个窗口</span></span><br><span class="line">code -n</span><br></pre></td></tr></table></figure></p><h2>修改 VSCode 为 git 默认 diff tool</h2><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改 VSCode 为 git 默认 diff</span></span><br><span class="line">git config --global diff.tool vscode</span><br><span class="line">git config --global difftool.vscode.cmd <span class="string">"code --wait --diff <span class="variable">$LOCAL</span> <span class="variable">$REMOTE</span>"</span></span><br><span class="line"><span class="comment"># 修改 git 默认编辑器</span></span><br><span class="line">git config --global core.editor <span class="string">"code --wait"</span></span><br></pre></td></tr></table></figure></p><h2>参考</h2><p><a href="https://www.meziantou.net/comparing-files-using-visual-studio-code.htm" target="_blank" rel="noopener">Comparing files using Visual Studio Code</a></p><p><strong>code --help</strong></p><p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">HY <span class="variable">$code</span> --<span class="built_in">help</span></span><br><span class="line">Visual Studio Code 1.43.1</span><br><span class="line"></span><br><span class="line">Usage: code.exe [options][paths...]</span><br><span class="line"></span><br><span class="line">To <span class="built_in">read</span> output from another program, append <span class="string">'-'</span> (e.g. <span class="string">'echo Hello World | code.exe -'</span>)</span><br><span class="line"></span><br><span class="line">Options</span><br><span class="line">  -d --diff &lt;file&gt; &lt;file&gt;           Compare two files with each other.</span><br><span class="line">  -a --add &lt;folder&gt;                 Add folder(s) to the last active window.</span><br><span class="line">  -g --goto &lt;file:line[:character]&gt; Open a file at the path on the specified</span><br><span class="line">line and character position.</span><br><span class="line">  -n --new-window                   Force to open a new window.</span><br><span class="line">  -r --reuse-window                 Force to open a file or folder <span class="keyword">in</span> an</span><br><span class="line">already opened window.</span><br><span class="line">  -w --<span class="built_in">wait</span>                         Wait <span class="keyword">for</span> the files to be closed before</span><br><span class="line">returning.</span><br><span class="line">  --locale &lt;locale&gt;                 The locale to use (e.g. en-US or zh-TW).</span><br><span class="line">  --user-data-dir &lt;dir&gt;             Specifies the directory that user data is</span><br><span class="line">kept <span class="keyword">in</span>. Can be used to open multiple</span><br><span class="line">distinct instances of Code.</span><br><span class="line">  -v --version                      Print version.</span><br><span class="line">  -h --<span class="built_in">help</span>                         Print usage.</span><br><span class="line">  --telemetry                       Shows all telemetry events <span class="built_in">which</span> VS code</span><br><span class="line">collects.</span><br><span class="line">  --folder-uri &lt;uri&gt;                Opens a window with given folder uri(s)</span><br><span class="line">  --file-uri &lt;uri&gt;                  Opens a window with given file uri(s)</span><br><span class="line"></span><br><span class="line">Extensions Management</span><br><span class="line">  --extensions-dir &lt;dir&gt;                            Set the root path <span class="keyword">for</span></span><br><span class="line">extensions.</span><br><span class="line">  --list-extensions                                 List the installed</span><br><span class="line">extensions.</span><br><span class="line">  --show-versions                                   Show versions of installed</span><br><span class="line">extensions, when using</span><br><span class="line">--list-extension.</span><br><span class="line">  --category                                        Filters installed</span><br><span class="line">extensions by provided</span><br><span class="line">category, when using</span><br><span class="line">--list-extension.</span><br><span class="line">  --install-extension &lt;extension-id | path-to-vsix&gt; Installs or updates the</span><br><span class="line">extension. Use `--force`</span><br><span class="line">argument to avoid</span><br><span class="line">prompts.</span><br><span class="line">  --uninstall-extension &lt;extension-id&gt;              Uninstalls an extension.</span><br><span class="line">  --<span class="built_in">enable</span>-proposed-api &lt;extension-id&gt;              Enables proposed API</span><br><span class="line">features <span class="keyword">for</span> extensions.</span><br><span class="line">Can receive one or more</span><br><span class="line">extension IDs to <span class="built_in">enable</span></span><br><span class="line">individually.</span><br><span class="line"></span><br><span class="line">Troubleshooting</span><br><span class="line">  --verbose                          Print verbose output (implies --<span class="built_in">wait</span>).</span><br><span class="line">  --<span class="built_in">log</span> &lt;level&gt;                      Log level to use. Default is <span class="string">'info'</span>.</span><br><span class="line"> Allowed values are <span class="string">'critical'</span>, <span class="string">'error'</span>,</span><br><span class="line"> <span class="string">'warn'</span>, <span class="string">'info'</span>, <span class="string">'debug'</span>, <span class="string">'trace'</span>, <span class="string">'off'</span>.</span><br><span class="line">  -s --status                        Print process usage and diagnostics</span><br><span class="line"> information.</span><br><span class="line">  --prof-startup                     Run CPU profiler during startup</span><br><span class="line">  --<span class="built_in">disable</span>-extensions               Disable all installed extensions.</span><br><span class="line">  --<span class="built_in">disable</span>-extension &lt;extension-id&gt; Disable an extension.</span><br><span class="line">  --inspect-extensions &lt;port&gt;        Allow debugging and profiling of</span><br><span class="line"> extensions. Check the developer tools <span class="keyword">for</span></span><br><span class="line"> the connection URI.</span><br><span class="line">  --inspect-brk-extensions &lt;port&gt;    Allow debugging and profiling of</span><br><span class="line"> extensions with the extension host being</span><br><span class="line"> paused after start. Check the developer</span><br><span class="line"> tools <span class="keyword">for</span> the connection URI.</span><br><span class="line">  --<span class="built_in">disable</span>-gpu                      Disable GPU hardware acceleration.</span><br><span class="line">  --max-memory                       Max memory size <span class="keyword">for</span> a window (<span class="keyword">in</span> Mbytes).</span><br></pre></td></tr></table></figure></p>]]></content>
       
       
       <categories>
@@ -19,9 +19,9 @@
       
         <tags>
             
-            <tag> python </tag>
+            <tag> command </tag>
             
-            <tag> translate </tag>
+            <tag> vscode </tag>
             
         </tags>
       
@@ -168,75 +168,6 @@
     </entry>
     
     <entry>
-      <title>每周分享第 7 期</title>
-      <link href="/weekly_07/"/>
-      <url>/weekly_07/</url>
-      
-        <content type="html"><![CDATA[<h2>教程</h2><hr><p>1、<a href="https://standardjs.com/readme-zhcn.html" target="_blank" rel="noopener">JavaScript Standard Style</a> <code>JavaScript 规范</code>2、<a href="https://www.yuque.com/umijs/umi/hello" target="_blank" rel="noopener">Hello，Umi · 语雀</a>   <code>umi 实战</code>3、<a href="https://github.com/MRNIU/SimpleKernel/blob/TODO/README.md" target="_blank" rel="noopener">SimpleKernel/README.md at TODO · MRNIU/SimpleKernel</a><code>内核学习</code>4、<a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="noopener">Quick start / Methodology / BEM</a> <code>一种 css 命名规范</code>5、<a href="https://docs.emmet.io/" target="_blank" rel="noopener">Emmet Documentation</a> <code>emmet 文档</code>6、<a href="https://github.com/google/styleguide" target="_blank" rel="noopener">google/styleguide: Style guides for Google-originated open-source projects</a>7、<a href="http://www.jezzamon.com/fourier/index.html" target="_blank" rel="noopener">Fourier Transforms</a><code>画图教程</code></p><h2>资源</h2><hr><p>1、工具</p><ul><li><a href="http://www.javascriptkit.com/script/script2/jstohtml.shtml" target="_blank" rel="noopener">html2js</a> <code>把 html 转成 JavaScript</code></li><li><a href="https://github.com/rrweb-io/rrweb/blob/master/README.zh_CN.md" target="_blank" rel="noopener">rrweb/README.zh_CN.md at master · rrweb-io/rrweb</a><code>浏览器操作录制</code></li><li><a href="https://github.com/agermanidis/autosub/issues/31" target="_blank" rel="noopener">自动生成字幕</a></li><li><a href="https://cn.overleaf.com/" target="_blank" rel="noopener">Overleaf, 在线LaTeX编辑器</a></li><li><a href="http://writertools.funnyapi.com/#/home" target="_blank" rel="noopener">微信公号写手工具-近期热门文章搜索</a></li></ul><p>2、网站</p><ul><li><a href="https://betterdev.link/" target="_blank" rel="noopener">Better Dev Link - Resource around the web on becoming a better programmer</a><code>技术周报</code></li><li><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a><code>世界数据可视化</code></li></ul><p>3、书</p><ul><li><a href="https://www.c82.net/euclid/" target="_blank" rel="noopener">Byrne’s Euclid</a><code>数学书</code></li><li><a href="http://atomicdesign.bradfrost.com/" target="_blank" rel="noopener">Atomic Design by Brad Frost</a> <code>设计书</code></li><li><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">xitu/gold-miner: 🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：</a></li></ul><h2>文摘</h2><hr><p>1、Lazy programming<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Write what you need and no more, but when you write it, do it right.</span><br><span class="line">Avoid implementing features you don’t need. You can’t design a feature without knowing what the constraints are. Implementing features &quot;for completeness&quot; results in unused code that is expensive to maintain, learn about, document, test, etc.</span><br><span class="line">When you do implement a feature, implement it the right way. Avoid workarounds. Workarounds merely kick the problem further down the road, but at a higher cost: someone will have to relearn the problem, figure out the workaround and how to dismantle it (and all the places that now use it), and implement the feature. It’s much better to take longer to fix a problem properly, than to be the one who fixes everything quickly but in a way that will require cleaning up later.</span><br><span class="line">You may hear team members say &quot;embrace the yak shave!&quot;. This is an encouragement to take on the larger effort necessary to perform a proper fix for a problem rather than just applying a band-aid.</span><br></pre></td></tr></table></figure></p><p>2、<a href="https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53" target="_blank" rel="noopener">Goodbye, Object Oriented Programming – Charles Scalfani</a>3、<a href="https://www.yuque.com/seeconf/content/kbnzac" target="_blank" rel="noopener">第二届 SEE Conf 2019 精彩回顾（附 PPT 及视频） · 语雀</a>4、<a href="https://www.yuque.com/d2forum/content/d213" target="_blank" rel="noopener">第十三届 D2 前端技术论坛精彩回顾[附PPT] · 语雀</a>5、<a href="https://overreacted.io/zh-hant/things-i-dont-know-as-of-2018/" target="_blank" rel="noopener">Dan Abramov : 2018年，那些我所不知道的技術</a></p><hr><p>（完）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每周分享第 6 期</title>
-      <link href="/weekly_06/"/>
-      <url>/weekly_06/</url>
-      
-        <content type="html"><![CDATA[<h2>新闻</h2><hr><p>1、<a href="https://scratch.mit.edu/download/" target="_blank" rel="noopener">Scrach3</a></p><h2>教程</h2><hr><p>1、<a href="https://github.com/yujiangshui/An-English-Guide-for-Programmers/blob/master/README.md" target="_blank" rel="noopener">程序员英语学习指南</a>2、<a href="https://github.com/jeroenjanssens/data-science-at-the-command-line/blob/master/README.md" target="_blank" rel="noopener">用命令行学习数据科学</a>3、<a href="https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/" target="_blank" rel="noopener">50 个 matplotlib 可视化应用</a></p><h2>资源</h2><hr><p>1、<a href="http://plantuml.com/" target="_blank" rel="noopener">在线用代码画 UML 图</a><a href="https://www.kickstarter.com" target="_blank" rel="noopener">众筹</a>2、<a href="https://github.com/hizzgdev/jsmind" target="_blank" rel="noopener">hizzgdev/jsmind: Javascript version of mind mapping</a><br><code>用 JavaScript 画 mindmap</code>3、<a href="https://github.com/youfou/wxpy" target="_blank" rel="noopener">python 版的微信机器人 API</a>4、<a href="https://www.kickstarter.com" target="_blank" rel="noopener">一个众筹网站</a>5、<a href="https://pudding.cool/" target="_blank" rel="noopener">世界文化 - 可视化数据网站</a>6、<a href="https://github.com/micropython/micropython" target="_blank" rel="noopener">micropython</a>7、<a href="https://circleci.com/" target="_blank" rel="noopener">circleci</a></p><h2>文摘</h2><hr><p>1、 <a href="https://www.zcfy.cc/article/a-large-scale-study-of-programming-languages-and-code-quality-in-github" target="_blank" rel="noopener">在 GitHub 上对编程语言与软件质量的一个大规模研究 - 众成翻译</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每周分享第 5 期</title>
-      <link href="/weekly_05/"/>
-      <url>/weekly_05/</url>
-      
-        <content type="html"><![CDATA[<h2>文摘</h2><hr><ol><li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors" target="_blank" rel="noopener">JavaScript 错误参考</a></p></li><li><p>WTFPLYou just DO WHAT THE F123UCK YOU WANT TO</p></li><li><p>一道 JavaScript 面试题<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hookupevents</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"button"</span> + i)</span><br><span class="line">      .addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(i);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li></ol><hr><ul><li></li></ul><p>（完）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>JavaScript 作用域问题</title>
       <link href="/190102_1/"/>
       <url>/190102_1/</url>
@@ -254,98 +185,6 @@
         <tags>
             
             <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每周分享第 4 期</title>
-      <link href="/weekly_04/"/>
-      <url>/weekly_04/</url>
-      
-        <content type="html"><![CDATA[<h2>文摘</h2><hr><p>1、<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Value_definition_syntax#%E6%80%BB%E7%BB%93" target="_blank" rel="noopener">CSS属性值定义语法</a><code>|</code> =&gt; <code>\</code></p><p>| 符号 | 名称 | 描述 | 示例 ||----------|--------------|--------------------------------------|---------------------------------------------------|| 组合符号 |  |  |  ||  | 并置 | 各部分必须出现且按顺序出现 | solid <code>&lt;length&gt;</code>|| &amp;&amp; | “与”组合符 | 各部分必须出现，但可以不按顺序 | <code>&lt;length&gt;</code> &amp;&amp; <code>&lt;string&gt;</code> || \ | “或”组合符 | 各部分至少出现一个，可以不按顺序 | <code>&lt;'border-image-outset'&gt;</code> \ <code>&lt;'border-image-slice'&gt;</code> || \ | “互斥”组合符 | 各部分恰好出现一个 | smaller \ small \ normal \ big \ bigger || [ ] | 方括号 | 强调优先级 | bold [ thin &amp;&amp; <code>&lt;length&gt;</code> ] || 数量符号 |  |  |  ||  | 无数量符号 | 恰好一次 | solid || * | 星号 | 零次、一次或多次 | bold smaller* || +  | 加号 | 一次或多次 | bold smaller+ || ？ | 问号 | 零次或一次（即可选） | bold smaller？ || {A,B} | 大括号 | 至少A次，至多B次 | bold smaller{1,3} || # | 井号 | 一次或多次，但多次出现必须以逗号分隔 | bold smaller# |</p><p>2、python3 打印圣诞树<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"for i in list(range(0, 5)) + list(range(2, 8)) + list(range(3, 12)) + [2, 2]: print(' ' * int((40-2*i-i/2)) + '*' * int((4*i+1+i)))"</span></span><br></pre></td></tr></table></figure></p><p>3、python3 开启内置服务器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure></p><p>4、windows 装 python2 和 python3 后安装 python2 的 pip 包<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 -m pip install &lt;package&gt;</span><br></pre></td></tr></table></figure></p><p>5、windows 修改 dns command</p><ul><li>netsh interface ip set dns &quot;以太网&quot; static 114.114.114.114    # 设置 dns 管理员权限下6、全球 BGP<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">telnet route-server.ip.att.NET</span><br><span class="line">username: rviews</span><br><span class="line">password: rviews</span><br><span class="line">show route all</span><br></pre></td></tr></table></figure></li></ul><h2>结语</h2><p>----       ----     ---    ----     |     |     |     |     |     |     |     |     |     |     |     |----      |     |     |      ----|          |     |     |           ||          |     |     |           |----       ----     ---     ----</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每周分享第 3 期</title>
-      <link href="/weekly_03/"/>
-      <url>/weekly_03/</url>
-      
-        <content type="html"><![CDATA[<h2>教程</h2><hr><p>1、<a href="https://segmentfault.com/a/1190000000721142" target="_blank" rel="noopener">html2docset</a>html 文件转 docset</p><h2>文摘</h2><hr><p>1、镜像网站<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains \&lt;name&gt; --no-parent \&lt;url&gt;</span><br><span class="line">wget -m \&lt;url&gt;    </span><br><span class="line">wget -r -p -k -np \&lt;url&gt;</span><br></pre></td></tr></table></figure></p><p>2、python 2.x to python 3.x<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> lib2to3.main <span class="keyword">import</span> main</span><br><span class="line">sys.exit(main(<span class="string">"lib2to3.fixes"</span>))</span><br></pre></td></tr></table></figure></p><h2>结语</h2><hr><blockquote><p>http://www.ruanyifeng.com/blog/2018/12/weekly-issue-36.html</p></blockquote><p>美国一个编程培训班的老板，写了一篇文章。他说自己很担忧。现在，那么多人学习编程，他的公司全靠培训赚钱，将来会不会程序员过剩？</p><p>培训班的目的，就是让那些没有受过四年计算机教育的人，经过四个月的培训，找到一份软件开发的工作。某种程度上，这种做法是可行的，大量的程序员就是通过这种模式生产出来。</p><p>但是，人工智能正变得越来越强，终有一天，简单代码都会由计算机自已生成，低级程序员的需求将会大量减少。另一方面，云服务的兴起，使得很多任务不需要自己编程，可以购买云服务，这也减少了程序员的需求。</p><p>同时，由于不断的抽象和封装，应用层的软件开发正变得越来越简单，如果只是简单地遵循在线教程，就能编写软件，或者将一系列API混合在一起，就能做出一个服务，有必要向开发人员支付高额薪水吗？毕竟开发过程是那么简单。</p><p>他认为，学习编程是值得的，它可以帮助你理解世界。但是，梦想仅仅学会软件开发，就能解决你的人生问题是不现实的。&quot;只是能够编写一个安卓程序，不会为你赢得竞争优势，也没法在这个超级饱和的科技世界里，获得自己的一席之地。这个世界里，每个想法都已由十位企业家在你前面完成了。&quot;</p><p>由于其他行业不景气，大量年轻人正在转向软件业就业。但是，程序员的淘汰也很厉害，上车的人多，下车的人也多。大家应该对这一点有清醒的认识。</p><p>（完）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Cannot find one or more componets. Please reinstall the application</title>
-      <link href="/181215_1/"/>
-      <url>/181215_1/</url>
-      
-        <content type="html"><![CDATA[<h2>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> debug </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> windows </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每周分享第 2 期</title>
-      <link href="/weekly_02/"/>
-      <url>/weekly_02/</url>
-      
-        <content type="html"><![CDATA[<h2>教程</h2><p>1、<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Windows Subsystem for Linux Installation Guide for Windows 10</a></p><h2>资源</h2><hr><p>1、IP 查询 API</p><ul><li>实例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://freeapi.ipip.net/118.28.8.8</span><br></pre></td></tr></table></figure></li></ul><p>2、<a href="https://github.com/pagehelper/Mybatis-PageHelper" target="_blank" rel="noopener">Mybatis-PageHelper</a>Mybatis通用分页插件</p><h2>文摘</h2><hr><ul><li><a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6" target="_blank" rel="noopener">文件描述符</a>文件描述符（File descriptor）是计算机科学中的一个术语，是一个用于表述指向文件的引用的抽象化概念。</li><li>linux使用的进程间通信方式<ul><li>管道（pipe）,流管道(s_pipe)和有名管（FIFO）</li><li>信号（signal）</li><li>消息队列</li><li>共享内存</li><li>信号量</li><li>套接字（socket)</li></ul></li></ul><h2>结语</h2><hr><p>一周都在弄报告 ）0（（完）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> weekly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> weekly </tag>
             
         </tags>
       
@@ -377,23 +216,23 @@
     </entry>
     
     <entry>
-      <title>每周分享第 1 期</title>
-      <link href="/weekly_01/"/>
-      <url>/weekly_01/</url>
+      <title>Cannot find one or more componets. Please reinstall the application</title>
+      <link href="/181215_1/"/>
+      <url>/181215_1/</url>
       
-        <content type="html"><![CDATA[<h2>新闻</h2><hr><p>1、<code>一句话新闻</code> <a href="https://www.blog.google/products/translate/new-look-google-translate-web/" target="_blank" rel="noopener">谷歌翻译新增文档翻译功能</a><img src="https://hy-picgo.oss-cn-shenzhen.aliyuncs.com/img/blog-hackettyu-com/weekly_01_google_ts.gif" alt="weekly_01_google_ts.gif"></p><h2>教程</h2><hr><p>1、<a href="http://www.cnblogs.com/geek6/p/3951677.html" target="_blank" rel="noopener">java 23种设计模式</a></p><ul><li>设计模式的分类<img src="http://dl.iteye.com/upload/attachment/0083/1179/57a92d42-4d84-3aa9-a8b9-63a0b02c2c36.jpg" alt=""></li><li>设计模式的六大原则</li><li>Java的23中设计模式</li></ul><h2>资源</h2><hr><p>1、<a href="https://sergiubucur.itch.io/falling-through-code" target="_blank" rel="noopener">falling-through-code</a></p><ul><li><code>falling-through-code</code> 是一个关于代码的 web 游戏。<img src="https://hy-picgo.oss-cn-shenzhen.aliyuncs.com/img/blog-hackettyu-com/weekly_01_falling_through_code.gif" alt="weekly_01_falling_through_code.gif"></li></ul><p>2、<a href="https://zhusandiao.gitbooks.io/grammar-club/content/" target="_blank" rel="noopener">语法俱乐部</a></p><p>3、<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p><p>4、<a href="https://rubiks-cube-solver.com/" target="_blank" rel="noopener">rubiks-cube-solver</a></p><ul><li><code>rubiks-cube-solver</code> 是一个解模式的程序。</li></ul><h2>文摘</h2><hr><p>1、<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">反模式</a></p><ul><li>被认为是坏的软件开发实践的模式是反模式。</li></ul><p>2、<a href="https://zh.wikipedia.org/wiki/Foobar" target="_blank" rel="noopener">foobar</a></p><ul><li>foobar是计算机程序领域里的术语，并无实际用途和参考意义。在计算机程序设计与计算机技术的相关文档中，术语foobar是一个常见的无名氏化名，常被作为“伪变量”使用。</li></ul><p>3、<a href="https://ocg-rule.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">游戏王 ocg 规则</a></p><p>4、<a href="https://github.com/linchuanXu/word-statistics-cet4" target="_blank" rel="noopener">12年36套四级真题试卷的单词频率统计程序</a></p><h2>结语</h2><hr><ul><li>这个 weekly 是模仿 <a href="https://github.com/ruanyf/weekly" target="_blank" rel="noopener">阮一峰技术分享周刊</a> 并结合博主自身写的周记。（完）</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2>简介</h2><hr><p>打开 mssqlserver manager 时提示 <code>Cannot find one or more componets. Please reinstall the application</code></p><h2>快速上手</h2><hr><p>这个原因是系统找不到你的 vs shell 位置，原因可能是：</p><ul><li>没安装</li><li>没安装正确</li></ul><p>从这里下载好 <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/isolated-shell/?rr=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener">vs shell</a></p><p>安装前删除注册表：<code>计算机\HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\14.0_Remote</code></p><h2>FAQ</h2><hr><p>hy 没安装是因为 hy 把 vs shell 位置移动了，但注册表没改变，更惨的是卸载后重新安装时因为 hy 之前的 d 盘符不用了了，安装程序又不能换安装位置却一直提示 <code>invail drive</code>，hy 打算删除错误注册表...... 放弃:)</p>]]></content>
       
       
       <categories>
           
-          <category> weekly </category>
+          <category> debug </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> weekly </tag>
+            <tag> windows </tag>
             
         </tags>
       
@@ -702,9 +541,9 @@
             
             <tag> command </tag>
             
-            <tag> ubuntu </tag>
-            
             <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
             
         </tags>
       

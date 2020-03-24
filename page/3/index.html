@@ -860,7 +860,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_07/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/190102_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -879,7 +879,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/weekly_07/" itemprop="url">每周分享第 7 期</a></h2>
+                <a class="post-title-link" href="/190102_1/" itemprop="url">JavaScript 作用域问题</a></h2>
         
 
         <div class="post-meta">
@@ -891,8 +891,8 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T12:00:00+08:00">
-                2019-01-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T12:00:00+08:00">
+                2019-01-02
               </time>
             
 
@@ -914,8 +914,8 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/weekly/" itemprop="url" rel="index">
-                    <span itemprop="name">weekly</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -931,7 +931,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
 
           
           
-             <span id="/weekly_07/" class="leancloud_visitors" data-flag-title="每周分享第 7 期">
+             <span id="/190102_1/" class="leancloud_visitors" data-flag-title="JavaScript 作用域问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -964,46 +964,29 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
       
         
           
-            <h2>教程</h2>
+            <h2>简介</h2>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//block</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foo() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo();  <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1 </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"bar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// function block</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> b = <span class="number">2</span>;  <span class="comment">// same variable!</span></span><br><span class="line">      <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(b);  <span class="comment">// 2</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"foobar() --------------------------------------------------"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foobar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> c = <span class="number">2</span>;  <span class="comment">// </span></span><br><span class="line">      <span class="built_in">console</span>.log(c);  <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(c);  <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line">foobar();</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>1、<a href="https://standardjs.com/readme-zhcn.html" target="_blank" rel="noopener">JavaScript Standard Style</a> <code>JavaScript 规范</code>
-2、<a href="https://www.yuque.com/umijs/umi/hello" target="_blank" rel="noopener">Hello，Umi · 语雀</a>   <code>umi 实战</code>
-3、<a href="https://github.com/MRNIU/SimpleKernel/blob/TODO/README.md" target="_blank" rel="noopener">SimpleKernel/README.md at TODO · MRNIU/SimpleKernel</a>	<code>内核学习</code>
-4、<a href="https://en.bem.info/methodology/quick-start/" target="_blank" rel="noopener">Quick start / Methodology / BEM</a> <code>一种 css 命名规范</code>
-5、<a href="https://docs.emmet.io/" target="_blank" rel="noopener">Emmet Documentation</a> <code>emmet 文档</code>
-6、<a href="https://github.com/google/styleguide" target="_blank" rel="noopener">google/styleguide: Style guides for Google-originated open-source projects</a>
-7、<a href="http://www.jezzamon.com/fourier/index.html" target="_blank" rel="noopener">Fourier Transforms</a>		<code>画图教程</code></p>
-<h2>资源</h2>
-<hr>
-<p>1、工具</p>
+<h2>问题</h2>
 <ul>
-<li><a href="http://www.javascriptkit.com/script/script2/jstohtml.shtml" target="_blank" rel="noopener">html2js</a> <code>把 html 转成 JavaScript</code></li>
-<li><a href="https://github.com/rrweb-io/rrweb/blob/master/README.zh_CN.md" target="_blank" rel="noopener">rrweb/README.zh_CN.md at master · rrweb-io/rrweb</a>	<code>浏览器操作录制</code></li>
-<li><a href="https://github.com/agermanidis/autosub/issues/31" target="_blank" rel="noopener">自动生成字幕</a></li>
-<li><a href="https://cn.overleaf.com/" target="_blank" rel="noopener">Overleaf, 在线LaTeX编辑器</a></li>
-<li><a href="http://writertools.funnyapi.com/#/home" target="_blank" rel="noopener">微信公号写手工具-近期热门文章搜索</a></li>
+<li>语句作用域与函数作用域的区别？</li>
 </ul>
-<p>2、网站</p>
-<ul>
-<li><a href="https://betterdev.link/" target="_blank" rel="noopener">Better Dev Link - Resource around the web on becoming a better programmer</a>	<code>技术周报</code></li>
-<li><a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a>	<code>世界数据可视化</code></li>
-</ul>
-<p>3、书</p>
-<ul>
-<li><a href="https://www.c82.net/euclid/" target="_blank" rel="noopener">Byrne’s Euclid</a>	<code>数学书</code></li>
-<li><a href="http://atomicdesign.bradfrost.com/" target="_blank" rel="noopener">Atomic Design by Brad Frost</a> <code>设计书</code></li>
-<li><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">xitu/gold-miner: 🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：</a></li>
-</ul>
-<h2>文摘</h2>
 <hr>
-<p>1、Lazy programming
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Write what you need and no more, but when you write it, do it right.</span><br><span class="line">Avoid implementing features you don’t need. You can’t design a feature without knowing what the constraints are. Implementing features &quot;for completeness&quot; results in unused code that is expensive to maintain, learn about, document, test, etc.</span><br><span class="line">When you do implement a feature, implement it the right way. Avoid workarounds. Workarounds merely kick the problem further down the road, but at a higher cost: someone will have to relearn the problem, figure out the workaround and how to dismantle it (and all the places that now use it), and implement the feature. It’s much better to take longer to fix a problem properly, than to be the one who fixes everything quickly but in a way that will require cleaning up later.</span><br><span class="line">You may hear team members say &quot;embrace the yak shave!&quot;. This is an encouragement to take on the larger effort necessary to perform a proper fix for a problem rather than just applying a band-aid.</span><br></pre></td></tr></table></figure></p>
-<p>2、<a href="https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53" target="_blank" rel="noopener">Goodbye, Object Oriented Programming – Charles Scalfani</a>
-3、<a href="https://www.yuque.com/seeconf/content/kbnzac" target="_blank" rel="noopener">第二届 SEE Conf 2019 精彩回顾（附 PPT 及视频） · 语雀</a>
-4、<a href="https://www.yuque.com/d2forum/content/d213" target="_blank" rel="noopener">第十三届 D2 前端技术论坛精彩回顾[附PPT] · 语雀</a>
-5、<a href="https://overreacted.io/zh-hant/things-i-dont-know-as-of-2018/" target="_blank" rel="noopener">Dan Abramov : 2018年，那些我所不知道的技術</a></p>
-<hr>
-<p>（完）</p>
+<h2>思考</h2>
+<ul>
+<li>同是 var 定义
+<ul>
+<li>foo(){} 外的 a 不等价于 foo(){} 里的 a(function 外的代码块)</li>
+<li>boo()-&gt;if{} 里的  a 等价于 boo()-&gt;if{} 外的 a</li>
+</ul>
+</li>
+<li>一个是 var 定义，另一个是 let 定义
+<ul>
+<li>foo(){} 外的 a 不等价于 foo(){} 里的 a(function 外的代码块)</li>
+<li>boo()-&gt;if{} 里的  a 不等价于 boo()-&gt;if{} 外的 a</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -1059,7 +1042,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/weekly_06/">
+    <link itemprop="mainEntityOfPage" href="https://hackettyu.com/181215_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HackettYu">
@@ -1078,7 +1061,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/weekly_06/" itemprop="url">每周分享第 6 期</a></h2>
+                <a class="post-title-link" href="/181215_2/" itemprop="url">切换 eclipse 编译版本</a></h2>
         
 
         <div class="post-meta">
@@ -1090,8 +1073,8 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T12:00:00+08:00">
-                2019-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-15T12:00:00+08:00">
+                2018-12-15
               </time>
             
 
@@ -1113,8 +1096,8 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/weekly/" itemprop="url" rel="index">
-                    <span itemprop="name">weekly</span>
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
                   </a>
                 </span>
 
@@ -1130,7 +1113,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
 
           
           
-             <span id="/weekly_06/" class="leancloud_visitors" data-flag-title="每周分享第 6 期">
+             <span id="/181215_2/" class="leancloud_visitors" data-flag-title="切换 eclipse 编译版本">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1163,28 +1146,51 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
       
         
           
-            <h2>新闻</h2>
+            <h2>简介</h2>
 <hr>
-<p>1、<a href="https://scratch.mit.edu/download/" target="_blank" rel="noopener">Scrach3</a></p>
-<h2>教程</h2>
+<p>导入其它编译器或别人的项目的时候，有时候 jre 会不一样</p>
+<h2>快速上手</h2>
 <hr>
-<p>1、<a href="https://github.com/yujiangshui/An-English-Guide-for-Programmers/blob/master/README.md" target="_blank" rel="noopener">程序员英语学习指南</a>
-2、<a href="https://github.com/jeroenjanssens/data-science-at-the-command-line/blob/master/README.md" target="_blank" rel="noopener">用命令行学习数据科学</a>
-3、<a href="https://www.machinelearningplus.com/plots/top-50-matplotlib-visualizations-the-master-plots-python/" target="_blank" rel="noopener">50 个 matplotlib 可视化应用</a></p>
-<h2>资源</h2>
+<ul>
+<li>
+<p>查看你的工程编译版本：</p>
+<ul>
+<li>命令行：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javap -verbose src/source.class</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>可以直接看前面显示的 version</p>
+<ul>
+<li>eclipse 打开 src/*.class</li>
+</ul>
+</li>
+<li>
+<p>对应信息：</p>
+</li>
+</ul>
+<p>| 版本号 	| 对应十进制 	| jdk 版本号 	|
+|:------:	|:----------:	|:----------:	|
+|   2E   	|     46     	|     1.2    	|
+|   2F   	|     47     	|     1.3    	|
+|   30   	|     48     	|     1.4    	|
+|   31   	|     49     	|     1.5    	|
+|   32   	|     50     	|     1.6    	|
+|   33   	|     51     	|     1.7    	|
+|   34   	|     52     	|     1.8    	|</p>
+<ul>
+<li>切换 eclipse 编译版本
+<ul>
+<li>全局
+<code>Preferences--&gt;Java--&gt;Compiler-&gt;Compiler compliance level</code></li>
+<li>局部
+<code>工程右键--&gt;属性--&gt;Java Compiler</code></li>
+</ul>
+</li>
+</ul>
+<h2>附录</h2>
 <hr>
-<p>1、<a href="http://plantuml.com/" target="_blank" rel="noopener">在线用代码画 UML 图</a>
-<a href="https://www.kickstarter.com" target="_blank" rel="noopener">众筹</a>
-2、<a href="https://github.com/hizzgdev/jsmind" target="_blank" rel="noopener">hizzgdev/jsmind: Javascript version of mind mapping</a><br>
-<code>用 JavaScript 画 mindmap</code>
-3、<a href="https://github.com/youfou/wxpy" target="_blank" rel="noopener">python 版的微信机器人 API</a>
-4、<a href="https://www.kickstarter.com" target="_blank" rel="noopener">一个众筹网站</a>
-5、<a href="https://pudding.cool/" target="_blank" rel="noopener">世界文化 - 可视化数据网站</a>
-6、<a href="https://github.com/micropython/micropython" target="_blank" rel="noopener">micropython</a>
-7、<a href="https://circleci.com/" target="_blank" rel="noopener">circleci</a></p>
-<h2>文摘</h2>
-<hr>
-<p>1、 <a href="https://www.zcfy.cc/article/a-large-scale-study-of-programming-languages-and-code-quality-in-github" target="_blank" rel="noopener">在 GitHub 上对编程语言与软件质量的一个大规模研究 - 众成翻译</a></p>
+<blockquote>
+<p>https://blog.csdn.net/gnail_oug/article/details/47145047</p>
+</blockquote>
 
           
         
@@ -1231,7 +1237,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1277,7 +1283,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1288,7 +1294,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1299,7 +1305,7 @@ Array.prototype.sort() 的参数预期为 undefined 或者是一个比较操作�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
