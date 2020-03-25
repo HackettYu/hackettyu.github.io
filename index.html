@@ -596,18 +596,19 @@
         
           
             <h2>简介</h2>
-<hr>
 <p>看到一个<a href="https://blog.lilydjwg.me/2019/8/16/gh-check.214730.html" target="_blank" rel="noopener">博客</a>里面有一个添加了 send to kindle 链接，准备在自己 hexo 博客中也搞一个
 找到文件<code>theme\next\layout\_macro\post.swig</code></p>
 <p>找到一个你想添加的位置</p>
-<p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ &lt;a href="https://pushtokindle.fivefilters.org/send.php?url=\&#123;\&#123; page.permalink \&#125;\&#125;"&gt;send to kindle&lt;/a&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>注意一下文档里变量赋值是<code>\{\%- \%\}</code>,我的版本是是用<code>\{\{\}\}</code>作为操作符
-还有不要<code>\{\{ page.permalink | json \}\}</code>这样写，这样写会多一对引号</p>
+<p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ &lt;a href="https://pushtokindle.fivefilters.org/send.php?url=&amp;#123&amp;#123 page.permalink &amp;#125&amp;#125"&gt;send to kindle&lt;/a&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>注意一下文档里变量赋值是<code>&amp;#123%- %&amp;#125</code>,我的版本是是用<code>&amp;#123&amp;#123&amp;#125&amp;#125</code>作为操作符
+还有不要<code>&amp;#123&amp;#123 page.permalink | json &amp;#125&amp;#125</code>这样写，这样写会多一对引号</p>
+<p>请忽略 <code>\</code></p>
 <h2>附录</h2>
 <hr>
 <ul>
 <li><a href="https://hexo.io/zh-cn/docs/variables.html#%E7%BD%91%E7%AB%99%E5%8F%98%E9%87%8F" target="_blank" rel="noopener">hexo 变量</a></li>
 <li><a href="https://blog.lilydjwg.me/2019/8/16/gh-check.214730.html" target="_blank" rel="noopener">寻找最快的 GitHub IP - 依云's Blog</a></li>
+<li><a href="https://wxnacy.com/2018/01/12/hexo-specific-symbol/" target="_blank" rel="noopener">Hexo 特殊符号的转义问题</a></li>
 </ul>
 
           
